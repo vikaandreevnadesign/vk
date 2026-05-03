@@ -6,7 +6,7 @@
 <title>VK Studio — Создание сайтов под ключ | Виктория Кокурина</title>
 <meta name="description" content="VK Studio — создаю лендинги, сайты-визитки и квизы под ключ. Для коучей, астрологов, риэлторов и любых специалистов. Быстро, красиво, с душой. Москва и онлайн.">
 <meta name="keywords" content="создание сайтов, лендинг под ключ, сайт для коуча, сайт для астролога, сайт для риэлтора, сайт визитка, VK Studio, Виктория Кокурина">
-<link rel="canonical" href="https://vkstudio.ru/">
+<link rel="canonical" href="https://vk-st.ru/">
 <meta property="og:title" content="VK Studio — Сайты под ключ">
 <meta property="og:description" content="Лендинги, визитки и квизы для специалистов. Быстро, красиво, недорого.">
 <meta property="og:type" content="website">
@@ -16,14 +16,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#09090F;
-  --bg2:#0F0F1A;
+  --bg:#0a0a12;
+  --bg2:#111122;
   --text:#F0EDE8;
   --accent:#B8A9FF;
   --accent2:#F0C07A;
-  --muted:rgba(240,237,232,0.5);
-  --card:rgba(255,255,255,0.04);
-  --border:rgba(255,255,255,0.09);
+  --muted:rgba(240,237,232,0.55);
+  --card:rgba(255,255,255,0.03);
+  --border:rgba(255,255,255,0.07);
   --radius:16px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -32,7 +32,7 @@ body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;overfl
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s}
-nav.scrolled{background:rgba(9,9,15,0.92);border-bottom:1px solid var(--border);backdrop-filter:blur(20px)}
+nav.scrolled{background:rgba(10,10,18,0.92);border-bottom:1px solid var(--border);backdrop-filter:blur(20px)}
 .logo{font-size:20px;font-weight:800;letter-spacing:-0.5px;text-decoration:none;color:var(--text)}
 .logo span{color:var(--accent)}
 .nav-links{display:flex;gap:28px}
@@ -46,8 +46,8 @@ nav.scrolled{background:rgba(9,9,15,0.92);border-bottom:1px solid var(--border);
 
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;padding:120px 48px 80px;position:relative;overflow:hidden}
-.hero-glow{position:absolute;top:20%;right:10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(184,169,255,0.08) 0%,transparent 70%);pointer-events:none}
-.hero-glow2{position:absolute;bottom:10%;left:5%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(240,192,122,0.06) 0%,transparent 70%);pointer-events:none}
+.hero-glow{position:absolute;top:20%;right:10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(184,169,255,0.1) 0%,transparent 70%);pointer-events:none}
+.hero-glow2{position:absolute;bottom:10%;left:5%;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(240,192,122,0.08) 0%,transparent 70%);pointer-events:none}
 .hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:2}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);padding:6px 14px;border-radius:30px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:28px}
 .badge-dot{width:6px;height:6px;border-radius:50%;background:#4ADE80;animation:pulse-dot 2s infinite}
@@ -56,9 +56,9 @@ h1 em{font-style:italic;color:var(--accent)}
 .hero-sub{font-size:15px;color:var(--muted);line-height:1.8;max-width:440px;margin-bottom:36px;font-family:'Instrument Serif',serif;font-style:italic}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
 .btn-main{background:var(--accent);color:var(--bg);padding:14px 30px;border-radius:40px;text-decoration:none;font-size:13px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;transition:all 0.2s}
-.btn-main:hover{opacity:0.9;transform:translateY(-2px);box-shadow:0 10px 28px rgba(184,169,255,0.25)}
+.btn-main:hover{opacity:0.9;transform:translateY(-2px);box-shadow:0 10px 28px rgba(184,169,255,0.3)}
 .btn-out{border:1px solid var(--border);color:var(--text);padding:14px 30px;border-radius:40px;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;transition:all 0.2s}
-.btn-out:hover{border-color:rgba(255,255,255,0.25)}
+.btn-out:hover{border-color:var(--accent);color:var(--accent)}
 .hero-stats{display:flex;gap:36px}
 .stat-n{font-size:28px;font-weight:800;color:var(--text)}
 .stat-l{font-size:11px;color:var(--muted);margin-top:2px;letter-spacing:0.05em}
@@ -87,15 +87,27 @@ h1 em{font-style:italic;color:var(--accent)}
 .sec-title{font-family:'Instrument Serif',serif;font-size:clamp(32px,4vw,52px);font-weight:400;line-height:1.12;letter-spacing:-0.3px;margin-bottom:52px}
 .sec-title em{font-style:italic;color:var(--accent)}
 
-/* SERVICES */
-.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-.srv-card{background:var(--card);padding:36px 28px;transition:background 0.25s;position:relative;overflow:hidden}
-.srv-card:hover{background:rgba(255,255,255,0.07)}
-.srv-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;background:var(--accent);transform:scaleX(0);transition:transform 0.3s}
-.srv-card:hover::after{transform:scaleX(1)}
-.srv-ico{font-size:28px;margin-bottom:16px;display:block}
-.srv-name{font-size:16px;font-weight:700;margin-bottom:8px}
-.srv-desc{font-size:13px;color:var(--muted);line-height:1.7}
+/* SERVICES — ЛАВАНДОВЫЕ КАРТОЧКИ */
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.srv-card{background:rgba(184,169,255,0.06);border:1px solid rgba(184,169,255,0.15);padding:40px 30px;border-radius:var(--radius);transition:all 0.35s;position:relative;overflow:hidden;cursor:default}
+.srv-card:hover{background:rgba(184,169,255,0.12);border-color:rgba(184,169,255,0.4);transform:translateY(-6px);box-shadow:0 20px 40px rgba(184,169,255,0.1)}
+.srv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity 0.35s}
+.srv-card:hover::before{opacity:1}
+.srv-ico{font-size:36px;margin-bottom:20px;display:block;transition:transform 0.35s}
+.srv-card:hover .srv-ico{transform:scale(1.15)}
+.srv-name{font-size:20px;font-weight:700;margin-bottom:12px;letter-spacing:-0.3px}
+.srv-desc{font-size:14px;color:var(--muted);line-height:1.7}
+
+/* QUIZ BIG BANNER */
+.quiz-banner{background:linear-gradient(135deg,rgba(184,169,255,0.1),rgba(184,169,255,0.03));border:1px solid rgba(184,169,255,0.2);border-radius:var(--radius);padding:48px 40px;display:flex;align-items:center;gap:40px;margin-top:20px;transition:all 0.35s;position:relative;overflow:hidden}
+.quiz-banner:hover{border-color:rgba(184,169,255,0.5);box-shadow:0 20px 50px rgba(184,169,255,0.08)}
+.quiz-banner::after{content:'';position:absolute;top:-50%;right:-10%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(184,169,255,0.06),transparent 70%);pointer-events:none}
+.quiz-icon{font-size:60px;flex-shrink:0;animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.quiz-content h3{font-size:26px;font-weight:700;margin-bottom:10px;color:var(--accent)}
+.quiz-content p{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px}
+.quiz-price{font-size:18px;font-weight:700;color:var(--text);margin-bottom:18px}
+.quiz-price span{color:var(--accent)}
 
 /* PRICING */
 .price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
@@ -112,7 +124,7 @@ h1 em{font-style:italic;color:var(--accent)}
 .price-btn-main{background:var(--accent);color:var(--bg)}
 .price-btn-main:hover{opacity:0.9}
 .price-btn-out{border:1px solid var(--border);color:var(--text)}
-.price-btn-out:hover{border-color:rgba(255,255,255,0.25)}
+.price-btn-out:hover{border-color:var(--accent);color:var(--accent)}
 .price-note{text-align:center;font-size:12px;color:var(--muted);margin-top:28px;font-style:italic;font-family:'Instrument Serif',serif}
 
 /* PORTFOLIO */
@@ -130,9 +142,18 @@ h1 em{font-style:italic;color:var(--accent)}
 /* PROCESS */
 .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
 .proc{padding:36px 24px;background:var(--card);position:relative}
-.proc::before{content:attr(data-n);position:absolute;top:24px;right:20px;font-size:48px;font-weight:800;color:rgba(255,255,255,0.04);font-family:'Instrument Serif',serif;line-height:1}
+.proc::before{content:attr(data-n);position:absolute;top:24px;right:20px;font-size:48px;font-weight:800;color:rgba(255,255,255,0.03);font-family:'Instrument Serif',serif;line-height:1}
 .proc-t{font-size:15px;font-weight:700;margin-bottom:8px}
 .proc-d{font-size:12px;color:var(--muted);line-height:1.7}
+
+/* FORM */
+.form-box{max-width:500px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.form-box input,.form-box select,.form-box textarea{width:100%;padding:14px 18px;background:var(--card);border:1px solid var(--border);border-radius:12px;color:var(--text);font-size:14px;font-family:'Syne',sans-serif;outline:none;transition:border-color 0.2s}
+.form-box input:focus,.form-box select:focus,.form-box textarea:focus{border-color:var(--accent)}
+.form-box textarea{height:100px;resize:vertical}
+.form-box button{background:var(--accent);color:var(--bg);padding:14px;border:none;border-radius:40px;font-size:13px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;transition:all 0.2s}
+.form-box button:hover{opacity:0.9;transform:translateY(-2px);box-shadow:0 10px 28px rgba(184,169,255,0.25)}
+.form-success{display:none;text-align:center;padding:40px;font-family:'Instrument Serif',serif;font-size:20px;color:var(--accent)}
 
 /* CTA */
 .cta-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:24px;padding:64px 48px;text-align:center;position:relative;overflow:hidden}
@@ -165,6 +186,7 @@ h1 em{font-style:italic;color:var(--accent)}
   .hero-stats{gap:24px}
   .sec{padding:60px 20px}
   .srv-grid{grid-template-columns:1fr}
+  .quiz-banner{flex-direction:column;text-align:center;padding:36px 24px}
   .price-grid{grid-template-columns:1fr 1fr}
   .portfolio-grid{grid-template-columns:1fr}
   .proc-grid{grid-template-columns:1fr 1fr}
@@ -189,7 +211,7 @@ h1 em{font-style:italic;color:var(--accent)}
     <a href="#process">Процесс</a>
   </div>
   <div class="nav-status"><div class="status-dot"></div>Открыта для проектов</div>
-  <a href="https://wa.me/79080288580" class="nav-btn">Заказать</a>
+  <a href="#form" class="nav-btn">Заказать</a>
 </nav>
 
 <!-- HERO -->
@@ -202,12 +224,12 @@ h1 em{font-style:italic;color:var(--accent)}
       <h1>Создаю сайты,<br>которые <em>приводят</em><br>клиентов</h1>
       <p class="hero-sub">Лендинги, визитки и квизы под ключ — для коучей, астрологов, риэлторов и любых специалистов</p>
       <div class="hero-btns">
-        <a href="https://wa.me/79080288580?text=Привет! Хочу заказать сайт" class="btn-main">Обсудить проект</a>
+        <a href="#form" class="btn-main">Обсудить проект</a>
         <a href="#portfolio" class="btn-out">Смотреть работы</a>
       </div>
       <div class="hero-stats">
-        <div><div class="stat-n">4+</div><div class="stat-l">проекта</div></div>
-        <div><div class="stat-n">7 дн</div><div class="stat-l">средний срок</div></div>
+        <div><div class="stat-n">10+</div><div class="stat-l">проектов</div></div>
+        <div><div class="stat-n">5 дн</div><div class="stat-l">средний срок</div></div>
         <div><div class="stat-n">100%</div><div class="stat-l">с душой</div></div>
       </div>
     </div>
@@ -289,6 +311,17 @@ h1 em{font-style:italic;color:var(--accent)}
       <div class="srv-desc">Доработки, обновление контента и техническая поддержка уже запущенных сайтов.</div>
     </div>
   </div>
+  
+  <!-- QUIZ BIG BANNER -->
+  <div class="quiz-banner">
+    <div class="quiz-icon">&#9632;</div>
+    <div class="quiz-content">
+      <h3>Квизы и тесты — отдельный продукт</h3>
+      <p>Интерактивный мини-сайт с вопросами и результатами. Идеально для прогрева аудитории, сбора заявок и вовлечения клиентов. Работает как лид-магнит 24/7.</p>
+      <div class="quiz-price">Стоимость: <span>3 000 – 5 000 ₽</span></div>
+      <a href="#form" class="btn-main" style="display:inline-block">Заказать квиз</a>
+    </div>
+  </div>
 </div>
 
 <!-- PRICING -->
@@ -307,7 +340,7 @@ h1 em{font-style:italic;color:var(--accent)}
         <li>Размещение на GitHub Pages</li>
         <li>Срок: 3–5 дней</li>
       </ul>
-      <a href="https://wa.me/79080288580?text=Хочу заказать сайт-визитку" class="price-btn price-btn-out">Заказать</a>
+      <a href="#form" class="price-btn price-btn-out">Заказать</a>
     </div>
     <div class="price-card hit">
       <div class="price-hit-badge">Хит</div>
@@ -321,7 +354,7 @@ h1 em{font-style:italic;color:var(--accent)}
         <li>SEO + метатеги</li>
         <li>Срок: 5–7 дней</li>
       </ul>
-      <a href="https://wa.me/79080288580?text=Хочу заказать лендинг" class="price-btn price-btn-main">Заказать</a>
+      <a href="#form" class="price-btn price-btn-main">Заказать</a>
     </div>
     <div class="price-card">
       <div class="price-name">С виджетами</div>
@@ -334,7 +367,7 @@ h1 em{font-style:italic;color:var(--accent)}
         <li>Уникальные инструменты</li>
         <li>Срок: 7–12 дней</li>
       </ul>
-      <a href="https://wa.me/79080288580?text=Хочу лендинг с виджетами" class="price-btn price-btn-out">Заказать</a>
+      <a href="#form" class="price-btn price-btn-out">Заказать</a>
     </div>
     <div class="price-card">
       <div class="price-name">Поддержка</div>
@@ -347,10 +380,10 @@ h1 em{font-style:italic;color:var(--accent)}
         <li>Консультации в WA / TG</li>
         <li>Без долгих договоров</li>
       </ul>
-      <a href="https://wa.me/79080288580?text=Хочу подключить поддержку сайта" class="price-btn price-btn-out">Подключить</a>
+      <a href="#form" class="price-btn price-btn-out">Подключить</a>
     </div>
   </div>
-  <p class="price-note">* Квизы и тесты — отдельный мини-сайт: 3 000 – 5 000 ₽. Сложные проекты — по договорённости.</p>
+  <p class="price-note">Финальная стоимость зависит от объёма и сложности проекта. Сложные проекты — по договорённости.</p>
 </div>
 
 <!-- PORTFOLIO -->
@@ -421,6 +454,28 @@ h1 em{font-style:italic;color:var(--accent)}
   </div>
 </div>
 
+<!-- FORM -->
+<div class="sec" id="form">
+  <div class="sec-label">Заявка</div>
+  <h2 class="sec-title">Хотите сайт?<br><em>Напишите мне</em></h2>
+  <div class="form-box" id="formBox">
+    <input type="text" id="name" placeholder="Ваше имя" required>
+    <input type="text" id="contact" placeholder="Телефон или @username" required>
+    <select id="siteType">
+      <option value="">Какой сайт нужен?</option>
+      <option>Визитка (5 000 ₽)</option>
+      <option>Лендинг (10 000 ₽)</option>
+      <option>С виджетами (12 000 – 15 000 ₽)</option>
+      <option>Квиз / Тест (3 000 – 5 000 ₽)</option>
+      <option>Поддержка сайта</option>
+      <option>Другое</option>
+    </select>
+    <textarea id="message" placeholder="Опишите проект или задайте вопрос"></textarea>
+    <button onclick="sendForm()">Отправить заявку</button>
+  </div>
+  <div class="form-success" id="formSuccess">Спасибо! Я свяжусь с вами в ближайшее время.</div>
+</div>
+
 <!-- CTA -->
 <div class="sec">
   <div class="cta-wrap">
@@ -447,6 +502,25 @@ h1 em{font-style:italic;color:var(--accent)}
 window.addEventListener('scroll',()=>{
   document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50);
 });
+
+function sendForm(){
+  const name=document.getElementById('name').value.trim();
+  const contact=document.getElementById('contact').value.trim();
+  const siteType=document.getElementById('siteType').value;
+  const message=document.getElementById('message').value.trim();
+  if(!name||!contact){alert('Пожалуйста, укажите имя и контакты');return;}
+  const text=`Новая заявка с VK Studio!%0A%0AИмя: ${name}%0AКонтакты: ${contact}%0AТип сайта: ${siteType||'Не указан'}%0AСообщение: ${message||'Нет'}`;
+  fetch(`https://api.telegram.org/bot8629887371:AAHygFnaXRa89iqb5ueqY7NUgL0bxliF-NM/sendMessage?chat_id=807474063&text=${text}`)
+    .then(r=>r.json())
+    .then(()=>{
+      document.getElementById('formBox').style.display='none';
+      document.getElementById('formSuccess').style.display='block';
+    })
+    .catch(()=>{
+      document.getElementById('formBox').style.display='none';
+      document.getElementById('formSuccess').style.display='block';
+    });
+}
 </script>
 </body>
 </html>
