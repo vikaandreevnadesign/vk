@@ -510,7 +510,7 @@ function sendForm(){
   const message=document.getElementById('message').value.trim();
   if(!name||!contact){alert('Пожалуйста, укажите имя и контакты');return;}
   const text=`Новая заявка с VK Studio!%0A%0AИмя: ${name}%0AКонтакты: ${contact}%0AТип сайта: ${siteType||'Не указан'}%0AСообщение: ${message||'Нет'}`;
-  fetch(`https://api.telegram.org/bot8629887371:AAHygFnaXRa89iqb5ueqY7NUgL0bxliF-NM/sendMessage?chat_id=807474063&text=${text}`)
+  fetch(`https://api.telegram.org/bot8629887371:AAE1twwWOZHJMBqAWMze_HNoLEC8ftaEZtI/sendMessage?chat_id=807474063&text=${text}`)
     .then(r=>r.json())
     .then(()=>{
       document.getElementById('formBox').style.display='none';
