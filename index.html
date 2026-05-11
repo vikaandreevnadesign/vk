@@ -198,6 +198,68 @@ h1 em{font-style:italic;color:var(--accent)}
   .proc-grid{grid-template-columns:1fr}
   h1{font-size:38px}
 }
+  /* ============================================
+   МОБИЛЬНАЯ ОПТИМИЗАЦИЯ (до 768px)
+   ============================================ */
+@media (max-width: 768px) {
+
+  /* Отключаем тяжёлое размытие фона */
+  .nav,
+  .nav.scrolled,
+  .card,
+  .pricecard,
+  .formbox,
+  .ctawrap {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(20, 20, 30, 0.95) !important;
+  }
+
+  /* Прячем светящиеся пятна в hero */
+  .hero-glow,
+  .hero-glow2 {
+    display: none !important;
+  }
+
+  /* Останавливаем анимацию плавающих элементов */
+  .float,
+  .floating {
+    animation: none !important;
+  }
+
+  /* Прячем бегущую строку (если есть) */
+  .marquee {
+    display: none !important;
+  }
+
+  /* Оптимизация для плавности скролла */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Уменьшаем тени для производительности */
+  .card,
+  .pricecard,
+  .btn-wa,
+  .btn-tg {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+  }
+}
+
+/* Для очень слабых устройств — ещё жёстче */
+@media (max-width: 480px) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.2s !important;
+  }
+  }
 </style>
 </head>
 <body>
