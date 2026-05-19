@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VK Studio | Сайты для экспертов: астрологов, коучей, риэлторов</title>
-  <meta name="description" content="Сайты для экспертов, которые продают. Понимаю ваш мир изнутри, потому что сама — астролог, энергокоуч, риэлтор. Лендинги от 20 000 ₽ за 5-7 дней." />
-  <meta name="keywords" content="сайт для астролога, лендинг для коуча, сайт для риэлтора, веб-дизайн для экспертов, Виктория Кокурина, VK Studio" />
+  <title>VK Studio | Архитектура сайтов для экспертов</title>
+  <meta name="description" content="Сайты для экспертов и бизнеса на GitHub Pages. Бесплатный хостинг навсегда, срок 3-5 дней, ИП, договор. Лендинги, визитки, ИИ-ассистенты." />
+  <meta name="keywords" content="разработка сайтов, лендинг, сайт визитка, веб-дизайн, VK Studio, Виктория Кокурина, сайты для экспертов, GitHub Pages" />
   <meta name="author" content="Виктория Кокурина" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://vk-st.ru" />
@@ -15,430 +15,539 @@
   <meta property="og:url" content="https://vk-st.ru" />
   <meta property="og:type" content="website" />
   
-  <!-- Яндекс.Метрика: замените YOUR_COUNTER_ID на ваш номер -->
-  <!--
-  <script>
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
-    ym(YOUR_COUNTER_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
-  </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/YOUR_COUNTER_ID" style="position:absolute;left:-9999px" alt=""></div></noscript>
-  -->
-  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   
   <style>
-    :root{--graphite:#2C2C2E;--emerald:#0E4A3C;--gold:#C9A961;--milky:#F5F0E8;--bordeaux:#6B1E2C;--grass:#4A5D3A;--champagne:#E8D5A8;--font-display:'Playfair Display',serif;--font-serif:'Cormorant Garamond',serif;--font-sans:'Manrope',sans-serif;--transition:all .3s ease}
+    :root{
+      --graphite:#2C2C2E;--emerald:#0E4A3C;--gold:#C9A961;--milky:#F5F0E8;--bordeaux:#6B1E2C;--champagne:#E8D5A8;
+      --font-display:'Playfair Display',serif;--font-serif:'Cormorant Garamond',serif;--font-sans:'Manrope',sans-serif;
+      --transition:all .35s cubic-bezier(.4,0,.2,1);--shadow:0 12px 40px rgba(44,44,46,.12);
+    }
     *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-    body{font-family:var(--font-sans);color:var(--graphite);background:var(--milky);line-height:1.6;overflow-x:hidden}
-    .container{max-width:1200px;margin:0 auto;padding:0 20px}
-    h1,h2,h3,h4{font-family:var(--font-display);line-height:1.2;color:var(--graphite)}
-    .section-title{font-size:2.5rem;font-weight:700;color:var(--emerald);text-align:center;margin-bottom:3rem;position:relative}
-    .section-title::after{content:'';display:block;width:60px;height:3px;background:var(--gold);margin:1rem auto 0}
+    body{font-family:var(--font-sans);color:var(--graphite);background:var(--milky);line-height:1.65;overflow-x:hidden}
+    .container{max-width:1140px;margin:0 auto;padding:0 24px}
+    h1,h2,h3,h4{font-family:var(--font-display);line-height:1.25;color:var(--graphite)}
+    .section-title{font-size:clamp(2rem,4vw,2.8rem);font-weight:700;color:var(--emerald);text-align:center;margin-bottom:2.5rem;position:relative;padding-bottom:1rem}
+    .section-title::after{content:'';display:block;width:80px;height:2px;background:linear-gradient(90deg,var(--gold),var(--emerald));margin:1rem auto 0}
     a{text-decoration:none;color:inherit;transition:var(--transition)}
+    img{max-width:100%;height:auto;display:block}
     
-    .btn{display:inline-block;padding:14px 32px;border-radius:4px;font-weight:600;cursor:pointer;border:none;font-size:1rem;text-align:center;transition:var(--transition)}
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:4px;font-weight:600;cursor:pointer;border:none;font-size:1rem;text-align:center;transition:var(--transition);gap:8px}
     .btn--primary{background:var(--emerald);color:var(--milky)}
-    .btn--primary:hover{background:var(--bordeaux);transform:translateY(-2px);box-shadow:0 10px 30px rgba(14,74,60,.3)}
-    .btn--outline{background:transparent;color:var(--emerald);border:2px solid var(--emerald)}
+    .btn--primary:hover{background:var(--bordeaux);transform:translateY(-3px);box-shadow:0 12px 30px rgba(14,74,60,.25)}
+    .btn--outline{background:transparent;color:var(--emerald);border:1.5px solid var(--emerald)}
     .btn--outline:hover{background:var(--emerald);color:var(--milky)}
+    .btn--gold{background:var(--gold);color:var(--graphite)}
+    .btn--gold:hover{background:#b89a52;transform:translateY(-3px)}
     
-    .social-links{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:1.5rem}
-    .social-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:30px;background:var(--graphite);color:var(--milky);font-weight:500;font-size:.95rem;transition:var(--transition)}
-    .social-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.15)}
-    .social-btn--tg{background:#2AABEE;color:#fff}
-    .social-btn--tg:hover{background:#229ED9}
-    .social-btn--wa{background:#25D366;color:#fff}
-    .social-btn--wa:hover{background:#128C7E}
-    .social-btn--bot{background:var(--gold);color:var(--graphite)}
-    .social-btn--bot:hover{background:#b89a52}
+    /* Header & Burger */
+    .header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(245,240,232,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(44,44,46,.08);padding:16px 0}
+    .header__inner{display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--graphite);letter-spacing:.02em}
+    .logo span{color:var(--gold)}
+    .burger{width:44px;height:44px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;cursor:pointer;background:none;border:none;z-index:1002}
+    .burger span{display:block;width:24px;height:2px;background:var(--graphite);transition:var(--transition);transform-origin:center}
+    .burger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .burger.active span:nth-child(2){opacity:0}
+    .burger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
+    .nav-overlay{position:fixed;inset:0;background:rgba(245,240,232,.98);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;opacity:0;pointer-events:none;transition:var(--transition);z-index:1001}
+    .nav-overlay.open{opacity:1;pointer-events:auto}
+    .nav-overlay a{font-family:var(--font-display);font-size:1.8rem;font-weight:600;color:var(--graphite);position:relative}
+    .nav-overlay a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:var(--transition)}
+    .nav-overlay a:hover::after{width:100%}
     
-    .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;background:linear-gradient(135deg,var(--milky) 0%,var(--champagne) 100%);position:relative;overflow:hidden}
-    .hero__overlay{position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(44,44,46,.08) 0%,transparent 70%);pointer-events:none}
-    .hero__content{padding:4rem 2rem;animation:fadeInLeft .8s ease}
-    .hero__title{font-size:3.2rem;font-weight:700;color:var(--graphite);margin-bottom:1rem;line-height:1.1}
-    .hero__subtitle{font-size:1.3rem;color:var(--emerald);margin-bottom:1rem;font-weight:500}
+    /* Marquee */
+    .marquee-wrap{background:var(--graphite);color:var(--milky);padding:10px 0;overflow:hidden;white-space:nowrap;font-size:.9rem;letter-spacing:.05em}
+    .marquee{display:inline-block;animation:marquee 25s linear infinite}
+    .marquee span{margin:0 2rem;color:var(--gold)}
+    @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    
+    /* Hero */
+    .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;background:linear-gradient(135deg,var(--milky) 0%,var(--champagne) 100%);position:relative;overflow:hidden;padding-top:80px}
+    .hero__content{padding:4rem 2rem 4rem 0;animation:fadeInLeft .8s ease}
+    .hero__title{font-size:clamp(2.5rem,5vw,3.8rem);font-weight:700;color:var(--graphite);margin-bottom:1rem;line-height:1.1}
+    .hero__subtitle{font-size:1.35rem;color:var(--emerald);margin-bottom:1.5rem;font-weight:500}
     .hero__accent{color:var(--gold);font-weight:600}
-    .hero__desc{font-size:1.1rem;opacity:.95;margin-bottom:2rem;max-width:500px;color:var(--graphite)}
-    .hero__usp{background:rgba(14,74,60,.08);padding:1rem 1.5rem;border-radius:12px;border-left:4px solid var(--gold);margin-bottom:2rem;font-size:.95rem}
+    .hero__desc{font-size:1.1rem;opacity:.9;margin-bottom:2.5rem;max-width:480px}
     .hero__image{display:flex;justify-content:center;align-items:center;padding:2rem;animation:fadeInRight .8s ease}
-    .hero__image img{max-width:100%;height:auto;border-radius:20px;box-shadow:0 30px 60px rgba(44,44,46,.25);border:3px solid var(--gold)}
+    .hero__image img{max-width:90%;height:auto;border-radius:16px;box-shadow:var(--shadow);border:3px solid var(--gold);object-fit:cover}
     
-    .audience{padding:4rem 0;background:var(--graphite);color:var(--milky);text-align:center}
-    .audience__title{font-size:1.8rem;font-family:var(--font-display);margin-bottom:1.5rem;color:var(--milky)}
-    .audience__list{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem}
-    .audience__tag{background:rgba(201,169,97,.15);color:var(--gold);padding:8px 20px;border-radius:30px;font-weight:500;border:1px solid var(--gold)}
+    /* Sections Base */
+    .section{padding:6rem 0}
+    .section--dark{background:var(--graphite);color:var(--milky)}
+    .section--dark .section-title{color:var(--milky)}
+    .section--dark .section-title::after{background:linear-gradient(90deg,var(--gold),var(--emerald))}
+    .section--dark h3,.section--dark h4,.section--dark p{color:var(--milky)}
     
-    .about{padding:6rem 0;background:#fff}
-    .about__grid{display:grid;grid-template-columns:2fr 1fr;gap:3rem;align-items:start}
-    .about__text p{margin-bottom:1rem;color:var(--graphite)}
-    .about__text strong{color:var(--emerald)}
-    .about__highlight{font-family:var(--font-serif);font-style:italic;color:var(--bordeaux);font-size:1.1rem;margin-top:1.5rem!important;padding-left:1rem;border-left:3px solid var(--gold)}
-    .about__stats{display:grid;gap:1.5rem}
-    .stat{text-align:center;padding:1.5rem;background:var(--milky);border-radius:12px;border-left:4px solid var(--emerald)}
-    .stat__number{display:block;font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--gold)}
-    .stat__label{font-size:.9rem;opacity:.8;color:var(--graphite)}
+    /* Grid & Cards */
+    .grid{display:grid;gap:2rem}
+    .grid-3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+    .grid-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .card{background:#fff;border-radius:12px;padding:2rem;box-shadow:var(--shadow);transition:var(--transition);border:1px solid rgba(44,44,46,.05);position:relative;overflow:hidden}
+    .section--dark .card{background:rgba(255,255,255,.04);border:1px solid rgba(201,169,97,.15)}
+    .card:hover{transform:translateY(-6px);border-color:var(--gold)}
+    .card__header{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem}
+    .card__icon{width:40px;height:40px;background:rgba(14,74,60,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--emerald)}
+    .section--dark .card__icon{background:rgba(201,169,97,.15);color:var(--gold)}
+    .card__title{font-family:var(--font-display);font-size:1.3rem;font-weight:600}
+    .card__price{font-family:var(--font-serif);font-size:1.25rem;font-weight:600;color:var(--emerald);margin:1rem 0}
+    .section--dark .card__price{color:var(--gold)}
+    .card__list{list-style:none;margin-bottom:1.5rem}
+    .card__list li{padding:.4rem 0 .4rem 1.5rem;position:relative;font-size:.95rem}
+    .card__list li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;background:var(--gold);border-radius:50%}
     
-    .services{padding:6rem 0;background:var(--graphite);color:var(--milky)}
-    .services .section-title{color:var(--milky)}
-    .services .section-title::after{background:var(--gold)}
-    .services__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
-    .service-card{background:var(--milky);color:var(--graphite);border-radius:16px;padding:2rem;box-shadow:0 10px 40px rgba(0,0,0,.15);transition:var(--transition);position:relative}
-    .service-card:hover{transform:translateY(-8px);border:1px solid var(--gold);box-shadow:0 20px 60px rgba(14,74,60,.2)}
-    .service-card--highlight{border:2px solid var(--gold);background:linear-gradient(180deg,#fff 0%,var(--champagne) 100%)}
-    .service-card__badge{position:absolute;top:-12px;right:20px;background:var(--bordeaux);color:#fff;padding:4px 16px;border-radius:20px;font-size:.8rem;font-weight:600}
-    .service-card__header{margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid rgba(44,44,46,.1)}
-    .service-card__header h3{font-size:1.4rem;margin-bottom:.5rem}
-    .service-card__price{display:block;font-family:var(--font-serif);font-size:1.3rem;font-weight:600;color:var(--emerald)}
-    .service-card__list{list-style:none;margin-bottom:1.5rem}
-    .service-card__list li{padding:.4rem 0 .4rem 1.5rem;position:relative;color:var(--graphite)}
-    .service-card__list li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-weight:bold}
-    
-    .why{padding:6rem 0;background:#fff}
-    .why__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
-    .why__item{text-align:center;padding:2rem}
-    .why__icon{font-size:2.5rem;margin-bottom:1rem}
-    .why__title{font-family:var(--font-display);font-size:1.3rem;margin-bottom:.5rem}
-    .why__text{font-size:.95rem;opacity:.9}
-    
-    .portfolio{padding:6rem 0;background:var(--milky)}
-    .portfolio__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
-    .portfolio-item{background:#fff;border-radius:12px;overflow:hidden;transition:var(--transition);border:1px solid rgba(44,44,46,.1)}
-    .portfolio-item:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(44,44,46,.15)}
-    .portfolio-item img{width:100%;height:220px;object-fit:cover;display:block}
+    /* Portfolio */
+    .portfolio-item{background:#fff;border-radius:12px;overflow:hidden;transition:var(--transition);border:1px solid rgba(44,44,46,.05)}
+    .section--dark .portfolio-item{background:rgba(255,255,255,.04)}
+    .portfolio-item:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .portfolio-item img{width:100%;height:200px;object-fit:cover;display:block}
     .portfolio-item__content{padding:1.5rem}
-    .portfolio-item__content h3{font-size:1.3rem;margin-bottom:.5rem;color:var(--graphite)}
-    .portfolio-item__content p{font-size:.95rem;opacity:.9;margin-bottom:1rem;color:var(--graphite)}
-    .portfolio-item__link{color:var(--emerald);font-weight:600}
-    .portfolio-item__link:hover{color:var(--bordeaux);text-decoration:underline}
+    .portfolio-item__tag{display:inline-block;padding:4px 10px;background:rgba(14,74,60,.08);color:var(--emerald);font-size:.75rem;border-radius:20px;margin-bottom:.5rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+    .section--dark .portfolio-item__tag{background:rgba(201,169,97,.15);color:var(--gold)}
+    .portfolio-item__title{font-family:var(--font-display);font-size:1.2rem;margin-bottom:.4rem}
+    .portfolio-item__desc{font-size:.9rem;opacity:.8;margin-bottom:1rem}
+    .portfolio-item__link{color:var(--emerald);font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:4px}
+    .portfolio-item__link:hover{gap:8px}
     
-    .process{padding:6rem 0;background:var(--emerald);color:var(--milky)}
-    .process .section-title{color:var(--milky)}
-    .process .section-title::after{background:var(--gold)}
-    .process__steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;text-align:center}
-    .process-step{padding:2rem}
-    .process-step__number{display:inline-flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:50%;background:var(--gold);color:var(--emerald);font-family:var(--font-display);font-size:1.5rem;font-weight:700;margin-bottom:1rem}
+    /* Tools */
+    .tool-row{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1rem}
+    .tool-chip{padding:8px 16px;background:rgba(14,74,60,.06);border-radius:30px;font-size:.9rem;border:1px solid rgba(14,74,60,.1)}
+    .section--dark .tool-chip{background:rgba(201,169,97,.1);border-color:rgba(201,169,97,.2);color:var(--gold)}
     
-    .contact{padding:6rem 0;background:#fff;text-align:center}
-    .contact__desc{font-size:1.1rem;margin-bottom:2rem;opacity:.9;max-width:600px;margin-left:auto;margin-right:auto}
-    .contact-form{max-width:500px;margin:0 auto;display:grid;gap:1rem}
-    .contact-form input,.contact-form textarea{padding:14px 18px;border:2px solid rgba(14,74,60,.2);border-radius:8px;font-family:var(--font-sans);font-size:1rem;background:#fff;transition:var(--transition);width:100%}
-    .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--emerald);box-shadow:0 0 0 4px rgba(14,74,60,.1)}
-    .contact-form textarea{min-height:120px;resize:vertical}
+    /* About */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+    .about-img{width:100%;max-width:400px;margin:0 auto;border-radius:16px;box-shadow:var(--shadow);border:3px solid var(--gold)}
     
-    .footer{padding:2rem 0;background:var(--graphite);color:var(--milky);text-align:center}
-    .footer__copyright{opacity:.8;font-size:.9rem}
-    .footer__links{display:flex;justify-content:center;gap:1.5rem;margin-top:1rem;flex-wrap:wrap}
-    .footer__links a{color:var(--gold)}
-    .footer__links a:hover{color:var(--champagne)}
+    /* ИВика Chat */
+    .chat-box{max-width:600px;margin:0 auto;background:#fff;border-radius:16px;padding:2rem;box-shadow:var(--shadow);border:1px solid rgba(44,44,46,.05)}
+    .chat-step{display:none}
+    .chat-step.active{display:block;animation:fadeInUp .4s ease}
+    .chat-question{font-family:var(--font-display);font-size:1.3rem;margin-bottom:1.5rem;text-align:center}
+    .chat-options{display:flex;flex-direction:column;gap:.8rem}
+    .chat-btn{padding:14px;background:var(--milky);border:1px solid rgba(44,44,46,.1);border-radius:8px;cursor:pointer;text-align:left;transition:var(--transition);font-size:1rem}
+    .chat-btn:hover{border-color:var(--gold);background:#fff}
+    .chat-input{width:100%;padding:14px;border:1px solid rgba(44,44,46,.1);border-radius:8px;font-family:var(--font-sans);font-size:1rem;margin-bottom:1rem}
+    .chat-input:focus{outline:none;border-color:var(--emerald);box-shadow:0 0 0 3px rgba(14,74,60,.1)}
+    .chat-progress{display:flex;justify-content:center;gap:8px;margin-bottom:2rem}
+    .chat-dot{width:10px;height:10px;border-radius:50%;background:rgba(44,44,46,.1)}
+    .chat-dot.active{background:var(--gold)}
+    .chat-finish{text-align:center}
+    .chat-finish h3{margin-bottom:1rem}
     
-    .chat-widget{position:fixed;bottom:20px;right:20px;z-index:1000}
-    .chat-widget__toggle{width:60px;height:60px;border-radius:50%;background:var(--emerald);color:#fff;border:none;font-size:1.8rem;cursor:pointer;box-shadow:0 10px 30px rgba(14,74,60,.4);transition:var(--transition)}
-    .chat-widget__toggle:hover{transform:scale(1.1);background:var(--bordeaux)}
-    .chat-widget__content{display:none;position:absolute;bottom:70px;right:0;width:320px;background:#fff;border-radius:16px;padding:1.5rem;box-shadow:0 20px 60px rgba(0,0,0,.2);border:1px solid var(--gold)}
-    .chat-widget__content.active{display:block;animation:slideUp .3s ease}
-    .chat-widget__text{margin-bottom:1rem;font-size:.95rem}
-    .chat-widget__actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
-    .chat-widget__actions button{padding:6px 12px;background:var(--milky);border:1px solid var(--emerald);border-radius:20px;font-size:.85rem;cursor:pointer;transition:var(--transition)}
-    .chat-widget__actions button:hover{background:var(--emerald);color:#fff}
-    .chat-widget__note{font-size:.8rem;opacity:.7}
+    /* Footer */
+    .footer{background:var(--graphite);color:var(--milky);padding:3rem 0;text-align:center;font-size:.9rem;opacity:.9}
+    .footer__legal{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.1);font-size:.8rem;opacity:.7}
     
+    /* Animations */
     @keyframes fadeInLeft{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
     @keyframes fadeInRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
-    @keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease, transform .7s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
     
-    @media(max-width:900px){.hero{grid-template-columns:1fr;text-align:center}.hero__title{font-size:2.6rem}.hero__image{order:-1}.about__grid{grid-template-columns:1fr}}
-    @media(max-width:600px){.hero__title{font-size:2.2rem}.section-title{font-size:2rem}.btn{width:100%;text-align:center}}
+    /* Responsive */
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;text-align:center;padding-top:100px}
+      .hero__content{padding:2rem 0}
+      .hero__image{order:-1;padding:1rem}
+      .about-grid{grid-template-columns:1fr;text-align:center}
+      .section{padding:4rem 0}
+    }
+    @media(max-width:600px){
+      .hero__title{font-size:2.4rem}
+      .grid-3,.grid-2{grid-template-columns:1fr}
+      .nav-overlay a{font-size:1.5rem}
+    }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">VK<span>Studio</span></a>
+      <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="nav-overlay">
+      <a href="#services" class="nav-link">Услуги</a>
+      <a href="#portfolio" class="nav-link">Портфолио</a>
+      <a href="#github" class="nav-link">Почему GitHub</a>
+      <a href="#tools" class="nav-link">Инструменты</a>
+      <a href="#contact" class="nav-link">Контакты</a>
+    </nav>
+  </header>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap" style="margin-top:64px">
+    <div class="marquee">
+      <span>✓ Бесплатный хостинг навсегда</span>
+      <span>✓ Срок 3-5 дней*</span>
+      <span>✓ Расчеты через ИП</span>
+      <span>✓ Ответ на заявку в течение часа</span>
+      <span>✓ Бесплатный хостинг навсегда</span>
+      <span>✓ Срок 3-5 дней*</span>
+      <span>✓ Расчеты через ИП</span>
+      <span>✓ Ответ на заявку в течение часа</span>
+    </div>
+  </div>
+
   <!-- HERO -->
-  <header class="hero">
-    <div class="hero__overlay"></div>
+  <section class="hero">
     <div class="hero__content">
       <h1 class="hero__title">Сайты, которые <span class="hero__accent">продают вашу экспертизу</span></h1>
       <p class="hero__subtitle">Для астрологов, коучей, риэлторов и помогающих практик</p>
-      <p class="hero__desc">Не просто «красиво». Сайт, который привлекает клиентов, пока вы работаете.</p>
-      <div class="hero__usp">💡 Почему ко мне? Я сама — эксперт. Понимаю ваш мир изнутри.</div>
-      <a href="#contact" class="btn btn--primary">Обсудить мой проект</a>
-      <div class="social-links">
-        <a href="https://t.me/kowiktori" target="_blank" class="social-btn social-btn--tg">✈ Telegram</a>
-        <a href="https://wa.me/79080288580" target="_blank" class="social-btn social-btn--wa">💬 WhatsApp</a>
-        <a href="https://t.me/site_vk_studio_bot" target="_blank" class="social-btn social-btn--bot">🤖 Бот для заявок</a>
-      </div>
+      <p class="hero__desc">Не просто «красиво». Сайт, который привлекает клиентов, пока вы работаете. На базе GitHub Pages — без ежемесячных платежей за хостинг.</p>
+      <a href="#contact" class="btn btn--primary">Обсудить проект</a>
     </div>
     <div class="hero__image">
-      <img src="IMG_20260515_124648.png" alt="Виктория Кокурина — веб-разработчик для экспертов" loading="lazy">
-    </div>
-  </header>
-
-  <!-- ЦЕЛЕВАЯ АУДИТОРИЯ -->
-  <section class="audience">
-    <div class="container">
-      <h2 class="audience__title">Для кого я делаю сайты</h2>
-      <div class="audience__list">
-        <span class="audience__tag">✨ Астрологи</span>
-        <span class="audience__tag">🧘 Энергокоучи</span>
-        <span class="audience__tag">🔮 Тарологи</span>
-        <span class="audience__tag">🏠 Риэлторы</span>
-        <span class="audience__tag">💼 Бизнес-консультанты</span>
-        <span class="audience__tag">🎨 Мастера и творцы</span>
-      </div>
+      <img src="IMG_20260515_124648.png" alt="Виктория Кокурина — основатель VK Studio" loading="lazy">
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
+  <!-- ПОЧЕМУ GITHUB -->
+  <section class="section section--dark" id="github">
     <div class="container">
-      <h2 class="section-title">Почему эксперты выбирают меня</h2>
-      <div class="about__grid">
-        <div class="about__text">
-          <p>Привет! Я <strong>Виктория Кокурина</strong>. Я не просто «делаю сайты». Я создаю <strong>инструменты привлечения клиентов</strong> для таких же экспертов, как вы.</p>
-          <p>Я сама — астролог, энергокоуч, риэлтор. Поэтому <strong>понимаю ваши боли</strong>: как сложно объяснить ценность, как выделиться, как не «слить» бюджет на рекламу.</p>
-          <p>Я использую <strong>нейросети для кода</strong> — это даёт скорость без потери качества. Вы получаете готовый сайт за 5-10 дней, а не за месяц.</p>
-          <p class="about__highlight">Моя суперсила: я вижу вашу задачу и с точки зрения бизнеса, и с точки зрения энергетики бренда.</p>
+      <h2 class="section-title reveal">Почему я работаю на GitHub Pages</h2>
+      <div class="grid grid-3 reveal">
+        <div class="card">
+          <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg></div><h3 class="card__title">0₽/мес навсегда</h3></div>
+          <p>В отличие от Tilda (от 750₽/мес) или WordPress (хостинг + домен), GitHub Pages не берёт абонентскую плату. Вы платите один раз за разработку — сайт работает вечно.</p>
         </div>
-        <div class="about__stats">
-          <div class="stat"><span class="stat__number">5-10 дней</span><span class="stat__label">средний срок</span></div>
-          <div class="stat"><span class="stat__number">100%</span><span class="stat__label">адаптив</span></div>
-          <div class="stat"><span class="stat__number">2 недели</span><span class="stat__label">поддержка после</span></div>
+        <div class="card">
+          <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3 class="card__title">Молниеносная скорость</h3></div>
+          <p>Статические сайты загружаются мгновенно. Нет тяжёлых баз данных, нет плагинов, которые «тормозят». Идеально для SEO и конверсии.</p>
+        </div>
+        <div class="card">
+          <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 class="card__title">Безопасность</h3></div>
+          <p>Нет админки = нет точек входа для взлома. Ваш сайт защищён от вирусов, спама и DDoS-атак на уровне инфраструктуры GitHub.</p>
         </div>
       </div>
+      <p style="text-align:center;margin-top:2rem;opacity:.8;font-size:.95rem" class="reveal">*Редактирование контента происходит через разработчика. Это гарантирует, что сайт не «сломается» от случайных кликов и всегда будет работать корректно.</p>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="services" id="services">
+  <!-- УСЛУГИ -->
+  <section class="section" id="services">
     <div class="container">
-      <h2 class="section-title">Услуги и цены</h2>
-      <div class="services__grid">
-        
-        <div class="service-card">
-          <div class="service-card__header"><h3>📋 Сайт-визитка</h3><span class="service-card__price">15 000 – 25 000 ₽</span></div>
-          <ul class="service-card__list">
-            <li>До 5 страниц</li>
-            <li>Адаптивный дизайн</li>
-            <li>Заявки → ваш бот в Telegram</li>
-            <li>Подключение домена</li>
-            <li>Бесплатный хостинг (GitHub)</li>
-            <li><strong>Срок: 5-7 дней</strong></li>
-          </ul>
+      <h2 class="section-title reveal">Услуги и инвестиции</h2>
+      <div class="grid grid-3 reveal">
+        <div class="card">
+          <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg></div><h3 class="card__title">Сайт-визитка</h3></div>
+          <div class="card__price">15 000 – 25 000 ₽</div>
+          <ul class="card__list"><li>До 5 страниц</li><li>Адаптивный дизайн</li><li>Заявки → Telegram</li><li>Подключение домена</li><li>Бесплатный хостинг</li></ul>
           <a href="#contact" class="btn btn--outline">Заказать</a>
         </div>
-
-        <div class="service-card service-card--highlight">
-          <div class="service-card__badge">ХИТ</div>
-          <div class="service-card__header"><h3>📄 Лендинг</h3><span class="service-card__price">20 000 – 35 000 ₽</span></div>
-          <ul class="service-card__list">
-            <li>До 7 экранов</li>
-            <li>Продающая структура</li>
-            <li>Тексты под вашу аудиторию</li>
-            <li>Яндекс.Метрика</li>
-            <li>2 раунда правок</li>
-            <li><strong>Срок: 7-10 дней</strong></li>
-          </ul>
+        <div class="card" style="border-color:var(--gold);background:linear-gradient(180deg,#fff 0%,var(--champagne) 100%)">
+          <div style="position:absolute;top:-12px;right:20px;background:var(--bordeaux);color:#fff;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:600">ХИТ</div>
+          <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div><h3 class="card__title">Лендинг</h3></div>
+          <div class="card__price">20 000 – 35 000 ₽</div>
+          <ul class="card__list"><li>До 7 экранов</li><li>Продающая структура</li><li>Тексты под аудиторию</li><li>Аналитика</li><li>2 раунда правок</li></ul>
           <a href="#contact" class="btn btn--primary">Заказать</a>
         </div>
-
-        <div class="service-card">
-          <div class="service-card__header"><h3>💎 Архитектура бренда</h3><span class="service-card__price">55 000 – 75 000 ₽</span></div>
-          <ul class="service-card__list">
-            <li>Всё из «Лендинг»</li>
-            <li>Позиционирование и УТП</li>
-            <li>Тексты для сайта и соцсетей</li>
-            <li>Визуальный гайд (цвета, шрифты)</li>
-            <li>Лид-магнит (гайд/чек-лист)</li>
-            <li><strong>Срок: 14-21 день</strong></li>
-          </ul>
+        <div class="card">
+          <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg></div><h3 class="card__title">Архитектура бренда</h3></div>
+          <div class="card__price">55 000 – 75 000 ₽</div>
+          <ul class="card__list"><li>Всё из «Лендинг»</li><li>Позиционирование и УТП</li><li>Тексты для сайта и соцсетей</li><li>Визуальный гайд</li><li>Лид-магнит</li></ul>
           <a href="#contact" class="btn btn--outline">Заказать</a>
         </div>
-
+      </div>
+      
+      <div style="margin-top:3rem;background:#fff;padding:2rem;border-radius:12px;border:1px solid rgba(44,44,46,.05)" class="reveal">
+        <h3 style="font-family:var(--font-display);margin-bottom:1rem">Дополнительные форматы</h3>
+        <div class="grid grid-2" style="gap:1.5rem">
+          <div><strong>❓ Квиз / тест / опросник</strong><br><span style="opacity:.8;font-size:.9rem">от 8 000 ₽ • Сбор контактов через игру</span></div>
+          <div><strong>🎁 Промо-страница под акцию</strong><br><span style="opacity:.8;font-size:.9rem">от 10 000 ₽ • Быстрый запуск оффера</span></div>
+          <div><strong>📊 Презентация в формате сайта</strong><br><span style="opacity:.8;font-size:.9rem">от 12 000 ₽ • Интерактивное портфолио</span></div>
+          <div><strong>🔄 Поддержка и правки</strong><br><span style="opacity:.8;font-size:.9rem">от 1 500 ₽/час • Абонементы от 5 000 ₽/мес</span></div>
+        </div>
+        <p style="margin-top:1rem;font-size:.85rem;opacity:.7;text-align:center">*Указанные сроки — средние. Могут меняться в зависимости от сложности проекта и объёма контента.</p>
       </div>
     </div>
   </section>
 
-  <!-- WHY ME -->
-  <section class="why">
+  <!-- ПОРТФОЛИО -->
+  <section class="section section--dark" id="portfolio">
     <div class="container">
-      <h2 class="section-title">Почему стоит работать со мной</h2>
-      <div class="why__grid">
-        <div class="why__item">
-          <div class="why__icon">🎯</div>
-          <h3 class="why__title">Понимаю ваш мир</h3>
-          <p class="why__text">Я сама — эксперт. Знаю, как сложно продавать «невидимое». Сделаю сайт, который говорит с вашей аудиторией на одном языке.</p>
-        </div>
-        <div class="why__item">
-          <div class="why__icon">⚡</div>
-          <h3 class="why__title">Быстро, но качественно</h3>
-          <p class="why__text">Использую ИИ для кода — это ускоряет процесс, но не в ущерб качеству. Вы получаете сайт за 5-10 дней, а не за месяц.</p>
-        </div>
-        <div class="why__item">
-          <div class="why__icon">🔧</div>
-          <h3 class="why__title">Поддержка после запуска</h3>
-          <p class="why__text">Не бросаю после сдачи. 2 недели помогаю с правками, отвечаю на вопросы, чтобы сайт работал на вас.</p>
-        </div>
-        <div class="why__item">
-          <div class="why__icon">💰</div>
-          <h3 class="why__title">Инвестиция, а не расход</h3>
-          <p class="why__text">Сайт окупается с 1-2 клиентов. Вы платите не за «красиво», а за инструмент, который приносит деньги.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section class="portfolio" id="portfolio">
-    <div class="container">
-      <h2 class="section-title">Портфолио</h2>
-      <div class="portfolio__grid">
-        
+      <h2 class="section-title reveal">Портфолио</h2>
+      <div class="grid grid-3 reveal">
         <div class="portfolio-item">
-          <img src="Screenshot_andzela.jpg" alt="Лендинг для Анжелы Погосян" loading="lazy">
+          <img src="Screenshot_andzela.jpg" alt="Анжела Погосян" loading="lazy">
           <div class="portfolio-item__content">
-            <h3>Анжела Погосян</h3>
-            <p>Эксперт по новостройкам. Лендинг с формой заявки и акцентом на выгоды клиента.</p>
+            <span class="portfolio-item__tag">Лендинг</span>
+            <h3 class="portfolio-item__title">Анжела Погосян</h3>
+            <p class="portfolio-item__desc">Эксперт по новостройкам. Акцент на выгоды клиента и форму заявки.</p>
             <a href="https://exned.ru" target="_blank" class="portfolio-item__link">Посмотреть →</a>
           </div>
         </div>
-
         <div class="portfolio-item">
-          <img src="Screenshot_marina.jpg" alt="Лендинг для Марины Садрыевой" loading="lazy">
+          <img src="Screenshot_marina.jpg" alt="Марина Садрыева" loading="lazy">
           <div class="portfolio-item__content">
-            <h3>Марина Садрыева</h3>
-            <p>Эксперт по финансам и недвижимости. Лендинг с упором на доверие и результаты.</p>
+            <span class="portfolio-item__tag">Лендинг</span>
+            <h3 class="portfolio-item__title">Марина Садрыева</h3>
+            <p class="portfolio-item__desc">Эксперт по финансам и недвижимости. Упор на доверие и результаты.</p>
             <a href="https://msfin.ru" target="_blank" class="portfolio-item__link">Посмотреть →</a>
           </div>
         </div>
-
         <div class="portfolio-item">
-          <img src="IMG_20260515_124648.png" alt="Сайт ТОЧКА СБОРКИ" loading="lazy" style="object-position:center">
+          <div style="height:200px;background:linear-gradient(135deg,var(--emerald),var(--graphite));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:2rem">🧭</div>
           <div class="portfolio-item__content">
-            <h3>ТОЧКА СБОРКИ</h3>
-            <p>Мой авторский метод: архитектура бренда через астрологию, энергию и технологии. Сайт-визитка метода.</p>
-            <a href="https://tosborki.ru" target="_blank" class="portfolio-item__link">Посмотреть →</a>
+            <span class="portfolio-item__tag">Интерактив / Лид-магнит</span>
+            <h3 class="portfolio-item__title">Васту-компас</h3>
+            <p class="portfolio-item__desc">Наложение планировки, определение зон и рекомендации по коррекции.</p>
+            <a href="https://vikaandreevnadesign.github.io/test.vastu/" target="_blank" class="portfolio-item__link">Открыть →</a>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div style="height:200px;background:linear-gradient(135deg,var(--gold),var(--bordeaux));display:flex;align-items:center;justify-content:center;color:#fff;font-size:2rem">🧩</div>
+          <div class="portfolio-item__content">
+            <span class="portfolio-item__tag">Тест / Лид-магнит</span>
+            <h3 class="portfolio-item__title">Тест «Кто ты?»</h3>
+            <p class="portfolio-item__desc">Входной инструмент для блока 1 метода «Точка Сборки».</p>
+            <a href="https://vikaandreevnadesign.github.io/test.kto_ty/" target="_blank" class="portfolio-item__link">Пройти →</a>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div style="height:200px;background:var(--milky);display:flex;align-items:center;justify-content:center;color:var(--emerald);font-family:var(--font-display);font-size:1.5rem;font-weight:700">ТОЧКА СБОРКИ</div>
+          <div class="portfolio-item__content">
+            <span class="portfolio-item__tag">Многостраничный</span>
+            <h3 class="portfolio-item__title">Авторский метод</h3>
+            <p class="portfolio-item__desc">Архитектура бренда через астрологию, энергию и технологии. В процессе наполнения модулями.</p>
+            <a href="https://tosborki.ru" target="_blank" class="portfolio-item__link">Перейти →</a>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div style="height:200px;background:linear-gradient(135deg,#2AABEE,var(--emerald));display:flex;align-items:center;justify-content:center;color:#fff;font-size:2rem">🏗</div>
+          <div class="portfolio-item__content">
+            <span class="portfolio-item__tag">Промо-страница (Прототип)</span>
+            <h3 class="portfolio-item__title">Лендинг новостройки</h3>
+            <p class="portfolio-item__desc">Быстрый запуск оффера на Vercel. Финальная версия разворачивается на GitHub.</p>
+            <a href="https://v0-realtor-landing-page-eight.vercel.app/" target="_blank" class="portfolio-item__link">Смотреть →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ИНСТРУМЕНТЫ -->
+  <section class="section" id="tools">
+    <div class="container">
+      <h2 class="section-title reveal">Подключаемые модули</h2>
+      <p style="text-align:center;margin-bottom:2rem;opacity:.8" class="reveal">Дополнительно интегрирую за фиксированную стоимость. Всё протестировано и адаптировано под ваш проект.</p>
+      <div class="grid grid-3 reveal">
+        <div class="card">
+          <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3 class="card__title">ИИ-ассистент</h3></div>
+          <p>Чат-бот на базе GigaChat или YandexGPT. Отвечает на вопросы 24/7, квалифицирует лидов, собирает контакты.</p>
+          <div class="card__price">от 10 000 ₽</div>
+        </div>
+        <div class="card">
+          <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><h3 class="card__title">Переводчик</h3></div>
+          <p>Автоматический перевод контента через API. Мультиязычность без дублирования страниц.</p>
+          <div class="card__price">от 3 000 ₽</div>
+        </div>
+        <div class="card">
+          <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><h3 class="card__title">Формы и чаты</h3></div>
+          <p>Formspree, Tawk.to, обратный звонок. Интеграция с вашей CRM или Telegram-ботом.</p>
+          <div class="card__price">от 2 000 ₽</div>
+        </div>
+        <div class="card">
+          <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div><h3 class="card__title">Аналитика</h3></div>
+          <p>Яндекс.Метрика, цели, вебвизор, тепловые карты. Полная прозрачность трафика и поведения.</p>
+          <div class="card__price">от 2 000 ₽</div>
+        </div>
+        <div class="card" style="grid-column:1/-1">
+          <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div><h3 class="card__title">💳 Платёжные системы для сайта</h3></div>
+          <p>Подключение интернет-эквайринга для приёма оплаты картами, СБП, рассрочками и международными картами. Настраиваю тестовый режим, проверяю полный цикл оплаты, переключаю на боевой.</p>
+          <div class="tool-row">
+            <span class="tool-chip">Продамус (рассрочки, intl. карты)</span>
+            <span class="tool-chip">ЮKassa</span>
+            <span class="tool-chip">Робокасса</span>
+            <span class="tool-chip">CloudPayments</span>
+            <span class="tool-chip">Тинькофф Касса</span>
+          </div>
+          <div class="card__price" style="margin-top:1rem">от 5 000 ₽</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ОБО МНЕ -->
+  <section class="section section--dark" id="about">
+    <div class="container">
+      <div class="about-grid reveal">
+        <div>
+          <h2 class="section-title" style="text-align:left;margin-bottom:1.5rem">Виктория Кокурина</h2>
+          <p style="margin-bottom:1rem;font-size:1.05rem">Я не просто «делаю сайты». Я создаю <strong style="color:var(--gold)">архитектуру присутствия</strong> для экспертов, которые хотят продавать свою ценность без крика и выгорания.</p>
+          <p style="margin-bottom:1rem">Сама — астролог, энергокоуч, риэлтор. Поэтому понимаю ваши боли: как сложно объяснить «невидимое», как выделиться в шуме, как не слить бюджет на неработающую рекламу.</p>
+          <p style="margin-bottom:1.5rem">Использую нейросети для кода — это даёт скорость без потери качества. Вы получаете готовый продукт за <strong style="color:var(--gold)">3-5 дней*</strong>, а не за месяц.</p>
+          <div style="background:rgba(255,255,255,.05);padding:1.5rem;border-radius:12px;border-left:3px solid var(--gold)">
+            <p style="font-family:var(--font-serif);font-style:italic;font-size:1.1rem">«Моя суперсила: я вижу вашу задачу и с точки зрения бизнеса, и с точки зрения энергетики бренда.»</p>
+          </div>
+          <p style="margin-top:1.5rem;font-size:.85rem;opacity:.7">*Средний срок. Зависит от объёма контента и сложности интеграций.</p>
+        </div>
+        <img src="IMG_20260515_124648.png" alt="Виктория Кокурина" class="about-img" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- КОНТАКТЫ + ИВИКА -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title reveal">Начнём с диалога</h2>
+      <p style="text-align:center;margin-bottom:2rem;opacity:.8" class="reveal">Ответьте на 4 вопроса — я подготовлю предварительное предложение и свяжусь в течение часа.</p>
+      
+      <div class="chat-box reveal" id="ivika">
+        <div class="chat-progress">
+          <div class="chat-dot active" data-step="1"></div>
+          <div class="chat-dot" data-step="2"></div>
+          <div class="chat-dot" data-step="3"></div>
+          <div class="chat-dot" data-step="4"></div>
+          <div class="chat-dot" data-step="5"></div>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="chat-step active" data-step="1">
+          <div class="chat-question">Какой формат сайта вам нужен?</div>
+          <div class="chat-options">
+            <button class="chat-btn" data-val="Сайт-визитка">📋 Сайт-визитка (до 5 страниц)</button>
+            <button class="chat-btn" data-val="Лендинг">📄 Лендинг (продающая страница)</button>
+            <button class="chat-btn" data-val="Архитектура бренда">💎 Архитектура бренда (комплекс)</button>
+            <button class="chat-btn" data-val="Другое / Не знаю">🤔 Другое / Пока не определился</button>
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
+        <!-- Step 2 -->
+        <div class="chat-step" data-step="2">
+          <div class="chat-question">Есть ли готовые материалы?</div>
+          <div class="chat-options">
+            <button class="chat-btn" data-val="Тексты и фото готовы">✅ Тексты и фото готовы</button>
+            <button class="chat-btn" data-val="Частично готовы">📝 Частично готовы</button>
+            <button class="chat-btn" data-val="Нужна помощь с контентом">🛠 Нужна помощь с контентом</button>
+          </div>
+        </div>
 
-  <!-- PROCESS -->
-  <section class="process" id="process">
-    <div class="container">
-      <h2 class="section-title">Как мы будем работать</h2>
-      <div class="process__steps">
-        <div class="process-step"><span class="process-step__number">1</span><h4>Бриф</h4><p>Обсуждаем задачу, аудиторию, цели</p></div>
-        <div class="process-step"><span class="process-step__number">2</span><h4>Структура</h4><p>Показываю прототип до начала работы</p></div>
-        <div class="process-step"><span class="process-step__number">3</span><h4>Код</h4><p>Верстаю, тестирую, оптимизирую</p></div>
-        <div class="process-step"><span class="process-step__number">4</span><h4>Запуск</h4><p>Сдаю, даю инструкцию, 2 недели поддержки</p></div>
-      </div>
-    </div>
-  </section>
+        <!-- Step 3 -->
+        <div class="chat-step" data-step="3">
+          <div class="chat-question">Примерный бюджет на проект?</div>
+          <div class="chat-options">
+            <button class="chat-btn" data-val="до 20 000 ₽">💰 до 20 000 ₽</button>
+            <button class="chat-btn" data-val="20 000 – 50 000 ₽">💰 20 000 – 50 000 ₽</button>
+            <button class="chat-btn" data-val="50 000 – 100 000 ₽">💰 50 000 – 100 000 ₽</button>
+            <button class="chat-btn" data-val="Бюджет обсуждаем">🤝 Бюджет обсуждаем</button>
+          </div>
+        </div>
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <h2 class="section-title">Готовы обсудить проект?</h2>
-      <p class="contact__desc">Напишите — я отвечу в течение 2 часов. Заявка сразу придёт в мой бот в Telegram.</p>
-      
-      <form class="contact-form" id="telegramForm">
-        <input type="text" name="name" placeholder="Ваше имя *" required>
-        <input type="tel" name="phone" placeholder="Телефон или @Telegram *" required>
-        <textarea name="message" placeholder="Кратко: какой сайт нужен? *" required></textarea>
-        <button type="submit" class="btn btn--primary">Отправить заявку в Telegram</button>
-        <p style="font-size:.9rem;opacity:.7;margin-top:.5rem">Или напишите сразу: <a href="https://t.me/kowiktori" style="color:var(--emerald);font-weight:600">@kowiktori</a></p>
-      </form>
+        <!-- Step 4 -->
+        <div class="chat-step" data-step="4">
+          <div class="chat-question">Когда нужен готовый сайт?</div>
+          <div class="chat-options">
+            <button class="chat-btn" data-val="Срочно (на этой неделе)">🔥 Срочно (на этой неделе)</button>
+            <button class="chat-btn" data-val="В течение 2 недель">📅 В течение 2 недель</button>
+            <button class="chat-btn" data-val="В течение месяца">🗓 В течение месяца</button>
+            <button class="chat-btn" data-val="Пока изучаю варианты">👀 Пока изучаю варианты</button>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="chat-step" data-step="5">
+          <div class="chat-question">Куда отправить предварительный расчёт?</div>
+          <input type="text" class="chat-input" id="clientName" placeholder="Ваше имя">
+          <input type="text" class="chat-input" id="clientContact" placeholder="Telegram или телефон">
+          <button class="btn btn--primary" style="width:100%" id="sendIvika">Отправить заявку</button>
+        </div>
+
+        <!-- Finish -->
+        <div class="chat-step" data-step="finish">
+          <div class="chat-finish">
+            <div style="font-size:3rem;margin-bottom:1rem">✨</div>
+            <h3>Спасибо! Заявка принята.</h3>
+            <p style="margin-bottom:1.5rem">Я изучу ваши ответы и напишу в течение часа. Если не хотите ждать — нажмите кнопку ниже.</p>
+            <a href="https://t.me/kowiktori" target="_blank" class="btn btn--gold">Написать Виктории в Telegram</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p class="footer__copyright">&copy; 2026 VK Studio. Все права защищены.</p>
-      <div class="footer__links">
-        <a href="https://t.me/kowiktori" target="_blank">Telegram</a>
-        <a href="https://wa.me/79080288580" target="_blank">WhatsApp</a>
-        <a href="https://vk.ru/kowiktori" target="_blank">VK</a>
-        <a href="https://tosborki.ru" target="_blank">Точка Сборки</a>
+      <p>&copy; 2026 VK Studio. Все права защищены.</p>
+      <div class="footer__legal">
+        ИП Кокурина Виктория Андреевна<br>
+        ИНН 761101173810 | ОГРНИП 325762700032112
       </div>
     </div>
   </footer>
 
-  <!-- CHAT WIDGET (честный, без обмана про ИИ) -->
-  <div class="chat-widget">
-    <button class="chat-widget__toggle" aria-label="Открыть чат">💬</button>
-    <div class="chat-widget__content">
-      <p class="chat-widget__text">Привет! Нужен сайт, который продаёт вашу экспертизу? Напишите — помогу подобрать решение.</p>
-      <div class="chat-widget__actions">
-        <button onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">Нужен лендинг</button>
-        <button onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">Сайт-визитка</button>
-        <button onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">Архитектура бренда</button>
-      </div>
-      <p class="chat-widget__note">💡 Заявки можно отправить через форму ниже или сразу в <a href="https://t.me/site_vk_studio_bot" style="color:var(--emerald);font-weight:600">@site_vk_studio_bot</a></p>
-    </div>
-  </div>
-
   <script>
-    // Chat widget toggle
-    const chatToggle = document.querySelector('.chat-widget__toggle');
-    const chatContent = document.querySelector('.chat-widget__content');
-    if(chatToggle && chatContent){
-      chatToggle.addEventListener('click',()=>{
-        chatContent.classList.toggle('active');
-        chatToggle.textContent = chatContent.classList.contains('active') ? '✕' : '💬';
-      });
-      document.addEventListener('click',(e)=>{
-        if(!chatContent.contains(e.target) && !chatToggle.contains(e.target)){
-          chatContent.classList.remove('active');
-          chatToggle.textContent = '💬';
-        }
-      });
-    }
+    // Burger Menu
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-overlay');
+    const navLinks = document.querySelectorAll('.nav-link');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('active');
+      nav.classList.toggle('open');
+    });
+    navLinks.forEach(link => link.addEventListener('click', () => {
+      burger.classList.remove('active');
+      nav.classList.remove('open');
+    }));
 
-    // Form → Telegram Bot
-    const form = document.getElementById('telegramForm');
-    if(form){
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const btn = form.querySelector('button[type="submit"]');
-        const originalText = btn.textContent;
-        btn.textContent = 'Отправляю...'; btn.disabled = true;
-        
-        const name = form.name.value.trim();
-        const phone = form.phone.value.trim();
-        const message = form.message.value.trim();
-        
-        // Формируем сообщение для бота
-        const text = `📩 Новая заявка с vk-st.ru\n\n👤 ${name}\n📞 ${phone}\n💬 ${message}`;
-        const botUsername = 'site_vk_studio_bot';
-        const tgLink = `https://t.me/${botUsername}?start=${encodeURIComponent(text)}`;
-        
-        // Открываем бота с предзаполненным сообщением
-        window.open(tgLink, '_blank');
-        
-        alert('✅ Открываю бот @site_vk_studio_bot — нажмите «Отправить», чтобы заявка дошла.');
-        form.reset();
-        btn.textContent = originalText; btn.disabled = false;
-      });
-    }
-
-    // Scroll animations
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
+    // Scroll Reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
         if(entry.isIntersecting){
-          entry.target.style.opacity='1'; entry.target.style.transform='translateY(0)';
+          entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         }
       });
-    },{threshold:.1});
-    document.querySelectorAll('.service-card,.portfolio-item,.process-step,.why__item').forEach(el=>{
-      el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity .6s ease, transform .6s ease';
-      observer.observe(el);
+    }, {threshold: 0.1});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ИВика Logic
+    const steps = document.querySelectorAll('.chat-step');
+    const dots = document.querySelectorAll('.chat-dot');
+    let answers = {};
+    let currentStep = 1;
+
+    function goToStep(step) {
+      steps.forEach(s => s.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      document.querySelector(`.chat-step[data-step="${step}"]`).classList.add('active');
+      if(step !== 'finish') {
+        document.querySelector(`.chat-dot[data-step="${step}"]`).classList.add('active');
+      }
+    }
+
+    document.querySelectorAll('.chat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = btn.getAttribute('data-val');
+        const q = btn.closest('.chat-step').querySelector('.chat-question').textContent;
+        answers[q] = val;
+        currentStep++;
+        goToStep(currentStep);
+      });
+    });
+
+    document.getElementById('sendIvika').addEventListener('click', () => {
+      const name = document.getElementById('clientName').value.trim();
+      const contact = document.getElementById('clientContact').value.trim();
+      if(!name || !contact) {
+        alert('Пожалуйста, заполните имя и контакт.');
+        return;
+      }
+      answers['Имя'] = name;
+      answers['Контакт'] = contact;
+      
+      let msg = `📩 Новая заявка с vk-st.ru (ИВика)\n\n`;
+      for(let q in answers) msg += `▪️ ${q}: ${answers[q]}\n`;
+      
+      const tgLink = `https://t.me/kowiktori?text=${encodeURIComponent(msg)}`;
+      window.open(tgLink, '_blank');
+      goToStep('finish');
     });
   </script>
 </body>
