@@ -11,7 +11,7 @@
   <link rel="canonical" href="https://vk-st.ru">
   <meta property="og:title" content="VK Studio — Студия IT-решений Виктории Кокуриной">
   <meta property="og:description" content="Разработка сайтов и IT-решения для бизнеса. Лендинги и сайты-визитки на бесплатном хостинге.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200">
   <meta property="og:url" content="https://vk-st.ru">
   <meta property="og:type" content="website">
   
@@ -39,13 +39,13 @@
     .btn--wa{background:#25D366;color:#fff}.btn--wa:hover{background:#128C7E}
     .btn-sm{padding:10px 20px;font-size:.9rem}
     
-    /* Header - BURGER RIGHT */
+    /* Header - BURGER STRICTLY RIGHT */
     .header{position:fixed;top:0;width:100%;z-index:9999;background:rgba(15,15,17,.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,169,97,.2);padding:12px 0}
     .header__inner{display:flex;justify-content:space-between;align-items:center;max-width:1140px;margin:0 auto;padding:0 24px}
     .logo{font-family:var(--font-d);font-size:1.4rem;font-weight:700;color:var(--text);display:flex;flex-direction:column;line-height:1.2}
     .logo__main{color:var(--text)}.logo__main span{color:var(--gold)}
     .logo__sub{font-size:.75rem;color:var(--text-m);font-family:var(--font-s);font-weight:400;letter-spacing:.05em}
-    .header__actions{display:flex;align-items:center;gap:1rem}
+    .header__actions{display:flex;align-items:center;gap:1rem;justify-content:flex-end}
     .social-icons{display:flex;gap:.8rem}
     .social-icon{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border:1px solid var(--gold);border-radius:50%;color:var(--gold);transition:var(--trans)}
     .social-icon:hover{background:var(--gold);color:var(--bg);transform:translateY(-2px)}
@@ -55,7 +55,7 @@
     .burger.active span:nth-child(2){opacity:0;transform:translateX(-10px)}
     .burger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
     
-    /* Nav Overlay - RIGHT SIDE */
+    /* Nav Overlay - SLIDES FROM RIGHT */
     .nav-overlay{position:fixed;top:0;right:0;width:100%;max-width:400px;height:100vh;background:var(--gold);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;opacity:0;pointer-events:none;transition:var(--trans);z-index:10000;transform:translateX(100%);padding:2rem}
     .nav-overlay.open{opacity:1;pointer-events:auto;transform:translateX(0)}
     .nav-overlay a{font-family:var(--font-d);font-size:1.6rem;font-weight:600;color:var(--bg);position:relative;transition:var(--trans);text-align:center}
@@ -68,17 +68,19 @@
     .marquee{display:inline-block;animation:marquee 25s linear infinite}.marquee span{margin:0 2rem;color:var(--gold)}
     @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
     
-    /* Hero - BETTER IMAGES */
-    .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--bg) 0%,#1a1a2e 100%)}
-    .hero__bg{position:absolute;inset:0;z-index:0;background-image:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920');background-size:cover;background-position:center;opacity:.3}
-    .hero__overlay{position:absolute;inset:0;z-index:0;background:linear-gradient(135deg,rgba(15,15,17,.9),rgba(114,27,43,.6))}
-    .hero__content{max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:1;animation:fadeInUp .8s ease}
+    /* HERO SLIDER - RESTORED & PREMIUM */
+    .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
+    .hero__slider{position:absolute;inset:0;z-index:0}
+    .hero__slide{position:absolute;inset:0;opacity:0;transition:opacity 2.5s ease-in-out;background-size:cover;background-position:center}
+    .hero__slide.active{opacity:1}
+    .hero__overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(15,15,17,.85),rgba(114,27,43,.7))}
+    .hero__content{max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:2;animation:fadeInUp .8s ease}
     .hero__title{font-size:clamp(2.5rem,5vw,4rem);font-weight:700;margin-bottom:1.5rem;line-height:1.1;text-shadow:0 4px 20px rgba(0,0,0,.5)}
     .hero__title span{color:var(--gold)}.hero__subtitle{font-size:1.4rem;color:var(--text-m);margin-bottom:2rem;max-width:700px;margin-left:auto;margin-right:auto;text-shadow:0 2px 10px rgba(0,0,0,.3)}
     .hero__desc{font-size:1.15rem;margin-bottom:3rem;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.7}
     .hero__actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
     
-    /* Problem/Solution - ENHANCED TEXT */
+    /* Problem/Solution */
     .problem-solution{padding:6rem 0;background:linear-gradient(135deg,var(--card),#0a0a0f);position:relative;overflow:hidden}
     .problem-solution::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--bordeaux),transparent)}
     .ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
@@ -98,7 +100,7 @@
     .stats::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
     .stat__num{font-family:var(--font-d);font-size:2.5rem;color:var(--gold);font-weight:700}.stat__label{color:var(--text-m);font-size:.95rem}
     
-    /* About - REPOSITIONED */
+    /* About */
     .about{background:linear-gradient(135deg,var(--light),#fff);padding:6rem 0;position:relative;overflow:hidden}
     .about::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(201,169,97,.1) 0%,transparent 70%);border-radius:50%}
     .about-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;align-items:center;position:relative;z-index:1}
@@ -114,13 +116,15 @@
     .about-quote{background:linear-gradient(135deg,rgba(114,27,43,.1),rgba(201,169,97,.05));padding:2.5rem;border-radius:12px;border-left:4px solid var(--bordeaux);margin-top:2rem}
     .about-quote p{font-family:var(--font-d);font-style:italic;font-size:1.2rem;line-height:1.6;margin:0;color:var(--bg)}
     
-    /* Sections */
-    .section{padding:6rem 0;position:relative}.section--light{background:var(--light);color:var(--bg)}.section--light .section-title{color:var(--bg)}.section--light h3{color:var(--bg)}.section--light p{color:var(--text-m)}
+    /* Sections & Backgrounds */
+    .section{padding:6rem 0;position:relative;overflow:hidden}
+    .section--light{background:var(--light);color:var(--bg)}.section--light .section-title{color:var(--bg)}.section--light h3{color:var(--bg)}.section--light p{color:var(--text-m)}
     .section--alt{background:var(--card)}
     .section--dark{background:linear-gradient(135deg,#0a0a0f,var(--card))}
-    .grid{display:grid;gap:2rem}.grid-4{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
     
-    /* Cards - 2x2 ON DESKTOP */
+    /* SERVICES GRID - FIXED 2x2 ON DESKTOP */
+    .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+    
     .card{background:var(--bg);border:1px solid rgba(201,169,97,.15);border-radius:12px;padding:2rem;transition:var(--trans);position:relative}
     .card:hover{border-color:var(--gold);transform:translateY(-5px)}.card__header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
     .card__icon{width:40px;height:40px;background:rgba(114,27,43,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--bordeaux)}
@@ -161,9 +165,10 @@
     .portfolio-item__link{color:var(--gold);font-weight:600;font-size:.95rem;display:inline-flex;align-items:center;gap:6px}
     .portfolio-item__link:hover{gap:10px}
     
-    /* Testimonials */
+    /* Testimonials - TITLE FIXED */
     .testimonials{background:linear-gradient(135deg,var(--light),#fff);padding:6rem 0;position:relative;overflow:hidden}
     .testimonials::before{content:'';position:absolute;top:-50%;left:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(201,169,97,.08) 0%,transparent 70%);border-radius:50%}
+    .testimonials .section-title{color:#0F0F11 !important;font-weight:800;text-shadow:0 1px 0 rgba(255,255,255,.5)}
     .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem;position:relative;z-index:1}
     .testimonial-item{background:#fff;padding:2.5rem;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.08);border-left:4px solid var(--gold);position:relative}
     .testimonial-item::before{content:'"';font-family:var(--font-d);font-size:6rem;color:var(--gold);opacity:.2;position:absolute;top:-10px;left:20px;line-height:1}
@@ -220,7 +225,7 @@
       .about-features{grid-template-columns:1fr}
       .about-quote{text-align:left}
       .stats{grid-template-columns:repeat(2,1fr);gap:1.5rem}
-      .grid-4{grid-template-columns:repeat(2,1fr)}
+      .services-grid{grid-template-columns:1fr}
       .benefits-grid{grid-template-columns:1fr}
       .section{padding:4rem 0}
       .header__sub{display:none}
@@ -230,7 +235,7 @@
     }
     @media(max-width:600px){
       .hero__title{font-size:2.2rem}
-      .grid-4{grid-template-columns:1fr}
+      .services-grid{grid-template-columns:1fr}
       .nav-overlay{max-width:100%}
       .nav-overlay a{font-size:1.4rem}
       .contact-buttons{flex-direction:column;width:100%}
@@ -285,9 +290,13 @@
     </div>
   </div>
 
-  <!-- HERO -->
+  <!-- HERO WITH SLIDER -->
   <section class="hero">
-    <div class="hero__bg"></div>
+    <div class="hero__slider">
+      <div class="hero__slide active" style="background-image:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80')"></div>
+      <div class="hero__slide" style="background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80')"></div>
+      <div class="hero__slide" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80')"></div>
+    </div>
     <div class="hero__overlay"></div>
     <div class="hero__content">
       <h1 class="hero__title">IT-решения, которые <span>увеличивают прибыль</span></h1>
@@ -332,7 +341,7 @@
     </div>
   </section>
 
-  <!-- ABOUT - REPOSITIONED (AIDA: Interest) -->
+  <!-- ABOUT -->
   <section class="about" id="about">
     <div class="container">
       <div class="about-grid reveal">
@@ -382,7 +391,7 @@
   <section class="section section--light" id="services">
     <div class="container">
       <h2 class="section-title reveal">Услуги и цены</h2>
-      <div class="grid grid-4 reveal">
+      <div class="services-grid reveal">
         <div class="card">
           <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div><h3 class="card__title">Сайт-визитка</h3></div>
           <div class="card__price">от 25 000 ₽</div>
@@ -443,7 +452,7 @@
     </div>
   </section>
 
-  <!-- GITHUB BENEFITS - 2x2 GRID -->
+  <!-- GITHUB BENEFITS -->
   <section class="github-benefits" id="github">
     <div class="container">
       <h2 class="section-title reveal">Почему GitHub Pages?</h2>
@@ -617,7 +626,7 @@
   </footer>
 
   <script>
-    // Burger menu (RIGHT side)
+    // Burger menu (STRICTLY RIGHT)
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-overlay');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -643,6 +652,15 @@
         document.body.style.overflow = '';
       }
     });
+
+    // HERO SLIDER LOGIC
+    const slides = document.querySelectorAll('.hero__slide');
+    let currentSlide = 0;
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 5000);
 
     // Reveal on scroll
     const observer = new IntersectionObserver((entries) => {
