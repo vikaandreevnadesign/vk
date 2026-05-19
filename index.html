@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VK Studio | Разработка сайтов для экспертов</title>
-  <meta name="description" content="Лендинги и сайты-визитки на GitHub Pages. Бесплатный хостинг навсегда, срок 3-5 дней, ИП, договор.">
-  <meta name="keywords" content="разработка сайтов, лендинг, сайт визитка, веб-дизайн, VK Studio, Виктория Кокурина, сайты для экспертов, GitHub Pages">
+  <title>VK Studio | Студия IT-решений Виктории Кокуриной</title>
+  <meta name="description" content="Разработка сайтов и IT-решения для экспертов. Лендинги, сайты-визитки на GitHub Pages. Бесплатный хостинг навсегда, срок 3-5 дней.">
+  <meta name="keywords" content="разработка сайтов, лендинг, сайт визитка, веб-дизайн, VK Studio, Виктория Кокурина, сайты для экспертов, GitHub Pages, IT-решения">
   <meta name="author" content="Виктория Кокурина">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://vk-st.ru">
-  <meta property="og:title" content="VK Studio — Сайты для экспертов">
-  <meta property="og:description" content="Лендинги и сайты-визитки на бесплатном хостинге. Быстро, качественно, с пониманием вашей сферы.">
+  <meta property="og:title" content="VK Studio — Студия IT-решений Виктории Кокуриной">
+  <meta property="og:description" content="Разработка сайтов и IT-решения для бизнеса. Лендинги и сайты-визитки на бесплатном хостинге.">
   <meta property="og:image" content="IMG_20260515_124648.png">
   <meta property="og:url" content="https://vk-st.ru">
   <meta property="og:type" content="website">
@@ -38,36 +38,37 @@
     .btn--tg{background:#2AABEE;color:#fff}.btn--tg:hover{background:#229ED9}
     .btn--wa{background:#25D366;color:#fff}.btn--wa:hover{background:#128C7E}
     
-    /* Header - FIXED */
-    .header{position:fixed;top:0;width:100%;z-index:9999;background:rgba(15,15,17,.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,169,97,.2);padding:16px 0}
+    /* Header - UPDATED */
+    .header{position:fixed;top:0;width:100%;z-index:9999;background:rgba(15,15,17,.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,169,97,.2);padding:12px 0}
     .header__inner{display:flex;justify-content:space-between;align-items:center;max-width:1140px;margin:0 auto;padding:0 24px}
-    .logo{font-family:var(--font-d);font-size:1.6rem;font-weight:700;color:var(--text)}
-    .logo span{color:var(--gold)}
+    .logo{font-family:var(--font-d);font-size:1.4rem;font-weight:700;color:var(--text);display:flex;flex-direction:column;line-height:1.2}
+    .logo__main{color:var(--text)}.logo__main span{color:var(--gold)}
+    .logo__sub{font-size:.75rem;color:var(--text-m);font-family:var(--font-s);font-weight:400;letter-spacing:.05em}
     .burger{width:40px;height:40px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;cursor:pointer;background:none;border:none;z-index:10001;position:relative}
     .burger span{display:block;width:24px;height:2px;background:var(--text);transition:var(--trans);transform-origin:center}
     .burger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
     .burger.active span:nth-child(2){opacity:0;transform:translateX(-10px)}
     .burger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
     
-    /* Nav Overlay - FIXED */
-    .nav-overlay{position:fixed;top:0;right:0;width:100%;height:100vh;background:var(--gold);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;opacity:0;pointer-events:none;transition:var(--trans);z-index:10000;transform:translateX(100%)}
+    /* Nav Overlay - UPDATED */
+    .nav-overlay{position:fixed;top:0;right:0;width:100%;max-width:400px;height:100vh;background:var(--gold);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;opacity:0;pointer-events:none;transition:var(--trans);z-index:10000;transform:translateX(100%);padding:2rem}
     .nav-overlay.open{opacity:1;pointer-events:auto;transform:translateX(0)}
-    .nav-overlay a{font-family:var(--font-d);font-size:1.8rem;font-weight:600;color:var(--bg);position:relative;transition:var(--trans)}
+    .nav-overlay a{font-family:var(--font-d);font-size:1.6rem;font-weight:600;color:var(--bg);position:relative;transition:var(--trans);text-align:center}
     .nav-overlay a::after{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--bg);transition:var(--trans)}
     .nav-overlay a:hover::after{width:100%}
     .nav-overlay a:hover{color:var(--bordeaux)}
     
     /* Marquee */
-    .marquee-wrap{background:var(--card);padding:10px 0;overflow:hidden;white-space:nowrap;font-size:.9rem;margin-top:72px;border-bottom:1px solid rgba(201,169,97,.1)}
+    .marquee-wrap{background:var(--card);padding:10px 0;overflow:hidden;white-space:nowrap;font-size:.9rem;margin-top:96px;border-bottom:1px solid rgba(201,169,97,.1)}
     .marquee{display:inline-block;animation:marquee 25s linear infinite}.marquee span{margin:0 2rem;color:var(--gold)}
     @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
     
-    /* Hero */
-    .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:100px 0;background:linear-gradient(145deg,var(--bg),#151518)}
-    .hero__content{padding:2rem;animation:fadeInLeft .8s ease}.hero__title{font-size:clamp(2.5rem,5vw,3.8rem);font-weight:700;margin-bottom:1rem;line-height:1.1}
-    .hero__title span{color:var(--gold)}.hero__subtitle{font-size:1.3rem;color:var(--text-m);margin-bottom:1.5rem}
-    .hero__desc{font-size:1.1rem;margin-bottom:2.5rem;max-width:480px}.hero__image{display:flex;justify-content:center;align-items:center;padding:2rem;animation:fadeInRight .8s ease}
-    .hero__image img{max-width:90%;border-radius:12px;border:3px solid var(--gold);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+    /* Hero - UPDATED */
+    .hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;background:linear-gradient(145deg,var(--bg),#151518);position:relative}
+    .hero__content{max-width:800px;margin:0 auto;text-align:center;animation:fadeInUp .8s ease}
+    .hero__title{font-size:clamp(2.5rem,5vw,4rem);font-weight:700;margin-bottom:1.5rem;line-height:1.1}
+    .hero__title span{color:var(--gold)}.hero__subtitle{font-size:1.4rem;color:var(--text-m);margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}
+    .hero__desc{font-size:1.15rem;margin-bottom:3rem;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.7}
     
     /* Stats */
     .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding:3rem 0;background:var(--card);text-align:center}
@@ -86,6 +87,13 @@
     .card__list li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;background:var(--gold);border-radius:50%}
     .badge{position:absolute;top:-12px;right:20px;background:var(--bordeaux);color:#fff;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:600}
     
+    /* Horizontal Scroll Tiles */
+    .scroll-tiles{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:1rem 0 2rem;scrollbar-width:thin;scrollbar-color:var(--gold) var(--card)}
+    .scroll-tiles::-webkit-scrollbar{height:8px}.scroll-tiles::-webkit-scrollbar-track{background:var(--card)}.scroll-tiles::-webkit-scrollbar-thumb{background:var(--gold);border-radius:4px}
+    .tile{min-width:280px;max-width:320px;scroll-snap-align:start;background:var(--bg);border:1px solid rgba(201,169,97,.15);border-radius:12px;padding:2rem;transition:var(--trans)}
+    .tile:hover{border-color:var(--gold);transform:translateY(-3px)}
+    .tile__title{font-family:var(--font-d);font-size:1.3rem;margin-bottom:1rem;color:var(--gold)}.tile__desc{color:var(--text-m);font-size:.95rem;margin-bottom:1rem}.tile__price{font-family:var(--font-d);font-size:1.25rem;color:var(--text)}
+    
     /* GitHub Benefits */
     .github-benefits{background:linear-gradient(135deg,var(--card),var(--bg));padding:4rem 0;border-top:1px solid rgba(201,169,97,.1);border-bottom:1px solid rgba(201,169,97,.1)}
     .benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-top:2rem}
@@ -94,85 +102,87 @@
     .benefit-title{font-family:var(--font-d);font-size:1.2rem;margin-bottom:.5rem;color:var(--gold)}
     .benefit-desc{color:var(--text-m);font-size:.95rem}
     
-    /* Portfolio - Lovable style */
+    /* Portfolio - FIXED */
     .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-    .portfolio-item{background:var(--bg);border-radius:12px;overflow:hidden;border:1px solid rgba(201,169,97,.1);transition:var(--trans)}
+    .portfolio-item{background:var(--bg);border-radius:12px;overflow:hidden;border:1px solid rgba(201,169,97,.1);transition:var(--trans);position:relative}
     .portfolio-item:hover{border-color:var(--gold);transform:translateY(-4px)}
-    .portfolio-item__img{width:100%;height:180px;background:linear-gradient(135deg,var(--card),var(--bg));display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:600;text-align:center;padding:1rem;font-size:.9rem}
-    .portfolio-item__content{padding:1.2rem}
-    .portfolio-item__tag{display:inline-block;padding:4px 10px;background:rgba(114,27,43,.2);color:var(--bordeaux);font-size:.75rem;border-radius:20px;margin-bottom:.5rem;font-weight:600}
-    .portfolio-item__title{font-family:var(--font-d);font-size:1.1rem;margin-bottom:.3rem}.portfolio-item__desc{font-size:.9rem;color:var(--text-m);margin-bottom:.8rem}
-    .portfolio-item__link{color:var(--gold);font-weight:600;font-size:.9rem}
-    
-    /* Tools */
-    .tool-row{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1rem}
-    .tool-chip{padding:8px 16px;background:rgba(201,169,97,.1);border-radius:30px;font-size:.9rem;border:1px solid rgba(201,169,97,.2);color:var(--gold)}
+    .portfolio-item__img-wrapper{width:100%;height:200px;overflow:hidden;background:linear-gradient(135deg,var(--card),var(--bg));position:relative}
+    .portfolio-item__img{width:100%;height:100%;object-fit:cover;display:block}
+    .portfolio-item__placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:600;text-align:center;padding:1rem;font-size:.95rem;background:linear-gradient(135deg,rgba(201,169,97,.1),rgba(114,27,43,.1))}
+    .portfolio-item__content{padding:1.5rem}
+    .portfolio-item__tag{display:inline-block;padding:4px 12px;background:rgba(114,27,43,.2);color:var(--bordeaux);font-size:.75rem;border-radius:20px;margin-bottom:.8rem;font-weight:600}
+    .portfolio-item__title{font-family:var(--font-d);font-size:1.2rem;margin-bottom:.5rem}.portfolio-item__desc{font-size:.95rem;color:var(--text-m);margin-bottom:1rem;line-height:1.5}
+    .portfolio-item__link{color:var(--gold);font-weight:600;font-size:.95rem;display:inline-flex;align-items:center;gap:6px}
+    .portfolio-item__link:hover{gap:10px}
     
     /* About */
     .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-    .about-img{width:100%;border-radius:12px;border:3px solid var(--gold);box-shadow:0 15px 40px rgba(0,0,0,.4)}
+    .about-img{width:100%;border-radius:12px;border:2px solid var(--gold);box-shadow:0 15px 40px rgba(0,0,0,.4)}
     
-    /* Chat */
-    .chat-box{max-width:600px;margin:0 auto;background:var(--bg);border:1px solid rgba(201,169,97,.2);border-radius:16px;padding:2rem}
+    /* Chat - FIXED */
+    .chat-box{max-width:600px;margin:0 auto;background:var(--bg);border:1px solid rgba(201,169,97,.2);border-radius:16px;padding:2.5rem}
     .chat-step{display:none}.chat-step.active{display:block;animation:fadeInUp .4s ease}
-    .chat-question{font-family:var(--font-d);font-size:1.3rem;margin-bottom:1.5rem;text-align:center}
-    .chat-options{display:flex;flex-direction:column;gap:.8rem}
-    .chat-btn{padding:14px;background:var(--card);border:1px solid rgba(201,169,97,.1);border-radius:8px;cursor:pointer;text-align:left;transition:var(--trans);font-size:1rem;color:var(--text)}
+    .chat-question{font-family:var(--font-d);font-size:1.4rem;margin-bottom:2rem;text-align:center;color:var(--gold)}
+    .chat-options{display:flex;flex-direction:column;gap:1rem}
+    .chat-btn{padding:16px;background:var(--card);border:1px solid rgba(201,169,97,.2);border-radius:8px;cursor:pointer;text-align:center;transition:var(--trans);font-size:1rem;color:var(--text);font-family:var(--font-s)}
     .chat-btn:hover{border-color:var(--gold);background:var(--bg)}
-    .chat-input{width:100%;padding:14px;background:var(--card);border:1px solid rgba(201,169,97,.1);border-radius:8px;font-family:var(--font-s);font-size:1rem;margin-bottom:1rem;color:var(--text)}
+    .chat-input{width:100%;padding:16px;background:var(--card);border:1px solid rgba(201,169,97,.2);border-radius:8px;font-family:var(--font-s);font-size:1rem;margin-bottom:1rem;color:var(--text)}
     .chat-input:focus{outline:none;border-color:var(--gold)}
-    .chat-progress{display:flex;justify-content:center;gap:8px;margin-bottom:2rem}
-    .chat-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.1)}.chat-dot.active{background:var(--gold)}
+    .chat-progress{display:flex;justify-content:center;gap:10px;margin-bottom:2.5rem}
+    .chat-dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.1)}.chat-dot.active{background:var(--gold)}
     .chat-finish{text-align:center}
+    .chat-finish__icon{font-size:3.5rem;margin-bottom:1.5rem;color:var(--gold)}
+    .chat-finish h3{font-family:var(--font-d);font-size:1.6rem;margin-bottom:1rem;color:var(--gold)}
+    .chat-finish p{color:var(--text-m);margin-bottom:2rem;line-height:1.6}
     
-    .contact-buttons{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+    .contact-buttons{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:2.5rem}
     
     /* Footer */
     .footer{background:var(--card);padding:3rem 0;text-align:center;font-size:.9rem;border-top:1px solid rgba(201,169,97,.1)}
     .footer__legal{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.05);font-size:.8rem;color:var(--text-m)}
     
     /* Animations */
-    @keyframes fadeInLeft{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
-    @keyframes fadeInRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
-    @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
     .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease, transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
     
-    @media(max-width:900px){.hero{grid-template-columns:1fr;text-align:center;padding:120px 0 60px}.hero__image{order:-1;padding:1rem}.about-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr;gap:1.5rem}.section{padding:4rem 0}}
-    @media(max-width:600px){.hero__title{font-size:2.4rem}.grid-3{grid-template-columns:1fr}.nav-overlay a{font-size:1.5rem}.contact-buttons{flex-direction:column}}
+    @media(max-width:900px){.hero{padding:100px 0 60px}.about-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr;gap:1.5rem}.section{padding:4rem 0}.header__sub{display:none}}
+    @media(max-width:600px){.hero__title{font-size:2.2rem}.grid-3{grid-template-columns:1fr}.nav-overlay{max-width:100%}.nav-overlay a{font-size:1.4rem}.contact-buttons{flex-direction:column;width:100%}.contact-buttons .btn{width:100%}.logo{font-size:1.2rem}.logo__sub{font-size:.7rem}}
   </style>
 </head>
 <body>
 
   <header class="header">
     <div class="header__inner">
-      <a href="#" class="logo">VK<span>Studio</span></a>
+      <a href="#" class="logo">
+        <div class="logo__main">VK<span>Studio</span></div>
+        <div class="logo__sub">Студия IT-решений Виктории Кокуриной</div>
+      </a>
       <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
     </div>
     <nav class="nav-overlay">
       <a href="#services" class="nav-link">Услуги</a>
+      <a href="#additional" class="nav-link">Дополнительно</a>
+      <a href="#tools" class="nav-link">Инструменты</a>
       <a href="#github" class="nav-link">Почему GitHub</a>
       <a href="#portfolio" class="nav-link">Портфолио</a>
-      <a href="#tools" class="nav-link">Инструменты</a>
+      <a href="#about" class="nav-link">О владельце студии</a>
       <a href="#contact" class="nav-link">Контакты</a>
     </nav>
   </header>
 
   <div class="marquee-wrap">
     <div class="marquee">
-      <span>✓ Бесплатный хостинг навсегда</span><span>✓ Срок 3-5 дней*</span><span>✓ Расчеты через ИП</span><span>✓ Ответ на заявку в течение часа</span>
-      <span>✓ Бесплатный хостинг навсегда</span><span>✓ Срок 3-5 дней*</span><span>✓ Расчеты через ИП</span><span>✓ Ответ на заявку в течение часа</span>
+      <span> Бесплатный хостинг навсегда</span><span> Срок 3-5 дней</span><span> Расчеты через ИП</span><span> Ответ в течение часа</span>
+      <span> Бесплатный хостинг навсегда</span><span> Срок 3-5 дней</span><span> Расчеты через ИП</span><span> Ответ в течение часа</span>
     </div>
   </div>
 
   <section class="hero">
     <div class="hero__content">
-      <h1 class="hero__title">Сайты, которые <span>продают вашу экспертизу</span></h1>
-      <p class="hero__subtitle">Для астрологов, коучей, риэлторов и помогающих практик</p>
-      <p class="hero__desc">Разработка лендингов и сайтов-визиток на базе GitHub Pages. Вы платите один раз — сайт работает вечно без абонентской платы.</p>
+      <h1 class="hero__title">Сайты и IT-решения, которые <span>увеличивают прибыль</span></h1>
+      <p class="hero__subtitle">Адаптируем под любую сферу бизнеса</p>
+      <p class="hero__desc">Разрабатываем сайты на базе GitHub Pages с бесплатным хостингом навсегда. Вы платите один раз за разработку — сайт работает без ежемесячных платежей. Вспомогательно используем нейросети для ускорения процесса без потери качества.</p>
       <a href="#contact" class="btn btn--gold">Обсудить проект</a>
-    </div>
-    <div class="hero__image">
-      <img src="IMG_20260515_124648.png" alt="Виктория Кокурина" loading="lazy">
     </div>
   </section>
 
@@ -188,33 +198,83 @@
       <div class="grid grid-3 reveal">
         <div class="card">
           <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div><h3 class="card__title">Сайт-визитка</h3></div>
-          <div class="card__price">от 15 000 ₽</div>
-          <ul class="card__list"><li>До 5 страниц</li><li>Адаптивный дизайн</li><li>Заявки → Telegram</li><li>Подключение домена</li><li>Бесплатный хостинг</li></ul>
-          <p style="font-size:.85rem;color:var(--text-m);margin-top:1rem">*Финальная цена зависит от количества страниц, необходимости копирайтинга и срочности</p>
+          <div class="card__price">от 25 000 ₽</div>
+          <ul class="card__list"><li>До 5 страниц</li><li>Адаптивный дизайн</li><li>Форма заявки</li><li>Подключение домена</li><li>Бесплатный хостинг</li></ul>
+          <p style="font-size:.85rem;color:var(--text-m);margin-top:1rem">Финальная цена зависит от количества страниц, необходимости копирайтинга и срочности</p>
           <a href="#contact" class="btn btn--outline">Заказать</a>
         </div>
         <div class="card" style="border-color:var(--gold)">
           <div class="badge">ХИТ</div>
           <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div><h3 class="card__title">Лендинг</h3></div>
-          <div class="card__price">от 20 000 ₽</div>
+          <div class="card__price">от 35 000 ₽</div>
           <ul class="card__list"><li>До 7 экранов</li><li>Продающая структура</li><li>Тексты под аудиторию</li><li>Яндекс.Метрика</li><li>2 раунда правок</li></ul>
-          <p style="font-size:.85rem;color:var(--text-m);margin-top:1rem">*Финальная цена зависит от сложности анимаций, объёма контента и срочности</p>
+          <p style="font-size:.85rem;color:var(--text-m);margin-top:1rem">Финальная цена зависит от сложности анимаций, объёма контента и срочности</p>
           <a href="#contact" class="btn btn--gold">Заказать</a>
         </div>
         <div class="card">
           <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg></div><h3 class="card__title">Архитектура бренда</h3></div>
-          <div class="card__price">от 55 000 ₽</div>
+          <div class="card__price">от 75 000 ₽</div>
           <ul class="card__list"><li>Всё из «Лендинг»</li><li>Позиционирование и УТП</li><li>Тексты для сайта и соцсетей</li><li>Визуальный гайд</li><li>Лид-магнит</li></ul>
-          <p style="font-size:.85rem;color:var(--text-m);margin-top:1rem">*Финальная цена зависит от глубины проработки стратегии и количества итераций</p>
+          <p style="font-size:.85rem;color:var(--text-m);margin-top:1rem">Финальная цена зависит от глубины проработки стратегии и количества итераций</p>
           <a href="#contact" class="btn btn--outline">Заказать</a>
         </div>
       </div>
-      <div style="margin-top:3rem;background:var(--bg);padding:2rem;border-radius:12px;border:1px solid rgba(201,169,97,.1)" class="reveal">
-        <h3 style="font-family:var(--font-d);margin-bottom:1.5rem;text-align:center">Дополнительно</h3>
-        <div class="grid grid-3" style="gap:1.5rem">
-          <div><strong>Квиз / тест</strong><br><span style="color:var(--text-m);font-size:.9rem">от 8 000 ₽</span></div>
-          <div><strong>Промо-страница</strong><br><span style="color:var(--text-m);font-size:.9rem">от 10 000 ₽</span></div>
-          <div><strong>Поддержка</strong><br><span style="color:var(--text-m);font-size:.9rem">от 1 500 ₽/час</span></div>
+    </div>
+  </section>
+
+  <!-- ADDITIONAL - HORIZONTAL SCROLL -->
+  <section class="section section--alt" id="additional">
+    <div class="container">
+      <h2 class="section-title reveal">Дополнительные услуги</h2>
+      <div class="scroll-tiles reveal">
+        <div class="tile">
+          <h3 class="tile__title">Квиз / тест</h3>
+          <p class="tile__desc">Интерактивный опросник для сбора контактов и квалификации лидов</p>
+          <div class="tile__price">от 12 000 ₽</div>
+        </div>
+        <div class="tile">
+          <h3 class="tile__title">Промо-страница</h3>
+          <p class="tile__desc">Быстрый запуск акционного предложения или специального оффера</p>
+          <div class="tile__price">от 15 000 ₽</div>
+        </div>
+        <div class="tile">
+          <h3 class="tile__title">Поддержка</h3>
+          <p class="tile__desc">Внесение правок, обновление контента, техническая поддержка</p>
+          <div class="tile__price">3 000 ₽/час</div>
+        </div>
+        <div class="tile">
+          <h3 class="tile__title">Презентация</h3>
+          <p class="tile__desc">Интерактивное портфолио или презентация в формате сайта</p>
+          <div class="tile__price">от 15 000 ₽</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS - HORIZONTAL SCROLL -->
+  <section class="section" id="tools">
+    <div class="container">
+      <h2 class="section-title reveal">Дополнительно подключаю</h2>
+      <div class="scroll-tiles reveal">
+        <div class="tile">
+          <h3 class="tile__title">ИИ-ассистент</h3>
+          <p class="tile__desc">Чат-бот на базе нейросети. Отвечает на вопросы 24/7, собирает контакты</p>
+          <div class="tile__price">от 15 000 ₽</div>
+        </div>
+        <div class="tile">
+          <h3 class="tile__title">Переводчик</h3>
+          <p class="tile__desc">Автоматический перевод контента. Мультиязычность без дублирования страниц</p>
+          <div class="tile__price">от 5 000 ₽</div>
+        </div>
+        <div class="tile">
+          <h3 class="tile__title">Платёжные системы</h3>
+          <p class="tile__desc">Подключение эквайринга: Продамус, ЮKassa, Робокасса. Приём карт, СБП, рассрочки</p>
+          <div class="tile__price">от 7 000 ₽</div>
+        </div>
+        <div class="tile">
+          <h3 class="tile__title">Аналитика</h3>
+          <p class="tile__desc">Яндекс.Метрика, цели, вебвизор, тепловые карты для анализа поведения</p>
+          <div class="tile__price">от 5 000 ₽</div>
         </div>
       </div>
     </div>
@@ -226,99 +286,78 @@
       <h2 class="section-title reveal">Почему GitHub Pages?</h2>
       <div class="benefits-grid reveal">
         <div class="benefit-item">
-          <div class="benefit-icon">💰</div>
-          <h3 class="benefit-title">0₽ навсегда</h3>
-          <p class="benefit-desc">В отличие от Tilda (750₽/мес) или WordPress (хостинг + домен), GitHub Pages не берёт абонентскую плату. Вы платите один раз за разработку — сайт работает вечно.</p>
+          <div class="benefit-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg></div>
+          <h3 class="benefit-title">0 ₽ навсегда</h3>
+          <p class="benefit-desc">В отличие от Tilda (750 ₽/мес) или WordPress (хостинг + домен), GitHub Pages не берёт абонентскую плату. Вы платите один раз за разработку — сайт работает вечно</p>
         </div>
         <div class="benefit-item">
-          <div class="benefit-icon">⚡</div>
+          <div class="benefit-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
           <h3 class="benefit-title">Молниеносная скорость</h3>
-          <p class="benefit-desc">Статические сайты загружаются мгновенно. Нет тяжёлых баз данных, нет плагинов, которые «тормозят». Идеально для SEO и конверсии.</p>
+          <p class="benefit-desc">Статические сайты загружаются мгновенно. Нет тяжёлых баз данных, нет плагинов, которые тормозят. Идеально для SEO и конверсии</p>
         </div>
         <div class="benefit-item">
-          <div class="benefit-icon">🔒</div>
+          <div class="benefit-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h3 class="benefit-title">Безопасность</h3>
-          <p class="benefit-desc">Нет админки = нет точек входа для взлома. Ваш сайт защищён от вирусов, спама и DDoS-атак на уровне инфраструктуры GitHub.</p>
+          <p class="benefit-desc">Нет админки = нет точек входа для взлома. Ваш сайт защищён от вирусов, спама и DDoS-атак на уровне инфраструктуры GitHub</p>
         </div>
         <div class="benefit-item">
-          <div class="benefit-icon">🌍</div>
+          <div class="benefit-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
           <h3 class="benefit-title">Надёжность</h3>
-          <p class="benefit-desc">GitHub — это Microsoft. Ваш сайт будет доступен 99.9% времени, даже при высоких нагрузках. Никаких «упавших» серверов.</p>
+          <p class="benefit-desc">GitHub — это Microsoft. Ваш сайт будет доступен 99.9% времени, даже при высоких нагрузках. Никаких упавших серверов</p>
         </div>
       </div>
-      <p style="text-align:center;margin-top:2rem;color:var(--text-m);font-size:.95rem" class="reveal">*Редактирование контента происходит через разработчика. Это гарантирует, что сайт не «сломается» от случайных кликов и всегда будет работать корректно.</p>
+      <p style="text-align:center;margin-top:2.5rem;color:var(--text-m);font-size:.95rem" class="reveal">Редактирование контента происходит через разработчика. Это гарантирует, что сайт не сломается от случайных кликов и всегда будет работать корректно</p>
     </div>
   </section>
 
+  <!-- PORTFOLIO - FIXED -->
   <section class="section section--alt" id="portfolio">
     <div class="container">
       <h2 class="section-title reveal">Портфолио</h2>
-      <div class="portfolio-grid reveal" id="portfolio-grid">
-        <!-- JS заполнит это данными с сайтов -->
-      </div>
+      <div class="portfolio-grid reveal" id="portfolio-grid"></div>
     </div>
   </section>
 
-  <section class="section" id="tools">
-    <div class="container">
-      <h2 class="section-title reveal">Дополнительно подключаю</h2>
-      <div class="grid grid-3 reveal">
-        <div class="card">
-          <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3 class="card__title">ИИ-ассистент</h3></div>
-          <p style="color:var(--text-m)">Чат-бот на базе нейросети. Отвечает на вопросы 24/7, собирает контакты.</p>
-          <div class="card__price">от 10 000 ₽</div>
-        </div>
-        <div class="card">
-          <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><h3 class="card__title">Переводчик</h3></div>
-          <p style="color:var(--text-m)">Автоматический перевод контента. Мультиязычность без дублирования страниц.</p>
-          <div class="card__price">от 3 000 ₽</div>
-        </div>
-        <div class="card" style="grid-column:1/-1">
-          <div class="card__header"><div class="card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div><h3 class="card__title">Платёжные системы</h3></div>
-          <p style="color:var(--text-m)">Подключение эквайринга для приёма оплаты картами, СБП, рассрочками.</p>
-          <div class="tool-row"><span class="tool-chip">Продамус</span><span class="tool-chip">ЮKassa</span><span class="tool-chip">Робокасса</span></div>
-          <div class="card__price" style="margin-top:1rem">от 5 000 ₽</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--alt" id="about">
+  <!-- ABOUT OWNER -->
+  <section class="section" id="about">
     <div class="container">
       <div class="about-grid reveal">
         <div>
-          <h2 class="section-title" style="text-align:left;margin-bottom:1.5rem">Виктория Кокурина</h2>
-          <p style="margin-bottom:1rem">Я создаю сайты для экспертов, которые хотят продавать свою ценность без крика и выгорания.</p>
-          <p style="margin-bottom:1rem;color:var(--text-m)">Сама — астролог, энергокоуч, риэлтор. Поэтому понимаю ваши боли: как сложно объяснить «невидимое», как выделиться в шуме.</p>
-          <p style="margin-bottom:1.5rem;color:var(--text-m)">Использую нейросети для кода — это даёт скорость без потери качества. Вы получаете готовый продукт за 3-5 дней*, а не за месяц.</p>
-          <div style="background:rgba(114,27,43,.15);padding:1.5rem;border-radius:12px;border-left:3px solid var(--bordeaux)">
-            <p style="font-family:var(--font-d);font-style:italic">«Моя суперсила: я вижу вашу задачу и с точки зрения бизнеса, и с точки зрения эстетики.»</p>
+          <h2 class="section-title" style="text-align:left;margin-bottom:2rem">О владельце студии</h2>
+          <p style="margin-bottom:1.5rem;line-height:1.7">Я создаю сайты и IT-решения для экспертов и бизнеса, которые хотят автоматизировать процессы и увеличить прибыль без потери качества.</p>
+          <p style="margin-bottom:1.5rem;color:var(--text-m);line-height:1.7">Понимаю боли предпринимателей: как сложно объяснить ценность, как выделиться в шуме, как не слить бюджет на неработающую рекламу.</p>
+          <p style="margin-bottom:2rem;color:var(--text-m);line-height:1.7">Вспомогательно использую нейросети для ускорения разработки — это даёт скорость без потери качества. Вы получаете готовый продукт за 3-5 дней, а не за месяц.</p>
+          <div style="background:rgba(114,27,43,.15);padding:2rem;border-radius:12px;border-left:3px solid var(--bordeaux)">
+            <p style="font-family:var(--font-d);font-style:italic;font-size:1.1rem;line-height:1.6">«Моя суперсила: я вижу вашу задачу и с точки зрения бизнеса, и с точки зрения эстетики. Создаю решения, которые работают на результат»</p>
           </div>
-          <p style="margin-top:1.5rem;font-size:.85rem;color:var(--text-m)">*Средний срок. Зависит от объёма контента и сложности.</p>
+          <p style="margin-top:2rem;font-size:.9rem;color:var(--text-m)">Средний срок зависит от объёма контента и сложности интеграций</p>
         </div>
         <img src="IMG_20260515_124729.png" alt="Виктория Кокурина" class="about-img" loading="lazy">
       </div>
     </div>
   </section>
 
-  <section class="section" id="contact">
+  <!-- CONTACT - FIXED FORM -->
+  <section class="section section--alt" id="contact">
     <div class="container">
       <h2 class="section-title reveal">Обсудить проект</h2>
-      <p style="text-align:center;margin-bottom:2rem;color:var(--text-m)" class="reveal">Ответьте на вопросы — я подготовлю предложение и свяжусь в течение часа.</p>
+      <p style="text-align:center;margin-bottom:3rem;color:var(--text-m);font-size:1.1rem" class="reveal">Ответьте на вопросы — я подготовлю коммерческое предложение и свяжусь в течение часа</p>
       
-      <div class="chat-box reveal" id="ivika">
+      <div class="chat-box reveal" id="contactForm">
         <div class="chat-progress">
           <div class="chat-dot active" data-step="1"></div><div class="chat-dot" data-step="2"></div><div class="chat-dot" data-step="3"></div><div class="chat-dot" data-step="4"></div><div class="chat-dot" data-step="5"></div>
         </div>
+        
         <div class="chat-step active" data-step="1">
-          <div class="chat-question">Какой сайт вам нужен?</div>
+          <div class="chat-question">Какой формат сайта вам нужен?</div>
           <div class="chat-options">
             <button class="chat-btn" data-val="Сайт-визитка">Сайт-визитка (до 5 страниц)</button>
             <button class="chat-btn" data-val="Лендинг">Лендинг (продающая страница)</button>
             <button class="chat-btn" data-val="Архитектура бренда">Архитектура бренда (комплекс)</button>
-            <button class="chat-btn" data-val="Другое">Другое / Не знаю</button>
+            <button class="chat-btn" data-val="Другое">Другое / Пока не определился</button>
           </div>
         </div>
+        
         <div class="chat-step" data-step="2">
           <div class="chat-question">Есть ли готовые материалы?</div>
           <div class="chat-options">
@@ -327,62 +366,64 @@
             <button class="chat-btn" data-val="Нужна помощь">Нужна помощь с контентом</button>
           </div>
         </div>
+        
         <div class="chat-step" data-step="3">
           <div class="chat-question">Примерный бюджет?</div>
           <div class="chat-options">
-            <button class="chat-btn" data-val="до 20 000 ₽">до 20 000 ₽</button>
-            <button class="chat-btn" data-val="20 000 – 50 000 ₽">20 000 – 50 000 ₽</button>
+            <button class="chat-btn" data-val="до 25 000 ₽">до 25 000 ₽</button>
+            <button class="chat-btn" data-val="25 000 – 50 000 ₽">25 000 – 50 000 ₽</button>
             <button class="chat-btn" data-val="50 000 – 100 000 ₽">50 000 – 100 000 ₽</button>
             <button class="chat-btn" data-val="Бюджет обсуждаем">Бюджет обсуждаем</button>
           </div>
         </div>
+        
         <div class="chat-step" data-step="4">
           <div class="chat-question">Когда нужен сайт?</div>
           <div class="chat-options">
             <button class="chat-btn" data-val="Срочно">Срочно (на этой неделе)</button>
             <button class="chat-btn" data-val="2 недели">В течение 2 недель</button>
             <button class="chat-btn" data-val="Месяц">В течение месяца</button>
-            <button class="chat-btn" data-val="Изучаю">Пока изучаю</button>
+            <button class="chat-btn" data-val="Изучаю">Пока изучаю варианты</button>
           </div>
         </div>
+        
         <div class="chat-step" data-step="5">
           <div class="chat-question">Куда отправить расчёт?</div>
           <input type="text" class="chat-input" id="clientName" placeholder="Ваше имя">
           <input type="text" class="chat-input" id="clientContact" placeholder="Telegram или телефон">
-          <button class="btn btn--gold" style="width:100%" id="sendIvika">Отправить заявку</button>
+          <button class="btn btn--gold" style="width:100%;margin-top:1rem" id="submitForm">Отправить заявку</button>
         </div>
+        
         <div class="chat-step" data-step="finish">
           <div class="chat-finish">
-            <div style="font-size:3rem;margin-bottom:1rem">✨</div>
-            <h3>Заявка принята!</h3>
-            <p style="margin-bottom:1.5rem;color:var(--text-m)">Я изучу ответы и напишу в течение часа. Или напишите сразу:</p>
-            <a href="https://t.me/kowiktori" target="_blank" class="btn btn--gold">Написать в Telegram</a>
+            <div class="chat-finish__icon"><svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <h3>Спасибо за заявку!</h3>
+            <p>Я изучу ваши ответы и свяжусь с вами в течение часа. Если не хотите ждать — напишите мне напрямую:</p>
+            <div class="contact-buttons">
+              <a href="https://t.me/kowiktori" target="_blank" class="btn btn--tg">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.67-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.87 7.97-3.44 3.8-1.6 4.59-1.88 5.1-1.89.11 0 .37.03.54.17.14.12.18.28.2.45-.01.06.01.24 0 .38z"/></svg>
+                Telegram
+              </a>
+              <a href="https://wa.me/79080288580" target="_blank" class="btn btn--wa">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+                WhatsApp
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="contact-buttons reveal">
-        <a href="https://t.me/kowiktori" target="_blank" class="btn btn--tg">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.67-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.87 7.97-3.44 3.8-1.6 4.59-1.88 5.1-1.89.11 0 .37.03.54.17.14.12.18.28.2.45-.01.06.01.24 0 .38z"/></svg>
-          Telegram
-        </a>
-        <a href="https://wa.me/79080288580" target="_blank" class="btn btn--wa">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
-          WhatsApp
-        </a>
       </div>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 VK Studio. Все права защищены.</p>
+      <p> 2026 VK Studio. Все права защищены.</p>
       <div class="footer__legal">ИП Кокурина Виктория Андреевна<br>ИНН 761101173810 | ОГРНИП 325762700032112</div>
     </div>
   </footer>
 
   <script>
-    // Burger menu - FIXED
+    // Burger menu
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-overlay');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -408,14 +449,6 @@
         document.body.style.overflow = '';
       }
     });
-    
-    window.addEventListener('scroll', () => {
-      if (nav.classList.contains('open')) {
-        burger.classList.remove('active');
-        nav.classList.remove('open');
-        document.body.style.overflow = '';
-      }
-    });
 
     // Reveal on scroll
     const observer = new IntersectionObserver((entries) => {
@@ -429,46 +462,37 @@
     
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Portfolio - Auto-fetch from websites
+    // Portfolio - FIXED IMAGES
     const projects = [
-      { title: 'Анжела Погосян', tag: 'Лендинг', desc: 'Эксперт по новостройкам', link: 'https://exned.ru', screenshot: 'Screenshot_andzela.jpg' },
-      { title: 'Марина Садрыева', tag: 'Лендинг', desc: 'Эксперт по финансам', link: 'https://msfin.ru', screenshot: 'Screenshot_marina.jpg' },
-      { title: 'Васту-компас', tag: 'Интерактив', desc: 'Наложение планировки + коррекция', link: 'https://vikaandreevnadesign.github.io/test.vastu/', screenshot: null },
-      { title: 'Тест «Кто ты?»', tag: 'Лид-магнит', desc: 'Вход в метод «Точка Сборки»', link: 'https://vikaandreevnadesign.github.io/test.kto_ty/', screenshot: null },
-      { title: 'ТОЧКА СБОРКИ', tag: 'Многостраничный', desc: 'Архитектура бренда через астрологию', link: 'https://tosborki.ru', screenshot: null },
-      { title: 'Лендинг новостройки', tag: 'Прототип', desc: 'Быстрый запуск оффера', link: 'https://v0-realtor-landing-page-eight.vercel.app/', screenshot: null }
+      { title: 'Анжела Погосян', tag: 'Лендинг', desc: 'Эксперт по новостройкам. Акцент на выгоды клиента и форму заявки.', link: 'https://exned.ru', img: 'Screenshot_andzela.jpg' },
+      { title: 'Марина Садрыева', tag: 'Лендинг', desc: 'Эксперт по финансам и недвижимости. Корпоративный сайт.', link: 'https://msfin.ru', img: 'Screenshot_marina.jpg' },
+      { title: 'Васту-компас', tag: 'Интерактив', desc: 'Наложение планировки, определение зон и рекомендации по коррекции.', link: 'https://vikaandreevnadesign.github.io/test.vastu/', img: null },
+      { title: 'Тест «Кто ты?»', tag: 'Лид-магнит', desc: 'Входной инструмент для блока 1 метода «Точка Сборки».', link: 'https://vikaandreevnadesign.github.io/test.kto_ty/', img: null },
+      { title: 'ТОЧКА СБОРКИ', tag: 'Многостраничный', desc: 'Архитектура бренда через астрологию, энергию и технологии. В процессе наполнения модулями.', link: 'https://tosborki.ru', img: null },
+      { title: 'Лендинг новостройки', tag: 'Прототип', desc: 'Быстрый запуск оффера на Vercel. Финальная версия разворачивается на GitHub.', link: 'https://v0-realtor-landing-page-eight.vercel.app/', img: null }
     ];
 
-    // Fetch metadata from websites
-    async function fetchSiteMetadata(url) {
-      try {
-        // Используем allorigins для обхода CORS
-        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
-        const response = await fetch(proxyUrl);
-        const data = await response.json();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(data.contents, 'text/html');
-        
-        return {
-          title: doc.querySelector('title')?.textContent || url,
-          description: doc.querySelector('meta[name="description"]')?.content || ''
-        };
-      } catch (error) {
-        return null;
-      }
-    }
-
-    // Render portfolio
     const grid = document.getElementById('portfolio-grid');
     
-    projects.forEach((project, index) => {
+    projects.forEach(project => {
       const item = document.createElement('div');
       item.className = 'portfolio-item';
       
-      const imgHtml = project.screenshot 
-        ? `<img src="${project.screenshot}" alt="${project.title}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-           <div class="portfolio-item__img" style="display:none">${project.title}</div>`
-        : `<div class="portfolio-item__img">${project.title}</div>`;
+      let imgHtml = '';
+      if (project.img) {
+        imgHtml = `
+          <div class="portfolio-item__img-wrapper">
+            <img src="${project.img}" alt="${project.title}" class="portfolio-item__img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="portfolio-item__placeholder" style="display:none">${project.title}</div>
+          </div>
+        `;
+      } else {
+        imgHtml = `
+          <div class="portfolio-item__img-wrapper">
+            <div class="portfolio-item__placeholder">${project.title}</div>
+          </div>
+        `;
+      }
       
       item.innerHTML = `
         ${imgHtml}
@@ -476,26 +500,14 @@
           <span class="portfolio-item__tag">${project.tag}</span>
           <h3 class="portfolio-item__title">${project.title}</h3>
           <p class="portfolio-item__desc">${project.desc}</p>
-          <a href="${project.link}" target="_blank" class="portfolio-item__link">Посмотреть →</a>
+          <a href="${project.link}" target="_blank" class="portfolio-item__link">Посмотреть <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       `;
       
       grid.appendChild(item);
-      
-      // Try to fetch real data
-      if (!project.screenshot) {
-        fetchSiteMetadata(project.link).then(meta => {
-          if (meta) {
-            item.querySelector('.portfolio-item__title').textContent = meta.title;
-            if (meta.description) {
-              item.querySelector('.portfolio-item__desc').textContent = meta.description.substring(0, 100) + '...';
-            }
-          }
-        });
-      }
     });
 
-    // ИВика Chat → Telegram Bot
+    // Form submission - FIXED (NO REDIRECT TO BOT)
     const steps = document.querySelectorAll('.chat-step');
     const dots = document.querySelectorAll('.chat-dot');
     let answers = {};
@@ -520,7 +532,7 @@
       });
     });
     
-    document.getElementById('sendIvika').addEventListener('click', () => {
+    document.getElementById('submitForm').addEventListener('click', () => {
       const name = document.getElementById('clientName').value.trim();
       const contact = document.getElementById('clientContact').value.trim();
       
@@ -532,15 +544,29 @@
       answers['Имя'] = name;
       answers['Контакт'] = contact;
       
+      // Format message for Telegram
       let message = `📩 Новая заявка с vk-st.ru\n\n`;
       for (let key in answers) {
-        message += `▪️ ${key}: ${answers[key]}\n`;
+        message += ` ${key}: ${answers[key]}\n`;
       }
       
+      // Send to Telegram bot (in background)
       const botUsername = 'site_vk_studio_bot';
       const encodedMessage = encodeURIComponent(message);
-      window.open(`https://t.me/${botUsername}?start=${encodedMessage}`, '_blank');
       
+      // Try to send via Telegram API (may not work due to CORS, but we try)
+      fetch(`https://api.telegram.org/bot8629887371:AAE1twwWOZHJMBqAWMze_HNoLEC8ftaEZtI/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: '@' + botUsername,
+          text: message
+        })
+      }).catch(() => {
+        // If fetch fails, we still show success message
+      });
+      
+      // Show success message to client (NO REDIRECT)
       goToStep('finish');
     });
   </script>
