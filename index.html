@@ -38,16 +38,24 @@
     .btn--tg{background:#2AABEE;color:#fff}.btn--tg:hover{background:#229ED9}
     .btn--wa{background:#25D366;color:#fff}.btn--wa:hover{background:#128C7E}
     
-    /* Header */
-    .header{position:fixed;top:0;width:100%;z-index:9999;background:rgba(15,15,17,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,169,97,.1);padding:16px 0}
-    .header__inner{display:flex;justify-content:space-between;align-items:center}.logo{font-family:var(--font-d);font-size:1.6rem;font-weight:700}
-    .logo span{color:var(--gold)}.burger{width:40px;height:40px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;cursor:pointer;background:none;border:none}
-    .burger span{display:block;width:24px;height:2px;background:var(--text);transition:var(--trans)}
-    .burger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.burger.active span:nth-child(2){opacity:0}
+    /* Header - FIXED */
+    .header{position:fixed;top:0;width:100%;z-index:9999;background:rgba(15,15,17,.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,169,97,.2);padding:16px 0}
+    .header__inner{display:flex;justify-content:space-between;align-items:center;max-width:1140px;margin:0 auto;padding:0 24px}
+    .logo{font-family:var(--font-d);font-size:1.6rem;font-weight:700;color:var(--text)}
+    .logo span{color:var(--gold)}
+    .burger{width:40px;height:40px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;cursor:pointer;background:none;border:none;z-index:10001;position:relative}
+    .burger span{display:block;width:24px;height:2px;background:var(--text);transition:var(--trans);transform-origin:center}
+    .burger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .burger.active span:nth-child(2){opacity:0;transform:translateX(-10px)}
     .burger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
-    .nav-overlay{position:fixed;inset:0;background:rgba(15,15,17,.98);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;opacity:0;pointer-events:none;transition:var(--trans);z-index:9998}
-    .nav-overlay.open{opacity:1;pointer-events:auto}.nav-overlay a{font-family:var(--font-d);font-size:1.8rem;font-weight:600;color:var(--text);position:relative}
-    .nav-overlay a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:var(--trans)}.nav-overlay a:hover::after{width:100%}
+    
+    /* Nav Overlay - FIXED */
+    .nav-overlay{position:fixed;top:0;right:0;width:100%;height:100vh;background:var(--gold);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;opacity:0;pointer-events:none;transition:var(--trans);z-index:10000;transform:translateX(100%)}
+    .nav-overlay.open{opacity:1;pointer-events:auto;transform:translateX(0)}
+    .nav-overlay a{font-family:var(--font-d);font-size:1.8rem;font-weight:600;color:var(--bg);position:relative;transition:var(--trans)}
+    .nav-overlay a::after{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--bg);transition:var(--trans)}
+    .nav-overlay a:hover::after{width:100%}
+    .nav-overlay a:hover{color:var(--bordeaux)}
     
     /* Marquee */
     .marquee-wrap{background:var(--card);padding:10px 0;overflow:hidden;white-space:nowrap;font-size:.9rem;margin-top:72px;border-bottom:1px solid rgba(201,169,97,.1)}
@@ -78,11 +86,20 @@
     .card__list li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;background:var(--gold);border-radius:50%}
     .badge{position:absolute;top:-12px;right:20px;background:var(--bordeaux);color:#fff;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:600}
     
+    /* GitHub Benefits */
+    .github-benefits{background:linear-gradient(135deg,var(--card),var(--bg));padding:4rem 0;border-top:1px solid rgba(201,169,97,.1);border-bottom:1px solid rgba(201,169,97,.1)}
+    .benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-top:2rem}
+    .benefit-item{text-align:center;padding:1.5rem}
+    .benefit-icon{width:60px;height:60px;margin:0 auto 1rem;background:rgba(201,169,97,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.5rem}
+    .benefit-title{font-family:var(--font-d);font-size:1.2rem;margin-bottom:.5rem;color:var(--gold)}
+    .benefit-desc{color:var(--text-m);font-size:.95rem}
+    
     /* Portfolio - Lovable style */
     .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
     .portfolio-item{background:var(--bg);border-radius:12px;overflow:hidden;border:1px solid rgba(201,169,97,.1);transition:var(--trans)}
     .portfolio-item:hover{border-color:var(--gold);transform:translateY(-4px)}
-    .portfolio-item img{width:100%;height:180px;object-fit:cover;display:block}.portfolio-item__content{padding:1.2rem}
+    .portfolio-item__img{width:100%;height:180px;background:linear-gradient(135deg,var(--card),var(--bg));display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:600;text-align:center;padding:1rem;font-size:.9rem}
+    .portfolio-item__content{padding:1.2rem}
     .portfolio-item__tag{display:inline-block;padding:4px 10px;background:rgba(114,27,43,.2);color:var(--bordeaux);font-size:.75rem;border-radius:20px;margin-bottom:.5rem;font-weight:600}
     .portfolio-item__title{font-family:var(--font-d);font-size:1.1rem;margin-bottom:.3rem}.portfolio-item__desc{font-size:.9rem;color:var(--text-m);margin-bottom:.8rem}
     .portfolio-item__link{color:var(--gold);font-weight:600;font-size:.9rem}
@@ -127,12 +144,13 @@
 <body>
 
   <header class="header">
-    <div class="container header__inner">
+    <div class="header__inner">
       <a href="#" class="logo">VK<span>Studio</span></a>
       <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
     </div>
     <nav class="nav-overlay">
       <a href="#services" class="nav-link">Услуги</a>
+      <a href="#github" class="nav-link">Почему GitHub</a>
       <a href="#portfolio" class="nav-link">Портфолио</a>
       <a href="#tools" class="nav-link">Инструменты</a>
       <a href="#contact" class="nav-link">Контакты</a>
@@ -202,10 +220,42 @@
     </div>
   </section>
 
+  <!-- GITHUB BENEFITS -->
+  <section class="github-benefits" id="github">
+    <div class="container">
+      <h2 class="section-title reveal">Почему GitHub Pages?</h2>
+      <div class="benefits-grid reveal">
+        <div class="benefit-item">
+          <div class="benefit-icon">💰</div>
+          <h3 class="benefit-title">0₽ навсегда</h3>
+          <p class="benefit-desc">В отличие от Tilda (750₽/мес) или WordPress (хостинг + домен), GitHub Pages не берёт абонентскую плату. Вы платите один раз за разработку — сайт работает вечно.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">⚡</div>
+          <h3 class="benefit-title">Молниеносная скорость</h3>
+          <p class="benefit-desc">Статические сайты загружаются мгновенно. Нет тяжёлых баз данных, нет плагинов, которые «тормозят». Идеально для SEO и конверсии.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🔒</div>
+          <h3 class="benefit-title">Безопасность</h3>
+          <p class="benefit-desc">Нет админки = нет точек входа для взлома. Ваш сайт защищён от вирусов, спама и DDoS-атак на уровне инфраструктуры GitHub.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🌍</div>
+          <h3 class="benefit-title">Надёжность</h3>
+          <p class="benefit-desc">GitHub — это Microsoft. Ваш сайт будет доступен 99.9% времени, даже при высоких нагрузках. Никаких «упавших» серверов.</p>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:2rem;color:var(--text-m);font-size:.95rem" class="reveal">*Редактирование контента происходит через разработчика. Это гарантирует, что сайт не «сломается» от случайных кликов и всегда будет работать корректно.</p>
+    </div>
+  </section>
+
   <section class="section section--alt" id="portfolio">
     <div class="container">
       <h2 class="section-title reveal">Портфолио</h2>
-      <div class="portfolio-grid reveal" id="portfolio-grid"></div>
+      <div class="portfolio-grid reveal" id="portfolio-grid">
+        <!-- JS заполнит это данными с сайтов -->
+      </div>
     </div>
   </section>
 
@@ -320,10 +370,6 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
           WhatsApp
         </a>
-        <a href="https://t.me/site_vk_studio_bot" target="_blank" class="btn btn--outline">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          Бот для заявок
-        </a>
       </div>
     </div>
   </section>
@@ -336,46 +382,165 @@
   </footer>
 
   <script>
-    // Burger menu
-    const burger = document.querySelector('.burger'), nav = document.querySelector('.nav-overlay');
-    burger.addEventListener('click', () => { burger.classList.toggle('active'); nav.classList.toggle('open'); });
-    document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => { burger.classList.remove('active'); nav.classList.remove('open'); }));
-    document.addEventListener('click', e => { if(!nav.contains(e.target) && !burger.contains(e.target) && nav.classList.contains('open')) { burger.classList.remove('active'); nav.classList.remove('open'); } });
-    window.addEventListener('scroll', () => { if(nav.classList.contains('open')) { burger.classList.remove('active'); nav.classList.remove('open'); } });
+    // Burger menu - FIXED
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-overlay');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('active');
+      nav.classList.toggle('open');
+      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+    });
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('active');
+        nav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+    
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !burger.contains(e.target) && nav.classList.contains('open')) {
+        burger.classList.remove('active');
+        nav.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+    
+    window.addEventListener('scroll', () => {
+      if (nav.classList.contains('open')) {
+        burger.classList.remove('active');
+        nav.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
 
     // Reveal on scroll
-    const obs = new IntersectionObserver(e => e.forEach(en => { if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); } }), {threshold:.1});
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Portfolio
+    // Portfolio - Auto-fetch from websites
     const projects = [
-      {t:'Анжела Погосян',tag:'Лендинг',d:'Эксперт по новостройкам',l:'https://exned.ru',i:'Screenshot_andzela.jpg'},
-      {t:'Марина Садрыева',tag:'Лендинг',d:'Эксперт по финансам',l:'https://msfin.ru',i:'Screenshot_marina.jpg'},
-      {t:'Васту-компас',tag:'Интерактив',d:'Наложение планировки + коррекция',l:'https://vikaandreevnadesign.github.io/test.vastu/',i:null},
-      {t:'Тест «Кто ты?»',tag:'Лид-магнит',d:'Вход в метод «Точка Сборки»',l:'https://vikaandreevnadesign.github.io/test.kto_ty/',i:null},
-      {t:'ТОЧКА СБОРКИ',tag:'Многостраничный',d:'Архитектура бренда через астрологию',l:'https://tosborki.ru',i:null},
-      {t:'Лендинг новостройки',tag:'Прототип',d:'Быстрый запуск оффера',l:'https://v0-realtor-landing-page-eight.vercel.app/',i:null}
+      { title: 'Анжела Погосян', tag: 'Лендинг', desc: 'Эксперт по новостройкам', link: 'https://exned.ru', screenshot: 'Screenshot_andzela.jpg' },
+      { title: 'Марина Садрыева', tag: 'Лендинг', desc: 'Эксперт по финансам', link: 'https://msfin.ru', screenshot: 'Screenshot_marina.jpg' },
+      { title: 'Васту-компас', tag: 'Интерактив', desc: 'Наложение планировки + коррекция', link: 'https://vikaandreevnadesign.github.io/test.vastu/', screenshot: null },
+      { title: 'Тест «Кто ты?»', tag: 'Лид-магнит', desc: 'Вход в метод «Точка Сборки»', link: 'https://vikaandreevnadesign.github.io/test.kto_ty/', screenshot: null },
+      { title: 'ТОЧКА СБОРКИ', tag: 'Многостраничный', desc: 'Архитектура бренда через астрологию', link: 'https://tosborki.ru', screenshot: null },
+      { title: 'Лендинг новостройки', tag: 'Прототип', desc: 'Быстрый запуск оффера', link: 'https://v0-realtor-landing-page-eight.vercel.app/', screenshot: null }
     ];
+
+    // Fetch metadata from websites
+    async function fetchSiteMetadata(url) {
+      try {
+        // Используем allorigins для обхода CORS
+        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+        const response = await fetch(proxyUrl);
+        const data = await response.json();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data.contents, 'text/html');
+        
+        return {
+          title: doc.querySelector('title')?.textContent || url,
+          description: doc.querySelector('meta[name="description"]')?.content || ''
+        };
+      } catch (error) {
+        return null;
+      }
+    }
+
+    // Render portfolio
     const grid = document.getElementById('portfolio-grid');
-    projects.forEach(p => {
-      const img = p.i ? `<img src="${p.i}" alt="${p.t}" loading="lazy">` : `<div style="height:180px;background:linear-gradient(135deg,var(--card),var(--bg));display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:600">${p.t}</div>`;
-      grid.innerHTML += `<div class="portfolio-item">${img}<div class="portfolio-item__content"><span class="portfolio-item__tag">${p.tag}</span><h3 class="portfolio-item__title">${p.t}</h3><p class="portfolio-item__desc">${p.d}</p><a href="${p.l}" target="_blank" class="portfolio-item__link">Посмотреть →</a></div></div>`;
+    
+    projects.forEach((project, index) => {
+      const item = document.createElement('div');
+      item.className = 'portfolio-item';
+      
+      const imgHtml = project.screenshot 
+        ? `<img src="${project.screenshot}" alt="${project.title}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+           <div class="portfolio-item__img" style="display:none">${project.title}</div>`
+        : `<div class="portfolio-item__img">${project.title}</div>`;
+      
+      item.innerHTML = `
+        ${imgHtml}
+        <div class="portfolio-item__content">
+          <span class="portfolio-item__tag">${project.tag}</span>
+          <h3 class="portfolio-item__title">${project.title}</h3>
+          <p class="portfolio-item__desc">${project.desc}</p>
+          <a href="${project.link}" target="_blank" class="portfolio-item__link">Посмотреть →</a>
+        </div>
+      `;
+      
+      grid.appendChild(item);
+      
+      // Try to fetch real data
+      if (!project.screenshot) {
+        fetchSiteMetadata(project.link).then(meta => {
+          if (meta) {
+            item.querySelector('.portfolio-item__title').textContent = meta.title;
+            if (meta.description) {
+              item.querySelector('.portfolio-item__desc').textContent = meta.description.substring(0, 100) + '...';
+            }
+          }
+        });
+      }
     });
 
     // ИВика Chat → Telegram Bot
-    const steps = document.querySelectorAll('.chat-step'), dots = document.querySelectorAll('.chat-dot');
-    let answers = {}, currentStep = 1;
-    function goToStep(s) { steps.forEach(x => x.classList.remove('active')); dots.forEach(x => x.classList.remove('active')); document.querySelector(`.chat-step[data-step="${s}"]`).classList.add('active'); if(s!=='finish') document.querySelector(`.chat-dot[data-step="${s}"]`).classList.add('active'); }
-    document.querySelectorAll('.chat-btn').forEach(btn => btn.addEventListener('click', () => { answers[btn.closest('.chat-step').querySelector('.chat-question').textContent] = btn.getAttribute('data-val'); currentStep++; goToStep(currentStep); }));
+    const steps = document.querySelectorAll('.chat-step');
+    const dots = document.querySelectorAll('.chat-dot');
+    let answers = {};
+    let currentStep = 1;
+    
+    function goToStep(step) {
+      steps.forEach(s => s.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      document.querySelector(`.chat-step[data-step="${step}"]`).classList.add('active');
+      if (step !== 'finish') {
+        document.querySelector(`.chat-dot[data-step="${step}"]`).classList.add('active');
+      }
+    }
+    
+    document.querySelectorAll('.chat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const question = btn.closest('.chat-step').querySelector('.chat-question').textContent;
+        const value = btn.getAttribute('data-val');
+        answers[question] = value;
+        currentStep++;
+        goToStep(currentStep);
+      });
+    });
+    
     document.getElementById('sendIvika').addEventListener('click', () => {
-      const name = document.getElementById('clientName').value.trim(), contact = document.getElementById('clientContact').value.trim();
-      if(!name || !contact) { alert('Заполните имя и контакт'); return; }
-      answers['Имя'] = name; answers['Контакт'] = contact;
-      let msg = `📩 Заявка с vk-st.ru (ИВика)\n\n`; for(let q in answers) msg += `▪️ ${q}: ${answers[q]}\n`;
-      const token = '8629887371:AAE1twwWOZHJMBqAWMze_HNoLEC8ftaEZtI', bot = 'site_vk_studio_bot';
-      const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=@${bot}&text=${encodeURIComponent(msg)}`;
-      fetch(url).catch(() => {}); // Отправка (может не сработать из-за CORS, но структура готова)
-      window.open(`https://t.me/${bot}?start=${encodeURIComponent(msg)}`, '_blank');
+      const name = document.getElementById('clientName').value.trim();
+      const contact = document.getElementById('clientContact').value.trim();
+      
+      if (!name || !contact) {
+        alert('Пожалуйста, заполните имя и контакт');
+        return;
+      }
+      
+      answers['Имя'] = name;
+      answers['Контакт'] = contact;
+      
+      let message = `📩 Новая заявка с vk-st.ru\n\n`;
+      for (let key in answers) {
+        message += `▪️ ${key}: ${answers[key]}\n`;
+      }
+      
+      const botUsername = 'site_vk_studio_bot';
+      const encodedMessage = encodeURIComponent(message);
+      window.open(`https://t.me/${botUsername}?start=${encodedMessage}`, '_blank');
+      
       goToStep('finish');
     });
   </script>
