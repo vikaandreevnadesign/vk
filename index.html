@@ -11,7 +11,7 @@
   <link rel="canonical" href="https://vk-st.ru">
   <meta property="og:title" content="VK Studio — Студия IT-решений Виктории Кокуриной">
   <meta property="og:description" content="Разработка сайтов и IT-решения для бизнеса. Лендинги и сайты-визитки на бесплатном хостинге.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200">
   <meta property="og:url" content="https://vk-st.ru">
   <meta property="og:type" content="website">
   
@@ -39,7 +39,7 @@
     .btn--wa{background:#25D366;color:#fff}.btn--wa:hover{background:#128C7E}
     .btn-sm{padding:10px 20px;font-size:.9rem}
     
-    /* Header */
+    /* Header - BURGER RIGHT */
     .header{position:fixed;top:0;width:100%;z-index:9999;background:rgba(15,15,17,.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,169,97,.2);padding:12px 0}
     .header__inner{display:flex;justify-content:space-between;align-items:center;max-width:1140px;margin:0 auto;padding:0 24px}
     .logo{font-family:var(--font-d);font-size:1.4rem;font-weight:700;color:var(--text);display:flex;flex-direction:column;line-height:1.2}
@@ -55,8 +55,8 @@
     .burger.active span:nth-child(2){opacity:0;transform:translateX(-10px)}
     .burger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
     
-    /* Nav Overlay */
-    .nav-overlay{position:fixed;top:0;left:0;width:100%;max-width:400px;height:100vh;background:var(--gold);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;opacity:0;pointer-events:none;transition:var(--trans);z-index:10000;transform:translateX(-100%);padding:2rem}
+    /* Nav Overlay - RIGHT SIDE */
+    .nav-overlay{position:fixed;top:0;right:0;width:100%;max-width:400px;height:100vh;background:var(--gold);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;opacity:0;pointer-events:none;transition:var(--trans);z-index:10000;transform:translateX(100%);padding:2rem}
     .nav-overlay.open{opacity:1;pointer-events:auto;transform:translateX(0)}
     .nav-overlay a{font-family:var(--font-d);font-size:1.6rem;font-weight:600;color:var(--bg);position:relative;transition:var(--trans);text-align:center}
     .nav-overlay a::after{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--bg);transition:var(--trans)}
@@ -68,39 +68,59 @@
     .marquee{display:inline-block;animation:marquee 25s linear infinite}.marquee span{margin:0 2rem;color:var(--gold)}
     @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
     
-    /* Hero - WITH IMAGES */
+    /* Hero - BETTER IMAGES */
     .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--bg) 0%,#1a1a2e 100%)}
-    .hero__slider{position:absolute;inset:0;z-index:0}
-    .hero__slide{position:absolute;inset:0;opacity:0;transition:opacity 2s ease-in-out;background-size:cover;background-position:center}
-    .hero__slide.active{opacity:.4}
+    .hero__bg{position:absolute;inset:0;z-index:0;background-image:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920');background-size:cover;background-position:center;opacity:.3}
+    .hero__overlay{position:absolute;inset:0;z-index:0;background:linear-gradient(135deg,rgba(15,15,17,.9),rgba(114,27,43,.6))}
     .hero__content{max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:1;animation:fadeInUp .8s ease}
-    .hero__title{font-size:clamp(2.5rem,5vw,4rem);font-weight:700;margin-bottom:1.5rem;line-height:1.1}
-    .hero__title span{color:var(--gold)}.hero__subtitle{font-size:1.4rem;color:var(--text-m);margin-bottom:2rem;max-width:700px;margin-left:auto;margin-right:auto}
+    .hero__title{font-size:clamp(2.5rem,5vw,4rem);font-weight:700;margin-bottom:1.5rem;line-height:1.1;text-shadow:0 4px 20px rgba(0,0,0,.5)}
+    .hero__title span{color:var(--gold)}.hero__subtitle{font-size:1.4rem;color:var(--text-m);margin-bottom:2rem;max-width:700px;margin-left:auto;margin-right:auto;text-shadow:0 2px 10px rgba(0,0,0,.3)}
     .hero__desc{font-size:1.15rem;margin-bottom:3rem;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.7}
     .hero__actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
     
-    /* Problem/Solution Block */
-    .problem-solution{padding:6rem 0;background:var(--card)}
-    .ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-    .ps-block{padding:2.5rem;border-radius:12px}
-    .ps-block--problem{background:linear-gradient(135deg,rgba(114,27,43,.15),rgba(15,15,17,.8));border:1px solid rgba(114,27,43,.3)}
-    .ps-block--solution{background:linear-gradient(135deg,rgba(201,169,97,.1),rgba(15,15,17,.8));border:1px solid rgba(201,169,97,.3)}
-    .ps-block__title{font-family:var(--font-d);font-size:1.8rem;margin-bottom:1.5rem;color:var(--gold)}
-    .ps-block__list{list-style:none;margin-bottom:1.5rem}
-    .ps-block__list li{padding:.6rem 0 .6rem 2.5rem;position:relative;color:var(--text-m);line-height:1.6}
-    .ps-block--problem .ps-block__list li::before{content:'✕';position:absolute;left:0;color:var(--bordeaux);font-weight:bold}
-    .ps-block--solution .ps-block__list li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-weight:bold}
+    /* Problem/Solution - ENHANCED TEXT */
+    .problem-solution{padding:6rem 0;background:linear-gradient(135deg,var(--card),#0a0a0f);position:relative;overflow:hidden}
+    .problem-solution::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--bordeaux),transparent)}
+    .ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
+    .ps-block{padding:3rem;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+    .ps-block--problem{background:linear-gradient(135deg,rgba(114,27,43,.2),rgba(15,15,17,.9));border:1px solid rgba(114,27,43,.4)}
+    .ps-block--solution{background:linear-gradient(135deg,rgba(201,169,97,.15),rgba(15,15,17,.9));border:1px solid rgba(201,169,97,.4)}
+    .ps-block__title{font-family:var(--font-d);font-size:2rem;margin-bottom:2rem;color:var(--gold);text-align:center}
+    .ps-block__list{list-style:none}
+    .ps-block__list li{padding:.8rem 0 .8rem 3rem;position:relative;color:var(--text);line-height:1.6;font-size:1.05rem}
+    .ps-block--problem .ps-block__list li::before{content:'✕';position:absolute;left:0;top:.8rem;width:24px;height:24px;background:rgba(114,27,43,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--bordeaux);font-weight:bold;border:1px solid var(--bordeaux)}
+    .ps-block--solution .ps-block__list li::before{content:'✓';position:absolute;left:0;top:.8rem;width:24px;height:24px;background:rgba(201,169,97,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:bold;border:1px solid var(--gold)}
+    .ps-cta{text-align:center;margin-top:3rem;padding:2rem;background:rgba(201,169,97,.05);border-radius:12px;border:1px solid rgba(201,169,97,.2)}
+    .ps-cta p{font-size:1.2rem;color:var(--gold);margin-bottom:1rem;font-family:var(--font-d)}
     
     /* Stats */
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;padding:4rem 0;background:var(--bg);text-align:center}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;padding:4rem 0;background:var(--bg);text-align:center;position:relative;overflow:hidden}
+    .stats::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
     .stat__num{font-family:var(--font-d);font-size:2.5rem;color:var(--gold);font-weight:700}.stat__label{color:var(--text-m);font-size:.95rem}
     
+    /* About - REPOSITIONED */
+    .about{background:linear-gradient(135deg,var(--light),#fff);padding:6rem 0;position:relative;overflow:hidden}
+    .about::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(201,169,97,.1) 0%,transparent 70%);border-radius:50%}
+    .about-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;align-items:center;position:relative;z-index:1}
+    .about-img{width:100%;border-radius:12px;border:3px solid var(--gold);box-shadow:0 20px 60px rgba(0,0,0,.2);order:1}
+    .about-content{order:2}
+    .about-content h2{text-align:left;margin-bottom:2rem;color:var(--bg);font-size:2.5rem}
+    .about-content p{margin-bottom:1.5rem;line-height:1.8;color:var(--text-m);font-size:1.05rem}
+    .about-content strong{color:var(--gold)}
+    .about-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0}
+    .about-feature{display:flex;align-items:flex-start;gap:.8rem}
+    .about-feature__icon{width:24px;height:24px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--bg);flex-shrink:0;font-weight:bold;font-size:.8rem}
+    .about-feature__text{font-size:.95rem;color:var(--text-m)}
+    .about-quote{background:linear-gradient(135deg,rgba(114,27,43,.1),rgba(201,169,97,.05));padding:2.5rem;border-radius:12px;border-left:4px solid var(--bordeaux);margin-top:2rem}
+    .about-quote p{font-family:var(--font-d);font-style:italic;font-size:1.2rem;line-height:1.6;margin:0;color:var(--bg)}
+    
     /* Sections */
-    .section{padding:6rem 0}.section--light{background:var(--light);color:var(--bg)}.section--light .section-title{color:var(--bg)}.section--light h3{color:var(--bg)}.section--light p{color:var(--text-m)}
+    .section{padding:6rem 0;position:relative}.section--light{background:var(--light);color:var(--bg)}.section--light .section-title{color:var(--bg)}.section--light h3{color:var(--bg)}.section--light p{color:var(--text-m)}
     .section--alt{background:var(--card)}
+    .section--dark{background:linear-gradient(135deg,#0a0a0f,var(--card))}
     .grid{display:grid;gap:2rem}.grid-4{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
     
-    /* Cards - 4 ITEMS */
+    /* Cards - 2x2 ON DESKTOP */
     .card{background:var(--bg);border:1px solid rgba(201,169,97,.15);border-radius:12px;padding:2rem;transition:var(--trans);position:relative}
     .card:hover{border-color:var(--gold);transform:translateY(-5px)}.card__header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
     .card__icon{width:40px;height:40px;background:rgba(114,27,43,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--bordeaux)}
@@ -116,18 +136,18 @@
     .tile:hover{border-color:var(--gold);transform:translateY(-3px)}
     .tile__title{font-family:var(--font-d);font-size:1.3rem;margin-bottom:1rem;color:var(--gold)}.tile__desc{color:var(--text-m);font-size:.95rem;margin-bottom:1rem}.tile__price{font-family:var(--font-d);font-size:1.25rem;color:var(--text)}
     
-    /* GitHub Benefits - ENHANCED */
+    /* GitHub Benefits - 2x2 GRID */
     .github-benefits{background:linear-gradient(135deg,var(--card),#0a0a0f);padding:5rem 0;border-top:1px solid rgba(201,169,97,.1);border-bottom:1px solid rgba(201,169,97,.1);position:relative;overflow:hidden}
     .github-benefits::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-    .benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-top:2.5rem}
-    .benefit-item{text-align:center;padding:2rem;background:rgba(26,26,29,.5);border-radius:12px;border:1px solid rgba(201,169,97,.1);transition:var(--trans)}
-    .benefit-item:hover{border-color:var(--gold);transform:translateY(-5px)}
+    .benefits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2.5rem}
+    .benefit-item{text-align:center;padding:2.5rem;background:rgba(26,26,29,.6);border-radius:12px;border:1px solid rgba(201,169,97,.15);transition:var(--trans)}
+    .benefit-item:hover{border-color:var(--gold);transform:translateY(-5px);box-shadow:0 15px 40px rgba(0,0,0,.2)}
     .benefit-icon{width:70px;height:70px;margin:0 auto 1.5rem;background:linear-gradient(135deg,rgba(201,169,97,.2),rgba(114,27,43,.2));border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:2rem;border:2px solid rgba(201,169,97,.3)}
     .benefit-title{font-family:var(--font-d);font-size:1.3rem;margin-bottom:1rem;color:var(--gold)}
     .benefit-desc{color:var(--text-m);font-size:.95rem;line-height:1.6}
-    .benefits-cta{text-align:center;margin-top:3rem;padding:2rem;background:rgba(201,169,97,.05);border-radius:12px;border:1px solid rgba(201,169,97,.2)}
+    .benefits-cta{text-align:center;margin-top:3rem;padding:2.5rem;background:linear-gradient(135deg,rgba(201,169,97,.05),rgba(114,27,43,.05));border-radius:12px;border:1px solid rgba(201,169,97,.2)}
     
-    /* Portfolio - WITH REAL IMAGES */
+    /* Portfolio */
     .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
     .portfolio-item{background:var(--bg);border-radius:12px;overflow:hidden;border:1px solid rgba(201,169,97,.1);transition:var(--trans);position:relative}
     .portfolio-item:hover{border-color:var(--gold);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.3)}
@@ -142,8 +162,9 @@
     .portfolio-item__link:hover{gap:10px}
     
     /* Testimonials */
-    .testimonials{background:var(--light);padding:6rem 0}
-    .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem}
+    .testimonials{background:linear-gradient(135deg,var(--light),#fff);padding:6rem 0;position:relative;overflow:hidden}
+    .testimonials::before{content:'';position:absolute;top:-50%;left:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(201,169,97,.08) 0%,transparent 70%);border-radius:50%}
+    .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem;position:relative;z-index:1}
     .testimonial-item{background:#fff;padding:2.5rem;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.08);border-left:4px solid var(--gold);position:relative}
     .testimonial-item::before{content:'"';font-family:var(--font-d);font-size:6rem;color:var(--gold);opacity:.2;position:absolute;top:-10px;left:20px;line-height:1}
     .testimonial__text{font-size:1.05rem;line-height:1.7;color:var(--text-m);margin-bottom:1.5rem;font-style:italic}
@@ -163,17 +184,6 @@
     .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease}
     .faq-item.active .faq-answer{max-height:300px}
     .faq-answer__content{padding:0 1.5rem 1.5rem;color:var(--text-m);line-height:1.6}
-    
-    /* About - MOBILE FIRST ORDER */
-    .about{background:var(--light);padding:6rem 0}
-    .about-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;align-items:center}
-    .about-img{width:100%;border-radius:12px;border:3px solid var(--gold);box-shadow:0 15px 40px rgba(0,0,0,.15);order:1}
-    .about-content{order:2}
-    .about-content h2{text-align:left;margin-bottom:2rem;color:var(--bg)}
-    .about-content p{margin-bottom:1.5rem;line-height:1.7;color:var(--text-m)}
-    .about-content strong{color:var(--gold)}
-    .about-quote{background:rgba(114,27,43,.1);padding:2rem;border-radius:12px;border-left:4px solid var(--bordeaux);margin-top:2rem}
-    .about-quote p{font-family:var(--font-d);font-style:italic;font-size:1.1rem;line-height:1.6;margin:0;color:var(--bg)}
     
     /* Chat */
     .chat-box{max-width:650px;margin:0 auto;background:var(--bg);border:1px solid rgba(201,169,97,.2);border-radius:16px;padding:2.5rem}
@@ -207,8 +217,11 @@
       .about-grid{grid-template-columns:1fr}
       .about-img{order:-1;max-width:400px;margin:0 auto}
       .about-content{order:2;text-align:center}
+      .about-features{grid-template-columns:1fr}
       .about-quote{text-align:left}
       .stats{grid-template-columns:repeat(2,1fr);gap:1.5rem}
+      .grid-4{grid-template-columns:repeat(2,1fr)}
+      .benefits-grid{grid-template-columns:1fr}
       .section{padding:4rem 0}
       .header__sub{display:none}
       .header__actions{gap:.5rem}
@@ -225,6 +238,7 @@
       .logo{font-size:1.2rem}
       .logo__sub{font-size:.7rem}
       .portfolio-grid{grid-template-columns:1fr}
+      .ps-block{padding:2rem}
     }
   </style>
 </head>
@@ -254,12 +268,12 @@
     </div>
     <nav class="nav-overlay">
       <a href="#problem" class="nav-link">Проблема и решение</a>
+      <a href="#about" class="nav-link">О нас</a>
       <a href="#services" class="nav-link">Услуги</a>
       <a href="#portfolio" class="nav-link">Портфолио</a>
       <a href="#testimonials" class="nav-link">Отзывы</a>
       <a href="#github" class="nav-link">Почему GitHub</a>
       <a href="#faq" class="nav-link">FAQ</a>
-      <a href="#about" class="nav-link">О нас</a>
       <a href="#contact" class="nav-link">Контакты</a>
     </nav>
   </header>
@@ -271,13 +285,10 @@
     </div>
   </div>
 
-  <!-- HERO WITH SLIDER -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero__slider">
-      <div class="hero__slide active" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920')"></div>
-      <div class="hero__slide" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920')"></div>
-      <div class="hero__slide" style="background-image:url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920')"></div>
-    </div>
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
     <div class="hero__content">
       <h1 class="hero__title">IT-решения, которые <span>увеличивают прибыль</span></h1>
       <p class="hero__subtitle">Работаем с астрологами, коучами, риэлторами — знаем эти ниши изнутри. Адаптируем под любую сферу бизнеса</p>
@@ -296,22 +307,64 @@
         <div class="ps-block ps-block--problem">
           <h3 class="ps-block__title">Узнаёте себя?</h3>
           <ul class="ps-block__list">
-            <li>Сайт на конструкторе «съедает» 750-3000₽ ежемесячно</li>
-            <li>Тяжело объяснить ценность своих услуг клиентам</li>
-            <li>Сайт не продаёт, а просто «висит» в интернете</li>
-            <li>Нет времени разбираться в технических деталях</li>
-            <li>Боитесь, что сайт «упадёт» или взломают</li>
+            <li>Сайт на конструкторе «съедает» 750-3000₽ ежемесячно, а результата нет</li>
+            <li>Тяжело объяснить ценность своих услуг — клиенты не понимают, за что платить</li>
+            <li>Сайт просто «висит» в интернете, а не приносит заявки</li>
+            <li>Нет времени разбираться в технических деталях и настройках</li>
+            <li>Боитесь, что сайт «упадёт», взломают или пропадут данные</li>
           </ul>
         </div>
         <div class="ps-block ps-block--solution">
           <h3 class="ps-block__title">Наше решение</h3>
           <ul class="ps-block__list">
-            <li>GitHub Pages — 0₽ абонентской платы навсегда</li>
-            <li>Продающие тексты, которые говорят с вашей аудиторией</li>
-            <li>Сайт, который работает 24/7 и приносит заявки</li>
-            <li>Полное техническое сопровождение</li>
-            <li>Максимальная защита на уровне инфраструктуры GitHub</li>
+            <li>GitHub Pages — 0₽ абонентской платы навсегда. Платите один раз — сайт работает вечно</li>
+            <li>Продающие тексты, которые говорят с вашей аудиторией на её языке</li>
+            <li>Сайт, который работает 24/7 и приносит заявки даже пока вы спите</li>
+            <li>Полное техническое сопровождение — вы занимаетесь бизнесом, мы — сайтом</li>
+            <li>Максимальная защита на уровне инфраструктуры GitHub (Microsoft)</li>
           </ul>
+        </div>
+      </div>
+      <div class="ps-cta">
+        <p>Хватит переплачивать за конструкторы — получите сайт, который работает на вас</p>
+        <a href="#contact" class="btn btn--gold">Получить бесплатную консультацию</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT - REPOSITIONED (AIDA: Interest) -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid reveal">
+        <img src="IMG_20260515_124729.png" alt="Виктория Кокурина" class="about-img" loading="lazy">
+        <div class="about-content">
+          <h2>Почему выбирают меня?</h2>
+          <p><strong>Меня зовут Виктория Кокурина</strong> — основатель студии VK Studio. Я не работаю на конвейер. В моей практике <strong style="color:var(--gold)">10 успешно реализованных проектов</strong>, и каждым из них я горжусь лично.</p>
+          
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature__icon">✓</div>
+              <div class="about-feature__text">Личный контроль каждого проекта — никаких стажёров</div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature__icon">✓</div>
+              <div class="about-feature__text">Погружение в ваш бизнес на 100%</div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature__icon">✓</div>
+              <div class="about-feature__text">Индивидуальные решения, а не шаблоны</div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature__icon">✓</div>
+              <div class="about-feature__text">Срок 3-5 дней без потери качества</div>
+            </div>
+          </div>
+          
+          <p>Для меня важен не поток заказов, а <strong>ваш результат</strong> и качество моей работы. Вы получите решение, созданное специально под ваши задачи, с моим личным контролем на каждом этапе — от идеи до запуска.</p>
+          
+          <div class="about-quote">
+            <p>«Моя суперсила: я вижу вашу задачу и с точки зрения бизнеса, и с точки зрения эстетики. Создаю решения, которые работают на результат, а не просто «красиво висят»»</p>
+          </div>
         </div>
       </div>
     </div>
@@ -325,8 +378,8 @@
     <div><div class="stat__num">100%</div><div class="stat__label">адаптив</div></div>
   </div>
 
-  <!-- SERVICES - 4 CARDS -->
-  <section class="section" id="services">
+  <!-- SERVICES - 2x2 GRID -->
+  <section class="section section--light" id="services">
     <div class="container">
       <h2 class="section-title reveal">Услуги и цены</h2>
       <div class="grid grid-4 reveal">
@@ -359,6 +412,14 @@
     </div>
   </section>
 
+  <!-- PORTFOLIO -->
+  <section class="section section--alt" id="portfolio">
+    <div class="container">
+      <h2 class="section-title reveal">Портфолио</h2>
+      <div class="portfolio-grid reveal" id="portfolio-grid"></div>
+    </div>
+  </section>
+
   <!-- TESTIMONIALS -->
   <section class="testimonials" id="testimonials">
     <div class="container">
@@ -382,15 +443,7 @@
     </div>
   </section>
 
-  <!-- PORTFOLIO -->
-  <section class="section section--alt" id="portfolio">
-    <div class="container">
-      <h2 class="section-title reveal">Портфолио</h2>
-      <div class="portfolio-grid reveal" id="portfolio-grid"></div>
-    </div>
-  </section>
-
-  <!-- GITHUB BENEFITS - ENHANCED -->
+  <!-- GITHUB BENEFITS - 2x2 GRID -->
   <section class="github-benefits" id="github">
     <div class="container">
       <h2 class="section-title reveal">Почему GitHub Pages?</h2>
@@ -417,7 +470,7 @@
         </div>
       </div>
       <div class="benefits-cta reveal">
-        <p style="font-size:1.1rem;margin-bottom:1rem;color:var(--text)">Редактирование контента происходит через разработчика</p>
+        <p style="font-size:1.1rem;margin-bottom:1rem;color:var(--gold)">Редактирование контента происходит через разработчика</p>
         <p style="color:var(--text-m);margin-bottom:1.5rem">Это гарантирует, что сайт не сломается от случайных кликов и всегда будет работать корректно</p>
         <a href="#contact" class="btn btn--gold">Рассчитать стоимость</a>
       </div>
@@ -478,27 +531,8 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-grid reveal">
-        <img src="IMG_20260515_124729.png" alt="Виктория Кокурина" class="about-img" loading="lazy">
-        <div class="about-content">
-          <h2>О нас</h2>
-          <p><strong>Меня зовут Виктория Кокурина</strong> — основатель студии VK Studio. Наша студия расположена в Москве, и хотя мы молодая компания, мы очень амбициозны и стремимся создавать решения, которые действительно работают на результат.</p>
-          <p>Мы создаём сайты и IT-решения для экспертов и бизнеса, которые хотят автоматизировать процессы и увеличить прибыль без потери качества.</p>
-          <p>Понимаем боли предпринимателей: как сложно объяснить ценность, как выделиться в шуме, как не слить бюджет на неработающую рекламу. Вспомогательно используем нейросети для ускорения разработки — это даёт скорость без потери качества. Вы получаете готовый продукт за 3-5 дней, а не за месяц.</p>
-          <div class="about-quote">
-            <p>«Наша суперсила: мы видим вашу задачу и с точки зрения бизнеса, и с точки зрения эстетики. Создаём решения, которые работают на результат»</p>
-          </div>
-          <p style="margin-top:1.5rem;font-size:.9rem;color:var(--text-m)">Средний срок зависит от объёма контента и сложности интеграций</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CONTACT -->
-  <section class="section section--alt" id="contact">
+  <section class="section section--dark" id="contact">
     <div class="container">
       <h2 class="section-title reveal">Обсудить проект</h2>
       <p style="text-align:center;margin-bottom:3rem;color:var(--text-m);font-size:1.1rem" class="reveal">Ответьте на вопросы — я подготовлю коммерческое предложение и свяжусь в течение часа</p>
@@ -583,7 +617,7 @@
   </footer>
 
   <script>
-    // Burger menu (LEFT side)
+    // Burger menu (RIGHT side)
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-overlay');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -609,15 +643,6 @@
         document.body.style.overflow = '';
       }
     });
-
-    // Hero Slider
-    const slides = document.querySelectorAll('.hero__slide');
-    let currentSlide = 0;
-    setInterval(() => {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('active');
-    }, 5000);
 
     // Reveal on scroll
     const observer = new IntersectionObserver((entries) => {
@@ -647,7 +672,6 @@
       const item = document.createElement('div');
       item.className = 'portfolio-item';
       
-      // Try to fetch screenshot from website
       let imgHtml = '';
       if (project.screenshot) {
         imgHtml = `
@@ -656,7 +680,6 @@
           </div>
         `;
       } else {
-        // Try to use screenshot API
         const screenshotUrl = `https://image.thum.io/get/width/600/${project.link}`;
         imgHtml = `
           <div class="portfolio-item__img-wrapper">
@@ -683,11 +706,7 @@
       question.addEventListener('click', () => {
         const item = question.parentElement;
         const isActive = item.classList.contains('active');
-        
-        // Close all
         document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
-        
-        // Open clicked if wasn't active
         if (!isActive) {
           item.classList.add('active');
         }
