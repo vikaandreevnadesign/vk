@@ -1,221 +1,884 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="scroll-smooth">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VK Studio — Студия IT-решений</title>
-    <!-- Подключаем Tailwind CSS для шикарного современного дизайна без багов -->
-    <script src="https://tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://googleapis.com">
-    <style>
-        body { font-family: 'Manrope', sans-serif; background-color: #0B0F19; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VK Studio | Студия IT-решений Виктории Кокуриной</title>
+  <meta name="description" content="Разработка сайтов и IT-решения для экспертов. Лендинги, сайты-визитки на GitHub Pages. Бесплатный хостинг навсегда, срок 3-5 дней.">
+  <meta name="keywords" content="разработка сайтов, лендинг, сайт визитка, веб-дизайн, VK Studio, Виктория Кокурина, сайты для экспертов, GitHub Pages, IT-решения">
+  <meta name="author" content="Виктория Кокурина">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vk-st.ru">
+  <meta property="og:title" content="VK Studio — Студия IT-решений Виктории Кокуриной">
+  <meta property="og:description" content="Разработка сайтов и IT-решения для бизнеса. Лендинги и сайты-визитки на бесплатном хостинге.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200">
+  <meta property="og:url" content="https://vk-st.ru">
+  <meta property="og:type" content="website">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    :root{
+      --bg:#050508;--bg-card:#0A0A0F;--gold:#C9A961;--gold-light:#E8D5A3;--gold-dark:#9A7F3E;
+      --bordeaux:#721B2B;--bordeaux-light:#8B2E3E;--text:#F0EDE8;--text-m:#9B978F;--text-dim:#5C5A56;
+      --glass-bg:rgba(255,255,255,0.04);--glass-border:rgba(255,255,255,0.08);--glass-hover:rgba(255,255,255,0.08);
+      --font-d:'Playfair Display',serif;--font-s:'Inter',sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    body{font-family:var(--font-s);color:var(--text);background:var(--bg);line-height:1.6;overflow-x:hidden;min-height:100vh}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    h1,h2,h3,h4,h5,h6{font-family:var(--font-d);line-height:1.2;color:var(--text);font-weight:600}
+    .section-title{font-size:clamp(2rem,5vw,3.2rem);font-weight:700;text-align:center;margin-bottom:1rem;letter-spacing:-0.02em}
+    .section-subtitle{text-align:center;color:var(--text-m);font-size:1.1rem;max-width:600px;margin:0 auto 3rem;line-height:1.7}
+    a{color:inherit;text-decoration:none;transition:all .3s cubic-bezier(.4,0,.2,1)}
+    img{max-width:100%;height:auto;display:block}
+
+    /* ========== BUTTONS ========== */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 32px;border-radius:12px;font-weight:600;cursor:pointer;border:none;font-size:.95rem;font-family:var(--font-s);transition:all .3s cubic-bezier(.4,0,.2,1);letter-spacing:.01em}
+    .btn--gold{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#0A0A0F;box-shadow:0 4px 20px rgba(201,169,97,.25)}
+    .btn--gold:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,169,97,.35)}
+    .btn--glass{background:var(--glass-bg);color:var(--gold);border:1px solid var(--gold);backdrop-filter:blur(12px)}
+    .btn--glass:hover{background:rgba(201,169,97,.15);box-shadow:0 0 20px rgba(201,169,97,.15)}
+    .btn--lg{padding:18px 40px;font-size:1.05rem;border-radius:14px}
+
+    /* ========== HEADER ========== */
+    .header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:16px 0;transition:all .4s ease}
+    .header.scrolled{background:rgba(5,5,8,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border);padding:10px 0}
+    .header__inner{display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:var(--font-d);font-size:1.5rem;font-weight:700;letter-spacing:.02em}
+    .logo span{color:var(--gold)}
+    .logo__sub{display:block;font-size:.65rem;color:var(--text-dim);font-family:var(--font-s);font-weight:400;letter-spacing:.08em;margin-top:2px;text-transform:uppercase}
+    .header__actions{display:flex;align-items:center;gap:12px;justify-content:flex-end}
+    .social-icons{display:flex;gap:8px}
+    .social-icon{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid var(--glass-border);border-radius:50%;color:var(--text-m);background:var(--glass-bg);transition:all .3s ease}
+    .social-icon:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,169,97,.1);transform:translateY(-2px)}
+    .burger{width:44px;height:44px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;cursor:pointer;background:none;border:none;padding:8px;border-radius:10px;transition:background .3s}
+    .burger:hover{background:var(--glass-bg)}
+    .burger span{display:block;width:22px;height:2px;background:var(--text);transition:all .35s cubic-bezier(.4,0,.2,1);border-radius:2px}
+    .burger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .burger.active span:nth-child(2){opacity:0;transform:translateX(-10px)}
+    .burger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
+
+    /* ========== NAV OVERLAY ========== */
+    .nav-overlay{position:fixed;top:0;right:0;width:100%;max-width:380px;height:100vh;background:rgba(10,10,15,.97);backdrop-filter:blur(30px);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;opacity:0;pointer-events:none;transition:all .5s cubic-bezier(.4,0,.2,1);z-index:999;transform:translateX(100%);border-left:1px solid var(--glass-border)}
+    .nav-overlay.open{opacity:1;pointer-events:all;transform:translateX(0)}
+    .nav-overlay a{font-family:var(--font-d);font-size:1.8rem;font-weight:600;color:var(--text);position:relative;transition:color .3s}
+    .nav-overlay a:hover{color:var(--gold)}
+    .nav-overlay a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:width .3s}
+    .nav-overlay a:hover::after{width:100%}
+
+    /* ========== HERO ========== */
+    .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
+    .hero__slider{position:absolute;inset:0;z-index:0}
+    .hero__slide{position:absolute;inset:0;opacity:0;transition:opacity 3s ease;background-size:cover;background-position:center}
+    .hero__slide.active{opacity:1}
+    .hero__overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(5,5,8,.92) 0%,rgba(10,10,15,.8) 50%,rgba(114,27,43,.3) 100%)}
+    .hero__content{max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:2;padding:2rem}
+    .hero__badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;background:rgba(201,169,97,.1);border:1px solid rgba(201,169,97,.2);border-radius:100px;color:var(--gold);font-size:.85rem;font-weight:500;margin-bottom:2rem;backdrop-filter:blur(8px)}
+    .hero__title{font-size:clamp(2.8rem,6vw,4.5rem);font-weight:700;margin-bottom:1.5rem;line-height:1.05;letter-spacing:-.03em}
+    .hero__title span{background:linear-gradient(135deg,var(--gold),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero__subtitle{font-size:1.2rem;color:var(--text-m);margin-bottom:2.5rem;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.7}
+    .hero__actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+    /* ========== GLASS CARD ========== */
+    .glass{background:var(--glass-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:20px;transition:all .4s cubic-bezier(.4,0,.2,1)}
+    .glass:hover{background:var(--glass-hover);border-color:rgba(201,169,97,.2)}
+
+    /* ========== BENTO GRID ========== */
+    .bento{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto;gap:20px}
+    .bento__span-2{grid-column:span 2}
+    .bento__span-full{grid-column:1 / -1}
+
+    /* ========== SERVICES CARDS WITH GLOW ========== */
+    .service-card{position:relative;padding:2rem;height:100%;overflow:hidden}
+    .service-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at center,rgba(201,169,97,.08) 0%,transparent 50%);opacity:0;transition:opacity .5s;pointer-events:none}
+    .service-card:hover::before{opacity:1}
+    .service-card:hover{border-color:rgba(201,169,97,.3);box-shadow:0 0 40px rgba(201,169,97,.1),0 20px 60px rgba(0,0,0,.3);transform:translateY(-4px)}
+    .service-card__icon{width:48px;height:48px;background:linear-gradient(135deg,rgba(201,169,97,.15),rgba(114,27,43,.1));border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;border:1px solid rgba(201,169,97,.2)}
+    .service-card__price{font-family:var(--font-d);font-size:1.5rem;font-weight:700;background:linear-gradient(135deg,var(--gold),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:1rem 0}
+    .service-card__list{list-style:none;margin:1.5rem 0}
+    .service-card__list li{padding:.5rem 0 .5rem 1.5rem;position:relative;color:var(--text-m);font-size:.9rem}
+    .service-card__list li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;background:var(--gold);border-radius:50%;opacity:.6}
+
+    /* ========== BADGE ========== */
+    .badge{position:absolute;top:16px;right:16px;background:linear-gradient(135deg,var(--bordeaux),var(--bordeaux-light));color:#fff;padding:6px 16px;border-radius:100px;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+
+    /* ========== STATS ========== */
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:0}
+    .stat{text-align:center;padding:2rem}
+    .stat__num{font-family:var(--font-d);font-size:clamp(2rem,4vw,3rem);font-weight:700;background:linear-gradient(135deg,var(--gold),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .stat__label{color:var(--text-m);font-size:.9rem;margin-top:.5rem}
+
+    /* ========== PROBLEM/SOLUTION ========== */
+    .ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .ps-block{padding:2.5rem;position:relative;overflow:hidden}
+    .ps-block::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:20px 20px 0 0}
+    .ps-block--problem::after{background:linear-gradient(90deg,var(--bordeaux),var(--bordeaux-light))}
+    .ps-block--solution::after{background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+    .ps-block__title{font-family:var(--font-d);font-size:1.6rem;margin-bottom:1.5rem;text-align:center}
+    .ps-list{list-style:none}
+    .ps-list li{padding:.7rem 0 .7rem 2.5rem;position:relative;color:var(--text-m);font-size:.95rem;line-height:1.6}
+    .ps-block--problem .ps-list li::before{content:'✕';position:absolute;left:0;color:var(--bordeaux);font-weight:bold;font-size:1.1rem}
+    .ps-block--solution .ps-list li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-weight:bold;font-size:1.1rem}
+
+    /* ========== ABOUT ========== */
+    .about-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;align-items:center}
+    .about-img-wrapper{position:relative}
+    .about-img-wrapper::before{content:'';position:absolute;inset:-4px;background:linear-gradient(135deg,var(--gold),var(--bordeaux));border-radius:20px;z-index:-1;opacity:.5}
+    .about-img{width:100%;border-radius:18px;display:block}
+    .about-features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:2rem 0}
+    .about-feature{display:flex;align-items:flex-start;gap:10px}
+    .about-feature__icon{width:24px;height:24px;background:rgba(201,169,97,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .about-feature__icon svg{width:12px;height:12px;color:var(--gold)}
+    .about-feature__text{font-size:.9rem;color:var(--text-m)}
+    .about-quote{background:linear-gradient(135deg,rgba(114,27,43,.08),rgba(201,169,97,.05));padding:2rem;border-radius:16px;border-left:3px solid var(--bordeaux);margin-top:2rem}
+    .about-quote p{font-family:var(--font-d);font-style:italic;font-size:1.1rem;line-height:1.7;color:var(--text)}
+
+    /* ========== PORTFOLIO ========== */
+    .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+    .portfolio-item{overflow:hidden;position:relative}
+    .portfolio-item__img-wrapper{width:100%;height:240px;overflow:hidden;position:relative}
+    .portfolio-item__img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+    .portfolio-item:hover .portfolio-item__img{transform:scale(1.08)}
+    .portfolio-item__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,5,8,.9) 0%,transparent 60%);opacity:0;transition:opacity .4s}
+    .portfolio-item:hover .portfolio-item__overlay{opacity:1}
+    .portfolio-item__placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:600;text-align:center;padding:2rem;background:linear-gradient(135deg,var(--bg-card),var(--bg))}
+    .portfolio-item__content{padding:1.5rem}
+    .portfolio-item__tag{display:inline-block;padding:5px 14px;background:rgba(114,27,43,.2);color:var(--bordeaux-light);font-size:.7rem;border-radius:100px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem}
+    .portfolio-item__title{font-family:var(--font-d);font-size:1.2rem;margin-bottom:.5rem}
+    .portfolio-item__desc{font-size:.9rem;color:var(--text-m);margin-bottom:1rem;line-height:1.5}
+    .portfolio-item__link{color:var(--gold);font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:6px}
+    .portfolio-item__link:hover{gap:10px}
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px}
+    .testimonial{padding:2rem;position:relative}
+    .testimonial__stars{display:flex;gap:4px;margin-bottom:1rem}
+    .testimonial__stars svg{width:16px;height:16px;color:var(--gold)}
+    .testimonial__text{font-size:1rem;line-height:1.7;color:var(--text-m);margin-bottom:1.5rem;font-style:italic}
+    .testimonial__author{display:flex;align-items:center;gap:12px}
+    .testimonial__avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--bordeaux));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1rem;flex-shrink:0}
+    .testimonial__name{font-family:var(--font-d);font-size:1rem;font-weight:600}
+    .testimonial__role{font-size:.85rem;color:var(--text-dim)}
+
+    /* ========== GITHUB BENEFITS ========== */
+    .benefits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .benefit-item{padding:2rem;text-align:center}
+    .benefit-item:hover{border-color:rgba(201,169,97,.3);box-shadow:0 0 40px rgba(201,169,97,.08);transform:translateY(-4px)}
+    .benefit-icon{width:64px;height:64px;margin:0 auto 1.5rem;background:linear-gradient(135deg,rgba(201,169,97,.12),rgba(114,27,43,.08));border-radius:18px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(201,169,97,.15)}
+    .benefit-title{font-family:var(--font-d);font-size:1.2rem;margin-bottom:.75rem;color:var(--gold)}
+    .benefit-desc{color:var(--text-m);font-size:.9rem;line-height:1.6}
+
+    /* ========== FAQ ========== */
+    .faq-grid{display:grid;gap:12px;max-width:700px;margin:0 auto}
+    .faq-item{overflow:hidden}
+    .faq-item:hover{border-color:rgba(201,169,97,.2)}
+    .faq-question{padding:1.25rem 1.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-weight:600;color:var(--text);font-size:1rem;user-select:none}
+    .faq-icon{width:20px;height:20px;color:var(--gold);transition:transform .3s;flex-shrink:0}
+    .faq-item.active .faq-icon{transform:rotate(180deg)}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1)}
+    .faq-item.active .faq-answer{max-height:300px}
+    .faq-answer__content{padding:0 1.5rem 1.5rem;color:var(--text-m);line-height:1.7;font-size:.95rem}
+
+    /* ========== CONTACT FORM ========== */
+    .contact-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .contact-info{padding:2rem;display:flex;flex-direction:column;justify-content:center}
+    .contact-info__title{font-family:var(--font-d);font-size:1.8rem;margin-bottom:1rem}
+    .contact-info__text{color:var(--text-m);font-size:.95rem;line-height:1.7;margin-bottom:2rem}
+    .contact-info__item{display:flex;align-items:center;gap:12px;margin-bottom:1rem;color:var(--text-m);font-size:.9rem}
+    .contact-info__icon{width:40px;height:40px;background:rgba(201,169,97,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .contact-info__icon svg{width:18px;height:18px;color:var(--gold)}
+    .contact-form-box{padding:2.5rem}
+    .form-group{margin-bottom:1.25rem}
+    .form-group label{display:block;margin-bottom:.5rem;color:var(--text-m);font-size:.85rem;font-weight:500}
+    .form-input{width:100%;padding:14px 16px;background:rgba(255,255,255,.03);border:1px solid var(--glass-border);border-radius:12px;font-family:var(--font-s);font-size:.95rem;color:var(--text);transition:all .3s}
+    .form-input:focus{outline:none;border-color:var(--gold);background:rgba(201,169,97,.05);box-shadow:0 0 0 3px rgba(201,169,97,.1)}
+    .form-input::placeholder{color:var(--text-dim)}
+    textarea.form-input{min-height:120px;resize:vertical}
+    .form-message{padding:1rem;border-radius:12px;margin-top:1rem;text-align:center;display:none;font-size:.9rem}
+    .form-message.success{background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);color:#25D366;display:block}
+    .form-message.error{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:#EF4444;display:block}
+
+    /* ========== MARQUEE ========== */
+    .marquee-wrap{background:rgba(255,255,255,.02);border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);padding:14px 0;overflow:hidden;white-space:nowrap}
+    .marquee{display:inline-block;animation:marquee 30s linear infinite}
+    .marquee span{margin:0 3rem;color:var(--text-dim);font-size:.85rem;font-weight:500;display:inline-flex;align-items:center;gap:8px}
+    .marquee span::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;opacity:.5}
+    @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    /* ========== FOOTER ========== */
+    .footer{background:rgba(255,255,255,.02);border-top:1px solid var(--glass-border);padding:3rem 0}
+    .footer__legal{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--glass-border);font-size:.8rem;color:var(--text-dim);text-align:center;line-height:1.8}
+
+    /* ========== BACKGROUND EFFECTS ========== */
+    .bg-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:.15}
+    .bg-orb--gold{background:var(--gold)}
+    .bg-orb--bordeaux{background:var(--bordeaux)}
+
+    /* ========== REVEAL ========== */
+    .reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .reveal-delay-1{transition-delay:.1s}
+    .reveal-delay-2{transition-delay:.2s}
+    .reveal-delay-3{transition-delay:.3s}
+    .reveal-delay-4{transition-delay:.4s}
+
+    /* ========== RESPONSIVE ========== */
+    @media(max-width:1024px){
+      .bento{grid-template-columns:repeat(2,1fr)}
+      .bento__span-2{grid-column:span 1}
+      .contact-wrapper{grid-template-columns:1fr}
+    }
+    @media(max-width:768px){
+      .hero__title{font-size:2.5rem}
+      .ps-grid{grid-template-columns:1fr}
+      .about-grid{grid-template-columns:1fr;gap:2rem}
+      .about-img{order:-1;max-width:350px;margin:0 auto}
+      .about-content{order:2;text-align:center}
+      .about-quote{text-align:left}
+      .about-features{grid-template-columns:1fr}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .bento{grid-template-columns:1fr}
+      .benefits-grid{grid-template-columns:1fr}
+      .testimonials-grid{grid-template-columns:1fr}
+      .portfolio-grid{grid-template-columns:1fr}
+      .section-title{font-size:2rem}
+      .header__sub{display:none}
+      .social-icons{display:none}
+      .nav-overlay{max-width:100%}
+      .nav-overlay a{font-size:1.4rem}
+    }
+    @media(max-width:480px){
+      .hero__title{font-size:2rem}
+      .hero__actions{flex-direction:column;align-items:center}
+      .hero__actions .btn{width:100%}
+      .btn--lg{padding:16px 24px}
+      .contact-buttons{flex-direction:column;width:100%}
+      .contact-buttons .btn{width:100%}
+    }
+
+    /* ========== CONTACT BUTTONS ========== */
+    .contact-buttons{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:2rem}
+    .btn--tg{background:#2AABEE;color:#fff}
+    .btn--tg:hover{background:#229ED9;transform:translateY(-2px)}
+    .btn--wa{background:#25D366;color:#fff}
+    .btn--wa:hover{background:#128C7E;transform:translateY(-2px)}
+
+    /* ========== SECTION SPACING ========== */
+    .section{padding:6rem 0;position:relative}
+    .section--divider{border-top:1px solid var(--glass-border)}
+  </style>
 </head>
-<body class="text-[#F2EFE9] antialiased selection:bg-[#C9A961] selection:text-black">
+<body>
 
-    <!-- ШАПКА СТИЛЬНАЯ -->
-    <header class="fixed top-0 left-0 w-full backdrop-blur-md bg-[#0B0F19]/70 z-50 border-b border-gray-800/40">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between align-items center items-center">
-            <div class="text-xl font-bold tracking-wider">VK Studio <span class="text-[#C9A961] text-xs font-normal block md:inline md:ml-2">Студия IT-решений</span></div>
-            <div class="flex space-x-1.5 flex-col cursor-pointer justify-center h-8">
-                <span class="w-6 h-0.5 bg-[#F2EFE9]"></span>
-                <span class="w-6 h-0.5 bg-[#F2EFE9] my-1"></span>
-                <span class="w-4 h-0.5 bg-[#C9A961] self-end"></span>
-            </div>
+  <!-- Background orbs for depth -->
+  <div class="bg-orb bg-orb--gold" style="width:500px;height:500px;top:-200px;right:-200px;position:fixed;z-index:0"></div>
+  <div class="bg-orb bg-orb--bordeaux" style="width:400px;height:400px;bottom:-100px;left:-100px;position:fixed;z-index:0"></div>
+  <div class="bg-orb bg-orb--gold" style="width:300px;height:300px;top:50%;left:50%;transform:translate(-50%,-50%);position:fixed;z-index:0;opacity:.08"></div>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <span class="logo__main">VK<span>Studio</span></span>
+        <span class="logo__sub">Студия IT-решений</span>
+      </a>
+      <div class="header__actions">
+        <div class="social-icons">
+          <a href="https://t.me/kowiktori?text=Здравствуйте,%20хочу%20обсудить%20проект" target="_blank" class="social-icon" title="Telegram" aria-label="Telegram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.67-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.87 7.97-3.44 3.8-1.6 4.59-1.88 5.1-1.89.11 0 .37.03.54.17.14.12.18.28.2.45-.01.06.01.24 0 .38z"/></svg>
+          </a>
+          <a href="https://wa.me/79080288580?text=Здравствуйте,%20хочу%20обсудить%20проект" target="_blank" class="social-icon" title="WhatsApp" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+          </a>
+          <a href="https://instagram.com/kowiktori" target="_blank" class="social-icon" title="Instagram" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
         </div>
-    </header>
+        <a href="https://t.me/kowiktori?text=Здравствуйте,%20хочу%20обсудить%20проект" target="_blank" class="btn btn--gold" style="padding:10px 20px;font-size:.85rem;border-radius:10px">Заказать</a>
+        <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="nav-overlay">
+      <a href="#problem" class="nav-link">Проблема и решение</a>
+      <a href="#about" class="nav-link">О нас</a>
+      <a href="#services" class="nav-link">Услуги</a>
+      <a href="#portfolio" class="nav-link">Портфолио</a>
+      <a href="#testimonials" class="nav-link">Отзывы</a>
+      <a href="#github" class="nav-link">Почему GitHub</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="nav-link">Контакты</a>
+    </nav>
+  </header>
 
-    <!-- ГЛАВНЫЙ ЭКРАН -->
-    <section class="min-h-screen flex items-center justify-center pt-24 pb-12 bg-gradient-to-b from-[#0B0F19] to-[#150D1A]">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">Разрабатываем <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A961] to-[#E3C78B]">Digital-решения</span> премиум класса</h1>
-            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">Создаем стильные, быстрые сайты и автоматизируем процессы для вашего бизнеса с гарантией результата.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#discuss" class="px-8 py-4 bg-gradient-to-r from-[#C9A961] to-[#A8793D] text-black font-semibold rounded-xl shadow-lg shadow-[#C9A961]/10 hover:opacity-90 transition-all text-center">Обсудить проект</a>
-                <a href="#services" class="px-8 py-4 border border-gray-700 hover:border-[#C9A961] text-[#F2EFE9] font-medium rounded-xl transition-all text-center">Наши услуги</a>
-            </div>
+  <!-- ==================== MARQUEE ==================== -->
+  <div class="marquee-wrap" style="margin-top:76px">
+    <div class="marquee">
+      <span>Бесплатный хостинг навсегда</span><span>Срок 3-5 дней</span><span>Расчёты через ИП</span><span>Ответ в течение часа</span>
+      <span>Бесплатный хостинг навсегда</span><span>Срок 3-5 дней</span><span>Расчёты через ИП</span><span>Ответ в течение часа</span>
+    </div>
+  </div>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="hero__slider">
+      <div class="hero__slide active" style="background-image:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80')"></div>
+      <div class="hero__slide" style="background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80')"></div>
+      <div class="hero__slide" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80')"></div>
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <div class="hero__badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Студия IT-решений Виктории Кокуриной
+      </div>
+      <h1 class="hero__title">IT-решения, которые <span>увеличивают прибыль</span></h1>
+      <p class="hero__subtitle">Работаем с астрологами, коучами, риэлторами — знаем эти ниши изнутри. Адаптируем под любую сферу бизнеса</p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--gold btn--lg">Обсудить проект</a>
+        <a href="https://t.me/kowiktori?text=Здравствуйте,%20хочу%20обсудить%20проект" target="_blank" class="btn btn--glass btn--lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.67-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.87 7.97-3.44 3.8-1.6 4.59-1.88 5.1-1.89.11 0 .37.03.54.17.14.12.18.28.2.45-.01.06.01.24 0 .38z"/></svg>
+          Написать в Telegram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATS ==================== -->
+  <section class="section" style="padding-top:0;padding-bottom:2rem">
+    <div class="container">
+      <div class="stats reveal">
+        <div class="stat glass">
+          <div class="stat__num">10+</div>
+          <div class="stat__label">готовых проектов</div>
         </div>
-    </section>
-
-    <!-- БЛОК ПРОБЛЕМА И РЕШЕНИЕ (BENTO GRID) -->
-    <section id="services" class="py-24 max-w-6xl mx-auto px-6">
-        <h2 class="text-2xl md:text-3xl font-bold mb-12 text-center md:text-left tracking-wide">Проблема и <span class="text-[#C9A961]">Решение</span></h2>
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-[#111625] border border-gray-800 p-8 rounded-2xl flex flex-col justify-between h-full hover:border-red-500/30 transition-all">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-red-400">Ваша боль</h3>
-                    <ul class="space-y-3 text-gray-400 font-light">
-                        <li class="flex items-start"><span class="text-red-500 mr-2">•</span> Сайт съедает бюджет, но не приносит заявок</li>
-                        <li class="flex items-start"><span class="text-red-500 mr-2">•</span> Подрядчики пропадают или срывают сроки</li>
-                        <li class="flex items-start"><span class="text-red-500 mr-2">•</span> Страшно, что сайт взломают или он упадет</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="bg-[#111625] border border-gray-800 p-8 rounded-2xl flex flex-col justify-between h-full hover:border-[#C9A961]/30 transition-all">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-[#C9A961]">Моё решение</h3>
-                    <ul class="space-y-3 text-gray-300 font-light">
-                        <li class="flex items-start"><span class="text-[#C9A961] mr-2">✓</span> Надежный хостинг и идеальная адаптивность</li>
-                        <li class="flex items-start"><span class="text-[#C9A961] mr-2">✓</span> Сильные, продающие тексты без "воды"</li>
-                        <li class="flex items-start"><span class="text-[#C9A961] mr-2">✓</span> Защита исходного кода через GitHub и Cloudflare</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="stat glass">
+          <div class="stat__num">3-5 дней</div>
+          <div class="stat__label">средний срок</div>
         </div>
-    </section>
-
-    <!-- БЛОК ОБО МНЕ (ДОРОГОЙ ДИЗАЙН, БЕЗ КРАСНОЙ ПЛАШКИ) -->
-    <section class="py-24 bg-[#0E1321]/50 border-y border-gray-900">
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
-            <div class="md:col-span-5 flex justify-center">
-                <div class="relative group max-w-[320px] w-full">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-[#C9A961] to-[#A8793D] rounded-2xl blur opacity-20"></div>
-                    <img src="https://unsplash.com" alt="Виктория Кокурина" class="relative rounded-2xl border border-gray-800 w-full object-cover grayscale aspect-[4/5]">
-                </div>
-            </div>
-            <div class="md:col-span-7">
-                <h2 class="text-2xl md:text-3xl font-bold mb-6">Почему выбирают меня?</h2>
-                <p class="text-gray-300 text-lg mb-6 leading-relaxed font-light">Меня зовут <strong class="text-[#C9A961] font-semibold">Виктория Кокурина</strong>. Я не работаю на конвейер. В моей практике более 10 успешно реализованных сложных цифровых проектов, и каждым из них я горжусь лично.</p>
-                <div class="grid grid-cols-3 gap-4 mb-8">
-                    <div class="text-center p-4 bg-[#111625] rounded-xl border border-gray-800"><div class="text-[#C9A961] font-bold text-xl">100%</div><div class="text-xs text-gray-400 mt-1">Контроль</div></div>
-                    <div class="text-center p-4 bg-[#111625] rounded-xl border border-gray-800"><div class="text-[#C9A961] font-bold text-xl">Глубокое</div><div class="text-xs text-gray-400 mt-1">Погружение</div></div>
-                    <div class="text-center p-4 bg-[#111625] rounded-xl border border-gray-800"><div class="text-[#C9A961] font-bold text-xl">Индивид.</div><div class="text-xs text-gray-400 mt-1">Решения</div></div>
-                </div>
-                <!-- ЭЛЕГАНТНАЯ ЦИТАТА ВЗАМЕН КРАСНОЙ ПЛАШКИ -->
-                <div class="border-l-2 border-[#C9A961] pl-6 py-2 italic text-gray-300 text-lg font-light bg-[#C9A961]/5 rounded-r-xl">
-                    «Я люблю помогать людям создавать прибыльный и упакованный бизнес, который выделяется на рынке».
-                </div>
-            </div>
+        <div class="stat glass">
+          <div class="stat__num">0 ₽</div>
+          <div class="stat__label">хостинг навсегда</div>
         </div>
-    </section>
-
-    <!-- БЛОК УСЛУГИ -->
-    <section class="py-24 max-w-6xl mx-auto px-6">
-        <h2 class="text-2xl md:text-3xl font-bold mb-12 text-center">Стоимость решений</h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-[#111625] border border-gray-800/80 p-6 rounded-2xl flex flex-col justify-between hover:border-[#C9A961]/40 transition-all h-full">
-                <div>
-                    <h3 class="font-bold text-lg mb-2">Сайт-визитка</h3>
-                    <p class="text-sm text-gray-400 font-light mb-6">Быстрый старт для эксперта или небольшой компании.</p>
-                </div>
-                <div class="text-[#C9A961] font-bold text-lg border-t border-gray-800/60 pt-4">от 25 000 ₽</div>
-            </div>
-            <div class="bg-[#111625] border border-[#C9A961]/40 p-6 rounded-2xl flex flex-col justify-between relative shadow-lg shadow-[#C9A961]/5 h-full">
-                <span class="absolute -top-3 right-4 bg-[#C9A961] text-black font-bold text-[10px] uppercase px-2.5 py-1 rounded-full tracking-wider">Хит</span>
-                <div>
-                    <h3 class="font-bold text-lg mb-2">Лендинг</h3>
-                    <p class="text-sm text-gray-400 font-light mb-6">Одностраничный сайт с высокой конверсией под конкретный продукт.</p>
-                </div>
-                <div class="text-[#C9A961] font-bold text-lg border-t border-gray-800/60 pt-4">от 35 000 ₽</div>
-            </div>
-            <div class="bg-[#111625] border border-gray-800/80 p-6 rounded-2xl flex flex-col justify-between hover:border-[#C9A961]/40 transition-all h-full">
-                <div>
-                    <h3 class="font-bold text-lg mb-2">Архитектура бренда</h3>
-                    <p class="text-sm text-gray-400 font-light mb-6">Полный комплекс: от глубокой аналитики до фирменного стиля.</p>
-                </div>
-                <div class="text-[#C9A961] font-bold text-lg border-t border-gray-800/60 pt-4">от 75 000 ₽</div>
-            </div>
-            <div class="bg-[#111625] border border-gray-800/80 p-6 rounded-2xl flex flex-col justify-between hover:border-[#C9A961]/40 transition-all h-full">
-                <div>
-                    <h3 class="font-bold text-lg mb-2">Промо-страница</h3>
-                    <p class="text-sm text-gray-400 font-light mb-6">Яркий имиджевый спецпроект для презентации новинок.</p>
-                </div>
-                <div class="text-[#C9A961] font-bold text-lg border-t border-gray-800/60 pt-4">от 15 000 ₽</div>
-            </div>
+        <div class="stat glass">
+          <div class="stat__num">100%</div>
+          <div class="stat__label">адаптивный дизайн</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- ФОРМА ОБРАТНОЙ СВЯЗИ -->
-    <section id="discuss" class="py-24 bg-[#0E1321]/50 border-t border-gray-900">
-        <div class="max-w-xl mx-auto px-6">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold mb-3 tracking-wide">Обсудить проект</h2>
-                <div class="w-16 h-0.5 bg-[#C9A961] mx-auto"></div>
-            </div>
-            
-            <!-- Форма отправляет данные на встроенный адрес функций Cloudflare Pages -->
-            <form id="tgForm" class="space-y-6">
-                <div>
-                    <label class="block text-xs font-medium text-gray-400 uppercase tracking-wider mb-2">Ваше имя *</label>
-                    <input type="text" name="name" required placeholder="Вячеслав" class="w-full bg-[#111625] border border-gray-800 focus:border-[#C9A961] rounded-xl px-4 py-3.5 text-[#F2EFE9] outline-none transition-all font-light">
-                </div>
-                <div>
-                    <label class="block text-xs font-medium text-gray-400 uppercase tracking-wider mb-2">Telegram или телефон *</label>
-                    <input type="text" name="contact" required placeholder="@username или +7..." class="w-full bg-[#111625] border border-gray-800 focus:border-[#C9A961] rounded-xl px-4 py-3.5 text-[#F2EFE9] outline-none transition-all font-light">
-                </div>
-                <div>
-                    <label class="block text-xs font-medium text-gray-400 uppercase tracking-wider mb-2">Какой сайт нужен? *</label>
-                    <select name="type" class="w-full bg-[#111625] border border-gray-800 focus:border-[#C9A961] rounded-xl px-4 py-3.5 text-[#F2EFE9] outline-none transition-all font-light appearance-none">
-                        <option value="Лендинг">Лендинг</option>
-                        <option value="Сайт-визитка">Сайт-визитка</option>
-                        <option value="Архитектура бренда">Архитектура бренда</option>
-                        <option value="Промо-страница">Промо-страница</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-xs font-medium text-gray-400 uppercase tracking-wider mb-2">Комментарий</label>
-                    <textarea name="message" rows="4" placeholder="Расскажите немного о вашем бизнесе и задачах..." class="w-full bg-[#111625] border border-gray-800 focus:border-[#C9A961] rounded-xl px-4 py-3.5 text-[#F2EFE9] outline-none transition-all font-light resize-none"></textarea>
-                </div>
-                
-                <button type="submit" id="submitBtn" class="w-full py-4 bg-gradient-to-r from-[#C9A961] to-[#A8793D] text-black font-bold rounded-xl shadow-md hover:opacity-90 transition-all cursor-pointer">Отправить заявку</button>
-                
-                <!-- Блок уведомлений -->
-                <div id="formStatus" class="hidden text-center p-4 rounded-xl font-medium text-sm"></div>
-            </form>
+  <!-- ==================== PROBLEM / SOLUTION ==================== -->
+  <section class="section" id="problem">
+    <div class="container">
+      <h2 class="section-title reveal">Проблема и решение</h2>
+      <p class="section-subtitle reveal">Вы узнаёте себя в этих ситуациях? Мы знаем, как помочь</p>
+      <div class="ps-grid reveal">
+        <div class="ps-block ps-block--problem glass">
+          <h3 class="ps-block__title" style="color:var(--bordeaux-light)">Узнаёте себя?</h3>
+          <ul class="ps-list">
+            <li>Сайт на конструкторе «съедает» 750-3000₽ ежемесячно, а результата нет</li>
+            <li>Тяжело объяснить ценность своих услуг — клиенты не понимают, за что платить</li>
+            <li>Сайт просто «висит» в интернете, а не приносит заявки</li>
+            <li>Нет времени разбираться в технических деталях и настройках</li>
+            <li>Боитесь, что сайт «упадёт», взломают или пропадут данные</li>
+          </ul>
         </div>
-    </section>
+        <div class="ps-block ps-block--solution glass">
+          <h3 class="ps-block__title" style="color:var(--gold)">Моё решение</h3>
+          <ul class="ps-list">
+            <li>GitHub Pages — 0₽ абонентской платы навсегда. Платите один раз — сайт работает вечно</li>
+            <li>Продающие тексты, которые говорят с вашей аудиторией на её языке</li>
+            <li>Сайт, который работает 24/7 и приносит заявки даже пока вы спите</li>
+            <li>Полное техническое сопровождение — вы занимаетесь бизнесом, мы — сайтом</li>
+            <li>Максимальная защита на уровне инфраструктуры GitHub (Microsoft)</li>
+          </ul>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:3rem" class="reveal">
+        <a href="#contact" class="btn btn--gold btn--lg">Получить бесплатную консультацию</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- ПОДВАЛ -->
-    <footer class="py-12 border-t border-gray-900/60 bg-[#0B0F19] text-center text-xs text-gray-500 font-light space-y-2">
-        <p>© 2026 VK Studio. Все права защищены.</p>
-        <p>ИП Кокурина Виктория Андреевна</p>
-        <p class="tracking-wider text-gray-600">ИНН 761101173810 | ОГРНИП 325762700032112</p>
-    </footer>
+  <!-- ==================== ABOUT ==================== -->
+  <section class="section section--divider" id="about">
+    <div class="container">
+      <div class="about-grid reveal">
+        <div class="about-img-wrapper">
+          <img src="IMG_20260515_124729.png" alt="Виктория Кокурина" class="about-img" loading="lazy">
+        </div>
+        <div class="about-content">
+          <h2 class="section-title" style="text-align:left;margin-bottom:1.5rem">Почему выбирают меня?</h2>
+          <p style="margin-bottom:1.5rem;line-height:1.8;color:var(--text-m);font-size:1.05rem"><strong style="color:var(--gold)">Меня зовут Виктория Кокурина</strong> — основатель студии VK Studio. Я не работаю на конвейер. В моей практике <strong style="color:var(--gold)">10 успешно реализованных проектов</strong>, и каждым из них я горжусь лично.</p>
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature__icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span class="about-feature__text">Личный контроль каждого проекта — никаких стажёров</span>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature__icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span class="about-feature__text">Погружение в ваш бизнес на 100%</span>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature__icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span class="about-feature__text">Индивидуальные решения, а не шаблоны</span>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature__icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span class="about-feature__text">Срок 3-5 дней без потери качества</span>
+            </div>
+          </div>
+          <p style="margin-bottom:1.5rem;line-height:1.8;color:var(--text-m);font-size:1.05rem">Для меня важен не поток заказов, а <strong style="color:var(--gold)">ваш результат</strong> и качество моей работы. Вы получите решение, созданное специально под ваши задачи, с моим личным контролем на каждом этапе.</p>
+          <div class="about-quote">
+            <p>«Моя суперсила: я вижу вашу задачу и с точки зрения бизнеса, и с точки зрения эстетики. Создаю решения, которые работают на результат, а не просто «красиво висят»»</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- СКРИПТ ОТПРАВКИ, КОТОРЫЙ СВЯЗЫВАЕТ ФОРМУ С ВАШИМИ НАСТРОЙКАМИ В CLOUDFLARE -->
-    <script>
-        document.getElementById('tgForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const btn = document.getElementById('submitBtn');
-            const status = document.getElementById('formStatus');
-            const formData = new FormData(this);
-            
-            btn.disabled = true;
-            btn.innerText = 'Отправка...';
-            status.className = 'hidden text-center p-4 rounded-xl font-medium text-sm';
+  <!-- ==================== SERVICES (BENTO GRID) ==================== -->
+  <section class="section section--divider" id="services">
+    <div class="container">
+      <h2 class="section-title reveal">Услуги и цены</h2>
+      <p class="section-subtitle reveal">Прозрачное ценообразование. Финальная стоимость зависит от сложности и объёма проекта</p>
+      <div class="bento reveal">
+        <!-- Card 1 -->
+        <div class="glass service-card">
+          <div class="service-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+          </div>
+          <h3 style="font-family:var(--font-d);font-size:1.2rem;margin-bottom:.5rem">Сайт-визитка</h3>
+          <div class="service-card__price">от 25 000 ₽</div>
+          <ul class="service-card__list">
+            <li>До 5 страниц</li>
+            <li>Адаптивный дизайн</li>
+            <li>Форма заявки</li>
+            <li>Подключение домена</li>
+            <li>Бесплатный хостинг</li>
+          </ul>
+          <a href="#contact" class="btn btn--glass" style="width:100%;margin-top:1rem">Заказать</a>
+        </div>
+        <!-- Card 2 - HIT -->
+        <div class="glass service-card" style="border-color:rgba(201,169,97,.3)">
+          <div class="badge">ХИТ</div>
+          <div class="service-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          </div>
+          <h3 style="font-family:var(--font-d);font-size:1.2rem;margin-bottom:.5rem">Лендинг</h3>
+          <div class="service-card__price">от 35 000 ₽</div>
+          <ul class="service-card__list">
+            <li>До 7 экранов</li>
+            <li>Продающая структура</li>
+            <li>Тексты под аудиторию</li>
+            <li>Яндекс.Метрика</li>
+            <li>2 раунда правок</li>
+          </ul>
+          <a href="#contact" class="btn btn--gold" style="width:100%;margin-top:1rem">Заказать</a>
+        </div>
+        <!-- Card 3 -->
+        <div class="glass service-card">
+          <div class="service-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+          </div>
+          <h3 style="font-family:var(--font-d);font-size:1.2rem;margin-bottom:.5rem">Архитектура бренда</h3>
+          <div class="service-card__price">от 75 000 ₽</div>
+          <ul class="service-card__list">
+            <li>Всё из «Лендинг»</li>
+            <li>Позиционирование и УТП</li>
+            <li>Тексты для сайта и соцсетей</li>
+            <li>Визуальный гайд</li>
+            <li>Лид-магнит</li>
+          </ul>
+          <a href="#contact" class="btn btn--glass" style="width:100%;margin-top:1rem">Заказать</a>
+        </div>
+        <!-- Card 4 -->
+        <div class="glass service-card">
+          <div class="service-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3 style="font-family:var(--font-d);font-size:1.2rem;margin-bottom:.5rem">Промо-страница</h3>
+          <div class="service-card__price">от 15 000 ₽</div>
+          <ul class="service-card__list">
+            <li>Одна целевая страница</li>
+            <li>Акционный оффер</li>
+            <li>Быстрый запуск (3-5 дней)</li>
+            <li>Форма захвата</li>
+            <li>Интеграция с Telegram</li>
+          </ul>
+          <a href="#contact" class="btn btn--glass" style="width:100%;margin-top:1rem">Заказать</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            // Формируем красивый текст для Телеграм-бота
-            const textMessage = `🚀 Новая заявка с сайта VK Studio!\n\n` +
-                                `👤 Имя: ${formData.get('name')}\n` +
-                                `📞 Контакт: ${formData.get('contact')}\n` +
-                                `💻 Тип сайта: ${formData.get('type')}\n` +
-                                `💬 Комментарий: ${formData.get('message') || 'Нет комм.'}`;
+  <!-- ==================== PORTFOLIO ==================== -->
+  <section class="section section--divider" id="portfolio">
+    <div class="container">
+      <h2 class="section-title reveal">Портфолио</h2>
+      <p class="section-subtitle reveal">Реальные проекты для реальных клиентов</p>
+      <div class="portfolio-grid reveal" id="portfolio-grid"></div>
+    </div>
+  </section>
 
-            try {
-                // Отправляем запрос напрямую на ваш созданный сервер-обработчик Cloudflare Pages
-                // Он сам подставит сохраненные вами переменные TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID
-                const response = await fetch('/functions/submit', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: textMessage })
-                });
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section class="section section--divider" id="testimonials">
+    <div class="container">
+      <h2 class="section-title reveal">Отзывы клиентов</h2>
+      <p class="section-subtitle reveal">Что говорят те, кто уже работает со мной</p>
+      <div class="testimonials-grid reveal">
+        <div class="glass testimonial">
+          <div class="testimonial__stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial__text">«Виктория создала для меня не просто сайт, а настоящий инструмент продаж. Раньше я тратила 750₽ в месяц на Tilda, теперь плачу один раз и сайт работает бесплатно. За первые 2 недели после запуска получила 3 заявки на консультации!»</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">АП</div>
+            <div><div class="testimonial__name">Анжела Погосян</div><div class="testimonial__role">Эксперт по новостройкам · exned.ru</div></div>
+          </div>
+        </div>
+        <div class="glass testimonial">
+          <div class="testimonial__stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial__text">«Наконец-то нашла разработчика, который понимает специфику работы с недвижимостью и финансами. Сайт получился строгим, но при этом продающим. Виктория учла все мои пожелания и сделала даже лучше, чем я представляла.»</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">МС</div>
+            <div><div class="testimonial__name">Марина Садрыева</div><div class="testimonial__role">Финансовый консультант · msfin.ru</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                if (response.ok) {
-                    status.innerText = '✨ Заявка успешно отправлена! Виктория скоро свяжется с вами.';
-                    status.className = 'block text-center p-4 bg-emerald-500/10 text-emerald-400 rounded-xl border border-emerald-500/20';
-                    this.reset();
-                } else {
-                    throw new Error('Ошибка сервера Cloudflare');
-                }
-            } catch (err) {
-                status.innerText = '❌ Ошибка отправки. Напишите, пожалуйста, напрямую в Telegram.';
-                status.className = 'block text-center p-4 bg-red-500/10 text-red-400 rounded-xl border border-red-500/20';
-            } finally {
-                btn.disabled = false;
-                btn.innerText = 'Отправить заявку';
-            }
+  <!-- ==================== GITHUB BENEFITS ==================== -->
+  <section class="section section--divider" id="github">
+    <div class="container">
+      <h2 class="section-title reveal">Почему GitHub Pages?</h2>
+      <p class="section-subtitle reveal">Технология, которая экономит ваши деньги и время</p>
+      <div class="benefits-grid reveal">
+        <div class="glass benefit-item">
+          <div class="benefit-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+          </div>
+          <h3 class="benefit-title">0 ₽ навсегда</h3>
+          <p class="benefit-desc">В отличие от Tilda (750 ₽/мес) или WordPress (хостинг + домен), GitHub Pages не берёт абонентскую плату. Вы платите один раз за разработку — сайт работает вечно</p>
+        </div>
+        <div class="glass benefit-item">
+          <div class="benefit-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 class="benefit-title">Молниеносная скорость</h3>
+          <p class="benefit-desc">Статические сайты загружаются мгновенно. Нет тяжёлых баз данных, нет плагинов, которые тормозят. Идеально для SEO и конверсии</p>
+        </div>
+        <div class="glass benefit-item">
+          <div class="benefit-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="benefit-title">Безопасность</h3>
+          <p class="benefit-desc">Нет админки = нет точек входа для взлома. Ваш сайт защищён от вирусов, спама и DDoS-атак на уровне инфраструктуры GitHub</p>
+        </div>
+        <div class="glass benefit-item">
+          <div class="benefit-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3 class="benefit-title">Надёжность 99.9%</h3>
+          <p class="benefit-desc">GitHub — это Microsoft. Ваш сайт будет доступен 99.9% времени, даже при высоких нагрузках. Никаких упавших серверов</p>
+        </div>
+      </div>
+      <div class="reveal" style="text-align:center;margin-top:3rem">
+        <div class="glass" style="display:inline-block;padding:2rem 3rem;max-width:600px">
+          <p style="font-size:1.1rem;margin-bottom:.5rem;color:var(--gold);font-weight:600">Редактирование контента происходит через разработчика</p>
+          <p style="color:var(--text-m);font-size:.95rem;margin-bottom:1.5rem">Это гарантирует, что сайт не сломается от случайных кликов и всегда будет работать корректно</p>
+          <a href="#contact" class="btn btn--gold">Рассчитать стоимость</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section class="section section--divider" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Частые вопросы</h2>
+      <p class="section-subtitle reveal">Ответы на самые популярные вопросы клиентов</p>
+      <div class="faq-grid reveal">
+        <div class="glass faq-item">
+          <div class="faq-question">
+            Сколько времени занимает разработка?
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer__content">Средний срок разработки сайта-визитки или лендинга — 3-5 дней. Если проект сложный (архитектура бренда, множество интеграций) — 2-3 недели. Всё зависит от объёма контента и количества правок.</div>
+          </div>
+        </div>
+        <div class="glass faq-item">
+          <div class="faq-question">
+            Что если мне не понравится результат?
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer__content">Я работаю по договору и всегда согласовываю каждый этап. У вас есть 2 раунда правок в рамках проекта. Если результат не устроит — верну предоплату за вычетом фактически потраченного времени.</div>
+          </div>
+        </div>
+        <div class="glass faq-item">
+          <div class="faq-question">
+            Смогу ли я сама редактировать сайт?
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer__content">GitHub Pages не имеет визуальной админки как WordPress. Все правки вносятся через меня — это гарантирует, что сайт не «сломается». У меня есть тарифы на поддержку от 3000₽/час или абонементы.</div>
+          </div>
+        </div>
+        <div class="glass faq-item">
+          <div class="faq-question">
+            Что нужно для начала работы?
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer__content">Достаточно заполнить бриф (я пришлю) и оплатить предоплату 50%. Если у вас нет текстов и фото — помогу с этим (это входит в стоимость или оплачивается отдельно).</div>
+          </div>
+        </div>
+        <div class="glass faq-item">
+          <div class="faq-question">
+            Можно ли подключить домен?
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer__content">Да, конечно! GitHub Pages позволяет подключить свой домен (например, vash-sayt.ru). Это бесплатно, я помогу с настройкой. Домен покупается отдельно (около 200-500₽/год).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="section section--divider" id="contact">
+    <div class="container">
+      <h2 class="section-title reveal">Обсудить проект</h2>
+      <p class="section-subtitle reveal">Заполните форму — я подготовлю предложение и свяжусь в течение часа</p>
+      
+      <div class="contact-wrapper reveal">
+        <!-- Contact Info -->
+        <div class="glass contact-info">
+          <h3 class="contact-info__title">Давайте создадим<br>что-то великое</h3>
+          <p class="contact-info__text">Расскажите о вашем проекте, и я предложу оптимальное решение с прозрачной стоимостью и сроками.</p>
+          
+          <div class="contact-info__item">
+            <div class="contact-info__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:600;color:var(--text);margin-bottom:2px">Телефон / WhatsApp</div>
+              <a href="https://wa.me/79080288580?text=Здравствуйте,%20хочу%20обсудить%20проект" target="_blank" style="color:var(--gold)">+7 908 028-85-80</a>
+            </div>
+          </div>
+          
+          <div class="contact-info__item">
+            <div class="contact-info__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:600;color:var(--text);margin-bottom:2px">Telegram</div>
+              <a href="https://t.me/kowiktori?text=Здравствуйте,%20хочу%20обсудить%20проект" target="_blank" style="color:var(--gold)">@kowiktori</a>
+            </div>
+          </div>
+          
+          <div class="contact-info__item">
+            <div class="contact-info__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:600;color:var(--text);margin-bottom:2px">Email</div>
+              <span style="color:var(--text-m)">Vikaandreevna.k@gmail.com</span>
+            </div>
+          </div>
+
+          <div class="contact-buttons" style="justify-content:flex-start;margin-top:1.5rem">
+            <a href="https://t.me/kowiktori?text=Здравствуйте,%20хочу%20обсудить%20проект" target="_blank" class="btn btn--tg" style="font-size:.85rem;padding:10px 20px;border-radius:10px">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.67-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.87 7.97-3.44 3.8-1.6 4.59-1.88 5.1-1.89.11 0 .37.03.54.17.14.12.18.28.2.45-.01.06.01.24 0 .38z"/></svg>
+              Telegram
+            </a>
+            <a href="https://wa.me/79080288580?text=Здравствуйте,%20хочу%20обсудить%20проект" target="_blank" class="btn btn--wa" style="font-size:.85rem;padding:10px 20px;border-radius:10px">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="glass contact-form-box">
+          <form id="contactForm">
+            <div class="form-group">
+              <label>Ваше имя *</label>
+              <input type="text" name="name" class="form-input" required placeholder="Как к вам обращаться?">
+            </div>
+            <div class="form-group">
+              <label>Telegram или телефон *</label>
+              <input type="text" name="contact" class="form-input" required placeholder="@username или +7...">
+            </div>
+            <div class="form-group">
+              <label>Какой сайт нужен? *</label>
+              <select name="service" class="form-input" required>
+                <option value="">Выберите услугу</option>
+                <option value="Сайт-визитка">Сайт-визитка</option>
+                <option value="Лендинг">Лендинг</option>
+                <option value="Архитектура бренда">Архитектура бренда</option>
+                <option value="Промо-страница">Промо-страница</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Комментарий</label>
+              <textarea name="message" class="form-input" placeholder="Расскажите о проекте..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--gold" style="width:100%" id="submitBtn">Отправить заявку</button>
+            <div id="formMessage" class="form-message"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 VK Studio. Все права защищены.</p>
+      <div class="footer__legal">
+        ИП Кокурина Виктория Андреевна<br>
+        ИНН 761101173810 &nbsp;|&nbsp; ОГРНИП 325762700032112<br>
+        <span style="margin-top:8px;display:inline-block">Телефон: <a href="tel:+79080288580" style="color:var(--text-m)">+7 908 028-85-80</a> &nbsp;|&nbsp; Telegram: <a href="https://t.me/kowiktori" target="_blank" style="color:var(--text-m)">@kowiktori</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ========== BURGER MENU ==========
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-overlay');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('active');
+      nav.classList.toggle('open');
+      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+    });
+    document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => {
+      burger.classList.remove('active'); nav.classList.remove('open'); document.body.style.overflow = '';
+    }));
+
+    // ========== HEADER SCROLL ==========
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    });
+
+    // ========== HERO SLIDER ==========
+    const slides = document.querySelectorAll('.hero__slide');
+    let currentSlide = 0;
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 5000);
+
+    // ========== REVEAL ON SCROLL ==========
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ========== PORTFOLIO GENERATOR ==========
+    const projects = [
+      { title: 'Анжела Погосян', tag: 'Лендинг', desc: 'Эксперт по новостройкам. Акцент на выгоды клиента и форму заявки.', link: 'https://exned.ru', screenshot: 'Screenshot_andzela.jpg' },
+      { title: 'Марина Садрыева', tag: 'Лендинг', desc: 'Эксперт по финансам и недвижимости. Корпоративный сайт.', link: 'https://msfin.ru', screenshot: 'Screenshot_marina.jpg' },
+      { title: 'Васту-компас', tag: 'Интерактив', desc: 'Наложение планировки, определение зон и рекомендации по коррекции.', link: 'https://vikaandreevnadesign.github.io/test.vastu/', screenshot: null },
+      { title: 'Тест «Кто ты?»', tag: 'Лид-магнит', desc: 'Входной инструмент для блока 1 метода «Точка Сборки».', link: 'https://vikaandreevnadesign.github.io/test.kto_ty/', screenshot: null },
+      { title: 'ТОЧКА СБОРКИ', tag: 'Многостраничный', desc: 'Архитектура бренда через астрологию, энергию и технологии.', link: 'https://tosborki.ru', screenshot: null },
+      { title: 'Лендинг новостройки', tag: 'Прототип', desc: 'Быстрый запуск оффера на Vercel. Финальная версия разворачивается на GitHub.', link: 'https://v0-realtor-landing-page-eight.vercel.app/', screenshot: null }
+    ];
+
+    const grid = document.getElementById('portfolio-grid');
+    projects.forEach(project => {
+      const item = document.createElement('div');
+      item.className = 'portfolio-item glass';
+      let imgHtml = '';
+      if (project.screenshot) {
+        imgHtml = `<div class="portfolio-item__img-wrapper"><img src="${project.screenshot}" alt="${project.title}" class="portfolio-item__img" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'portfolio-item__placeholder\\'>${project.title}</div>'"><div class="portfolio-item__overlay"></div></div>`;
+      } else {
+        const screenshotUrl = `https://image.thum.io/get/width/600/${project.link}`;
+        imgHtml = `<div class="portfolio-item__img-wrapper"><img src="${screenshotUrl}" alt="${project.title}" class="portfolio-item__img" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'portfolio-item__placeholder\\'>${project.title}</div>'"><div class="portfolio-item__overlay"></div></div>`;
+      }
+      item.innerHTML = `${imgHtml}<div class="portfolio-item__content"><span class="portfolio-item__tag">${project.tag}</span><h3 class="portfolio-item__title">${project.title}</h3><p class="portfolio-item__desc">${project.desc}</p><a href="${project.link}" target="_blank" class="portfolio-item__link">Посмотреть <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>`;
+      grid.appendChild(item);
+    });
+
+    // ========== FAQ ACCORDION ==========
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+
+    // ========== CONTACT FORM ==========
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const msg = document.getElementById('formMessage');
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData);
+      
+      btn.disabled = true;
+      btn.textContent = 'Отправка...';
+      
+      try {
+        const response = await fetch('/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
         });
-    </script>
+        const result = await response.json();
+        
+        if (result.success) {
+          msg.className = 'form-message success';
+          msg.textContent = '✅ Заявка отправлена! Я свяжусь с вами в течение часа.';
+          e.target.reset();
+        } else {
+          throw new Error(result.error || 'Ошибка отправки');
+        }
+      } catch (error) {
+        msg.className = 'form-message error';
+        msg.textContent = '❌ Ошибка: ' + error.message + '. Напишите мне напрямую в Telegram.';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Отправить заявку';
+      }
+    });
+  </script>
 </body>
 </html>
