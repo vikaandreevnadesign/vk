@@ -22,9 +22,6 @@ img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none;transition:all .3s ease}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
 .section{padding:100px 0;position:relative}
-.cursor{width:20px;height:20px;border:2px solid var(--gold);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transition:width .3s,height .3s,background .3s;transform:translate(-50%,-50%);mix-blend-mode:difference}
-.cursor.hover{width:50px;height:50px;background:rgba(209,158,72,0.2);border-color:transparent}
-@media(max-width:768px){.cursor{display:none}}
 .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(244,237,228,0.98);backdrop-filter:blur(12px);border-bottom:1px solid rgba(38,41,43,0.08);padding:20px 0}
 .header__inner{display:flex;justify-content:space-between;align-items:center}
 .logo{font-family:var(--font-d);font-size:26px;font-weight:600;letter-spacing:-0.5px}
@@ -39,31 +36,29 @@ a{color:inherit;text-decoration:none;transition:all .3s ease}
 .nav-close{position:absolute;top:32px;right:32px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:none;border:none;font-size:32px;cursor:pointer;color:var(--text)}
 .nav a{display:block;font-family:var(--font-d);font-size:32px;font-weight:400;margin-bottom:28px;color:var(--text);letter-spacing:-0.5px}
 .nav a:hover{color:var(--emerald)}
-.marquee{background:var(--grass);color:var(--bg);padding:16px 0;overflow:hidden;white-space:nowrap;position:relative;z-index:10}
+/* MARQUEE */
+.marquee{background:var(--grass);color:var(--bg);padding:16px 0;overflow:hidden;white-space:nowrap;position:relative;z-index:100}
 .marquee__content{display:inline-block;animation:marquee 25s linear infinite}
 .marquee__item{display:inline-flex;align-items:center;gap:12px;margin:0 40px;font-size:14px;font-weight:500;letter-spacing:0.5px}
 .marquee__item::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;padding:140px 0 80px;overflow:hidden}
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;padding:100px 0 80px;overflow:hidden;margin-top:80px}
 .hero__slider{position:absolute;inset:0;z-index:1}
 .hero__slide{position:absolute;inset:0;opacity:0;transition:opacity 2.5s ease-in-out;background-size:cover;background-position:center}
 .hero__slide.active{opacity:1}
-.hero__overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(135deg,rgba(244,237,228,0.88),rgba(244,237,228,0.82))}
-.hero__top{position:relative;z-index:3;text-align:center;margin-bottom:40px}
-.hero__title-fixed{font-family:var(--font-d);font-size:clamp(28px,5vw,48px);font-weight:600;line-height:1.2;color:var(--text);letter-spacing:-0.5px}
-.hero__title-fixed .word{display:inline-block;opacity:0;animation:wordReveal .8s ease forwards;margin:0 8px}
-.hero__title-fixed .word:nth-child(1){color:var(--text)}
-.hero__title-fixed .word:nth-child(2){color:var(--emerald)}
-.hero__title-fixed .word:nth-child(3){color:var(--gold)}
-@keyframes wordReveal{to{opacity:1;transform:translateY(0)}from{opacity:0;transform:translateY(50px)}}
-.hero__bottom{position:relative;z-index:3;max-width:700px;margin:0 auto;text-align:center}
-.hero__subtitle{font-family:var(--font-d);font-size:clamp(20px,3vw,28px);font-weight:400;line-height:1.4;color:var(--text-m);margin-bottom:24px;min-height:120px}
+.hero__overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(135deg,rgba(244,237,228,0.85),rgba(244,237,228,0.75))}
+.hero__content{position:relative;z-index:3;text-align:center}
+.hero__title-fixed{font-family:var(--font-d);font-weight:600;line-height:1.1;margin-bottom:24px}
+.hero__title-fixed .line{display:block;font-size:clamp(32px,6vw,64px);letter-spacing:-1px}
+.hero__title-fixed .line:nth-child(1){color:var(--text)}
+.hero__title-fixed .line:nth-child(2){color:var(--emerald)}
+.hero__subtitle{font-family:var(--font-d);font-size:clamp(18px,3vw,24px);color:var(--text-m);margin-bottom:16px;min-height:60px;font-style:italic}
 .hero__subtitle .cursor-blink{border-right:2px solid var(--gold);animation:blink 1s infinite}
 @keyframes blink{50%{border-color:transparent}}
-.hero__desc{font-size:16px;color:var(--text-m);margin-bottom:32px;line-height:1.8;font-weight:300;opacity:0;animation:fadeIn .8s ease 1.5s forwards}
-.hero__btn{display:inline-flex;align-items:center;justify-content:center;padding:18px 40px;background:var(--emerald);color:#fff;border-radius:50px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:all .3s;min-height:52px;border:none;cursor:pointer;opacity:0;animation:fadeIn .8s ease 1.8s forwards}
+.hero__desc{font-size:16px;color:var(--text-m);margin-bottom:32px;line-height:1.8;font-weight:300;max-width:700px;margin-left:auto;margin-right:auto}
+.hero__btn{display:inline-flex;align-items:center;justify-content:center;padding:18px 40px;background:var(--emerald);color:#fff;border-radius:50px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:all .3s;min-height:52px;border:none;cursor:pointer}
 .hero__btn:hover{background:#0d6146;transform:translateY(-3px);box-shadow:0 12px 35px rgba(11,76,55,0.3)}
-@keyframes fadeIn{to{opacity:1}}
 .asymmetric-divider{position:absolute;bottom:0;left:0;right:0;height:80px;overflow:hidden}
 .asymmetric-divider svg{width:100%;height:100%}
 .asymmetric-divider path{fill:var(--bg)}
@@ -82,36 +77,36 @@ a{color:inherit;text-decoration:none;transition:all .3s ease}
 .github-benefits{background:rgba(11,76,55,0.04)}
 .benefits__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 @media(min-width:768px){.benefits__grid{grid-template-columns:repeat(4,1fr)}}
-.benefit__card{background:#fff;padding:32px 24px;border-radius:2px;text-align:center;border:1px solid rgba(209,158,72,0.2);transition:all .3s}
+.benefit__card{background:#fff;padding:32px 24px;border-radius:24px;text-align:center;border:1px solid rgba(209,158,72,0.2);transition:all .3s;opacity:0;transform:translateY(30px);animation:fadeUp 0.8s ease forwards}
+.benefit__card:nth-child(1){animation-delay:0.1s}
+.benefit__card:nth-child(2){animation-delay:0.2s}
+.benefit__card:nth-child(3){animation-delay:0.3s}
+.benefit__card:nth-child(4){animation-delay:0.4s}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 .benefit__card:hover{border-color:var(--gold);transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,0.08)}
 .benefit__icon{width:64px;height:64px;margin:0 auto 20px;color:var(--emerald)}
 .benefit__title{font-family:var(--font-d);font-size:18px;font-weight:500;color:var(--text);margin-bottom:12px}
 .benefit__desc{font-size:14px;color:var(--text-m);line-height:1.7}
 .about{background:var(--grass);color:var(--bg);position:relative;overflow:hidden}
-.about__inner{position:relative;z-index:2;max-width:800px;text-align:center}
+.about__inner{position:relative;z-index:2;max-width:100%;text-align:center}
 .about__photo{width:200px;height:200px;border-radius:50%;object-fit:cover;margin:0 auto 32px;display:block;border:3px solid rgba(209,158,72,0.5);box-shadow:0 0 0 12px rgba(209,158,72,0.15),0 20px 40px rgba(0,0,0,0.3);filter:saturate(0.9) contrast(1.05)}
 .about__title{font-family:var(--font-d);font-size:clamp(32px,4vw,44px);font-weight:400;margin-bottom:28px;line-height:1.1;color:var(--bg)}
-.about__text{font-size:17px;line-height:1.95;opacity:0.95;margin-bottom:24px;font-weight:300;text-align:left}
-.why-me__grid{display:grid;grid-template-columns:1fr;gap:24px}
-@media(min-width:768px){.why-me__grid{grid-template-columns:repeat(3,1fr)}}
-.why-me__card{background:#fff;padding:40px 32px;border-radius:2px;text-align:center;border:1px solid rgba(209,158,72,0.25);transition:all .3s;position:relative;overflow:hidden}
-.why-me__card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--emerald));transform:translateX(-100%);transition:transform .4s}
-.why-me__card:hover::before{transform:translateX(0)}
-.why-me__card:hover{border-color:var(--gold);transform:translateY(-5px);box-shadow:0 12px 35px rgba(0,0,0,0.1)}
-.why-me__number{font-family:var(--font-d);font-size:48px;font-weight:600;color:var(--gold);margin-bottom:16px;line-height:1}
-.why-me__title{font-family:var(--font-d);font-size:20px;font-weight:500;color:var(--text);margin-bottom:12px}
+.about__text{font-size:17px;line-height:1.95;opacity:0.95;margin-bottom:24px;font-weight:300;text-align:center;max-width:900px;margin-left:auto;margin-right:auto}
+.why-me__grid{display:flex;flex-direction:column;gap:32px;max-width:800px;margin:0 auto}
+.why-me__item{display:flex;align-items:center;gap:24px;padding:24px 0;border-bottom:1px solid rgba(209,158,72,0.3)}
+.why-me__number{font-family:var(--font-d);font-size:48px;font-weight:600;color:var(--gold);line-height:1;min-width:100px;text-align:right}
+.why-me__content{text-align:left}
+.why-me__title{font-family:var(--font-d);font-size:20px;font-weight:500;color:var(--text);margin-bottom:8px}
 .why-me__desc{font-size:15px;color:var(--text-m);line-height:1.7}
-.mission{background:rgba(209,158,72,0.06)}
-.mission__grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:center}
-@media(min-width:768px){.mission__grid{grid-template-columns:1fr 1fr}}
-.mission__content h2{font-family:var(--font-d);font-size:clamp(28px,4vw,40px);font-weight:400;margin-bottom:24px;color:var(--text)}
-.mission__text{font-size:17px;color:var(--text-m);line-height:1.9;margin-bottom:24px;font-weight:300}
-.mission__features{display:grid;gap:16px}
-.mission__feature{display:flex;gap:16px;align-items:flex-start}
-.mission__feature svg{width:24px;height:24px;color:var(--gold);flex-shrink:0;margin-top:3px}
-.mission__feature span{font-size:15px;color:var(--text);font-weight:500}
-.mission__image{position:relative;border-radius:2px;overflow:hidden;aspect-ratio:4/3}
-.mission__image img{width:100%;height:100%;object-fit:cover}
+.mission{position:relative;background:url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1920&q=80') center/cover no-repeat fixed;color:#fff;text-align:center;padding:120px 0}
+.mission__overlay{position:absolute;inset:0;background:rgba(51,66,45,0.85);z-index:1}
+.mission__content{position:relative;z-index:2;max-width:800px;margin:0 auto}
+.mission__title{font-family:var(--font-d);font-size:clamp(32px,4vw,48px);font-weight:400;margin-bottom:24px;color:#fff}
+.mission__text{font-size:18px;line-height:1.8;margin-bottom:40px;opacity:0.95}
+.mission__features{display:flex;flex-wrap:wrap;justify-content:center;gap:24px}
+.mission__feature{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.1);padding:12px 20px;border-radius:50px;backdrop-filter:blur(5px)}
+.mission__feature svg{width:20px;height:20px;color:var(--gold)}
+.mission__feature span{font-size:15px;color:#fff;font-weight:500}
 .portfolio{overflow:hidden;position:relative}
 .portfolio__title{font-family:var(--font-d);font-size:clamp(32px,4vw,48px);font-weight:400;margin-bottom:20px;color:var(--text)}
 .portfolio__subtitle{font-size:16px;color:var(--text-m);max-width:600px;margin-bottom:48px}
@@ -133,12 +128,13 @@ a{color:inherit;text-decoration:none;transition:all .3s ease}
 .testimonial__text{font-family:var(--font-d);font-size:18px;font-style:italic;line-height:1.9;color:var(--text-m);margin-bottom:24px;font-weight:300}
 .testimonial__author{font-weight:600;color:var(--text);font-size:15px}
 .testimonial__role{font-size:13px;color:var(--text-m);margin-top:4px}
-.services__list{max-width:700px}
-.service__row{display:flex;align-items:baseline;gap:16px;padding:24px 0;border-bottom:1px dashed rgba(209,158,72,0.5)}
-.service__name{font-family:var(--font-d);font-size:19px;font-weight:400;color:var(--text);flex:1}
-.service__desc{font-size:13px;color:var(--text-m);display:block;margin-top:4px;font-weight:300}
+.services{padding:100px 0}
+.services__list{max-width:100%}
+.service__row{display:flex;align-items:baseline;gap:16px;padding:32px 0;border-bottom:1px dashed rgba(209,158,72,0.5)}
+.service__name{font-family:var(--font-d);font-size:24px;font-weight:500;color:var(--text);flex:1}
+.service__desc{font-size:15px;color:var(--text-m);display:block;margin-top:8px;font-weight:300}
 .service__dots{flex:1;border-bottom:2px dotted var(--gold);margin:0 12px;position:relative;top:-4px;min-width:60px}
-.service__price{font-weight:600;color:var(--emerald);white-space:nowrap;font-size:16px;letter-spacing:0.3px}
+.service__price{font-weight:600;color:var(--emerald);white-space:nowrap;font-size:20px;letter-spacing:0.3px}
 .addons{background:var(--bg)}
 .addons__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 @media(min-width:768px){.addons__grid{grid-template-columns:repeat(3,1fr)}}
@@ -179,8 +175,6 @@ a{color:inherit;text-decoration:none;transition:all .3s ease}
 </style>
 </head>
 <body>
-
-<div class="cursor"></div>
 
 <header class="header">
 <div class="container header__inner">
@@ -231,19 +225,14 @@ a{color:inherit;text-decoration:none;transition:all .3s ease}
 <div class="hero__slide" style="background-image:url('https://images.unsplash.com/photo-1531492746076-1fc74dae7f92?w=1920&q=80')"></div>
 </div>
 <div class="hero__overlay"></div>
-<div class="hero__top">
-<div class="container">
-<h1 class="hero__title-fixed" id="fixedTitle">
-<span class="word">СТУДИЯ</span><span class="word">IT-РЕШЕНИЙ</span><span class="word">ВИКТОРИИ</span><span class="word">КОКУРИНОЙ</span>
+<div class="hero__content">
+<h1 class="hero__title-fixed">
+<span class="line">Студия IT-решений</span>
+<span class="line">Виктории Кокуриной</span>
 </h1>
-</div>
-</div>
-<div class="hero__bottom">
-<div class="container">
 <p class="hero__subtitle"><span class="cursor-blink" id="typewriter"></span></p>
 <p class="hero__desc">Разработка лёгких, сверхбыстрых лендингов, квизов и многостраничных систем для экспертов, помогающих практик, сферы финансов и недвижимости. Вечный бесплатный хостинг на GitHub Pages.</p>
 <a href="#contact" class="hero__btn hover-trigger">Обсудить проект в чате</a>
-</div>
 </div>
 <div class="asymmetric-divider">
 <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
@@ -328,30 +317,35 @@ a{color:inherit;text-decoration:none;transition:all .3s ease}
 <h2 class="section__title reveal">Почему выбирают меня</h2>
 <p class="section__subtitle reveal">Прозрачные условия и быстрая окупаемость</p>
 <div class="why-me__grid reveal">
-<div class="why-me__card">
+<div class="why-me__item">
 <div class="why-me__number">30%</div>
+<div class="why-me__content">
 <h3 class="why-me__title">Предоплата</h3>
-<p class="why-me__desc">Минимальная предоплата всего 30%. Остальное — после принятия работы. Честно и прозрачно</p>
+<p class="why-me__desc">Минимальная предоплата всего 30%. Остальное — после принятия работы. Честно и прозрачно.</p>
 </div>
-<div class="why-me__card">
+</div>
+<div class="why-me__item">
 <div class="why-me__number">3-5</div>
+<div class="why-me__content">
 <h3 class="why-me__title">Дней на запуск</h3>
-<p class="why-me__desc">Не месяц, не два! Всего 3-5 дней — и ваш сайт готов приводить клиентов. Быстро без потери качества</p>
+<p class="why-me__desc">Не месяц, не два! Всего 3-5 дней — и ваш сайт готов приводить клиентов. Быстро без потери качества.</p>
 </div>
-<div class="why-me__card">
+</div>
+<div class="why-me__item">
 <div class="why-me__number">30</div>
+<div class="why-me__content">
 <h3 class="why-me__title">Дней поддержки</h3>
-<p class="why-me__desc">Бесплатная поддержка в течение 30 дней после запуска. Помогу с любыми вопросами и правками</p>
+<p class="why-me__desc">Бесплатная поддержка в течение 30 дней после запуска. Помогу с любыми вопросами и правками.</p>
+</div>
 </div>
 </div>
 </div>
 </section>
 
 <section class="section mission">
-<div class="container">
-<div class="mission__grid reveal">
-<div class="mission__content">
-<h2>Наша миссия</h2>
+<div class="mission__overlay"></div>
+<div class="container mission__content reveal">
+<h2 class="mission__title">Наша миссия</h2>
 <p class="mission__text">Создаём красивое продолжение личности эксперта и визитную карточку бизнеса. Индивидуальный подход вместо шаблонов. Чем быстрее запустим сайт — тем раньше он начнёт приводить клиентов.</p>
 <div class="mission__features">
 <div class="mission__feature">
@@ -369,11 +363,6 @@ a{color:inherit;text-decoration:none;transition:all .3s ease}
 <div class="mission__feature">
 <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke="var(--grass)" stroke-width="2" fill="none"/></svg>
 <span>Бесплатный хостинг навсегда</span>
-</div>
-</div>
-</div>
-<div class="mission__image">
-<img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80" alt="Миссия студии" loading="lazy">
 </div>
 </div>
 </div>
@@ -405,7 +394,7 @@ a{color:inherit;text-decoration:none;transition:all .3s ease}
 </div>
 </section>
 
-<section class="section" id="services">
+<section class="section services" id="services">
 <div class="container">
 <h2 class="section__title reveal">Фиксированная стоимость услуг</h2>
 <div class="services__list reveal">
@@ -508,14 +497,6 @@ a{color:inherit;text-decoration:none;transition:all .3s ease}
 
 <script src="https://admin.verbox.ru/support/support.js?h=82bb90aaeeebce6ea5848b59bc71ec90" async></script>
 <script>
-const cursor=document.querySelector('.cursor');
-const hoverTriggers=document.querySelectorAll('.hover-trigger,a,button');
-document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px'});
-hoverTriggers.forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'))});
-const fixedTitle=document.getElementById('fixedTitle');
-const words=fixedTitle.innerHTML;
-fixedTitle.innerHTML='';
-words.split('<span class="word">').filter(w=>w.trim()).forEach((w,i)=>{const span=document.createElement('span');span.className='word';span.innerHTML=w;span.style.animationDelay=(i*0.15)+'s';fixedTitle.appendChild(span)});
 const typewriter=document.getElementById('typewriter');
 const texts=['Проектирование сайтов на чистом коде','Без абонентской платы','Срок 3-5 дней','Бесплатный хостинг на GitHub Pages'];
 let textIndex=0,charIndex=0,isDeleting=false;
