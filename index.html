@@ -1,242 +1,337 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<title>VK Studio — Разработка кастомных сайтов на коде</title>
-<meta name="description" content="Создаю быстрые лендинги, квизы и лид-магниты без абонентской платы за конструкторы. Портфолио из 6 проектов.">
-<meta property="og:title" content="VK Studio — Разработка кастомных сайтов на коде">
-<meta property="og:description" content="Создаю быстрые лендинги, квизы и лид-магниты без абонентской платы за конструкторы. Портфолио из 6 проектов.">
-<meta property="og:url" content="https://vk-st.ru"><meta property="og:type" content="website">
-<meta property="og:image" content="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80&v=4">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<title>VK.studio — Студия IT-решений Виктории Кокуриной</title>
+<meta name="description" content="Разработка легких и быстрых сайтов на чистом коде для экспертов. Без абонентской платы на GitHub Pages.">
+<meta property="og:title" content="VK.studio — Студия IT-решений Виктории Кокуриной">
+<meta property="og:description" content="Создание сайтов на чистом коде для экспертов и бизнеса.">
+<meta property="og:url" content="https://vk-st.ru">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://image.thum.io/get/width/1200/https://vk-st.ru?v=10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f4ede4;--text:#26292b;--text-m:#555a5c;--emerald:#0b4c37;--wine:#631622;--gold:#d19e48;--grass:#33422d;--font-d:'Playfair Display',serif;--font-s:'Inter',sans-serif}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--font-s);color:var(--text);background:var(--bg);line-height:1.6;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom)}
+:root{--bg:#f4ede4;--text:#26292b;--text-m:#555a5c;--emerald:#0b4c37;--wine:#631622;--gold:#d19e48;--grass:#33422d;--font-d:'Cormorant Garamond',serif;--font-s:'Inter',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;cursor:none}
+body{font-family:var(--font-s);color:var(--text);background:var(--bg);line-height:1.7;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom)}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none;transition:all .3s ease}
-.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem 2rem;border-radius:2rem;font-weight:600;cursor:pointer;border:none;font-size:1rem;min-height:44px;min-width:44px}
-.btn--emerald{background:var(--emerald);color:#fff}
-.btn--emerald:hover{background:#0d6146;transform:translateY(-2px);box-shadow:0 10px 30px rgba(11,76,55,.25)}
-.btn--wine{background:var(--wine);color:#fff}
-.btn--wine:hover{background:#802a3a;transform:translateY(-2px)}
-.section{padding:5rem 0}
-.section-title{font-family:var(--font-d);font-size:clamp(2rem,4vw,3rem);font-weight:600;margin-bottom:1rem;line-height:1.1}
-.section-subtitle{color:var(--text-m);font-size:1.1rem;max-width:500px;margin-bottom:3rem}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:100px 0;position:relative}
+/* CUSTOM CURSOR */
+.cursor{width:20px;height:20px;border:2px solid var(--gold);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transition:width .3s,height .3s,background .3s;transform:translate(-50%,-50%);mix-blend-mode:difference}
+.cursor.hover{width:50px;height:50px;background:rgba(209,158,72,0.2);border-color:transparent}
+@media(max-width:768px){.cursor{display:none}html{cursor:auto}}
 /* HEADER */
-.header{position:sticky;top:0;z-index:100;background:rgba(244,237,228,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(38,41,43,.08);padding:.75rem 0}
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(244,237,228,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(38,41,43,0.08);padding:20px 0}
 .header__inner{display:flex;justify-content:space-between;align-items:center}
-.logo{font-family:var(--font-d);font-size:1.4rem;font-weight:700}
+.logo{font-family:var(--font-d);font-size:26px;font-weight:600;letter-spacing:-0.5px}
 .logo span{color:var(--gold)}
-.burger{width:44px;height:44px;display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer}
-.burger span{display:block;width:22px;height:2px;background:var(--text);transition:.3s}
-.nav-overlay{position:fixed;top:0;right:0;width:100%;max-width:360px;height:100vh;background:var(--bg);padding:2rem;display:flex;flex-direction:column;gap:1.5rem;transform:translateX(100%);transition:transform .4s ease;z-index:999}
-.nav-overlay.open{transform:translateX(0)}
-.nav-close{align-self:flex-end;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:none;border:none;font-size:1.5rem;cursor:pointer}
-.nav-overlay a{font-family:var(--font-d);font-size:1.3rem;font-weight:500}
+.header__socials{display:flex;gap:12px;margin-right:20px}
+.social-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(38,41,43,0.15);color:var(--text);transition:all .3s;cursor:pointer}
+.social-icon:hover{background:var(--emerald);border-color:var(--emerald);color:#fff;transform:translateY(-2px)}
+.burger{width:44px;height:44px;display:flex;flex-direction:column;justify-content:center;gap:6px;background:none;border:none;cursor:pointer}
+.burger span{display:block;width:24px;height:1.5px;background:var(--text);transition:.3s}
+.nav{position:fixed;top:0;right:0;width:100%;max-width:420px;height:100vh;background:var(--bg);padding:120px 48px;transform:translateX(100%);transition:transform .4s ease;z-index:999}
+.nav.open{transform:translateX(0)}
+.nav-close{position:absolute;top:32px;right:32px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:none;border:none;font-size:32px;cursor:pointer;color:var(--text)}
+.nav a{display:block;font-family:var(--font-d);font-size:32px;font-weight:400;margin-bottom:28px;color:var(--text);letter-spacing:-0.5px}
+.nav a:hover{color:var(--emerald)}
+/* ASYMMETRIC DIVIDER */
+.asymmetric-divider{position:absolute;bottom:0;left:0;right:0;height:80px;overflow:hidden}
+.asymmetric-divider svg{width:100%;height:100%}
+.asymmetric-divider path{fill:var(--bg)}
 /* HERO */
-.hero{min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:env(safe-area-inset-top)}
-.hero__bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(244,237,228,.95),rgba(244,237,228,.85)),url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=80') center/cover no-repeat}
-.hero__content{position:relative;z-index:2;max-width:700px}
-.hero__pre{font-family:var(--font-d);font-size:1.1rem;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem}
-.hero__title{font-family:var(--font-d);font-size:clamp(2.2rem,5vw,4rem);font-weight:600;line-height:1.05;margin-bottom:1.5rem}
-.hero__title span{color:var(--emerald)}
-.hero__desc{font-size:1.15rem;color:var(--text-m);margin-bottom:2.5rem;max-width:500px}
-.hero__actions{display:flex;gap:1rem;flex-wrap:wrap}
-/* PROMO BANNER */
-.promo-banner{background:var(--wine);color:#fff;padding:1rem;text-align:center;font-weight:500}
-.promo-banner__timer{display:flex;justify-content:center;gap:1.5rem;margin-top:.75rem;font-family:var(--font-d)}
-.timer__num{font-size:1.8rem;font-weight:700}
-.timer__label{font-size:.75rem;opacity:.9;text-transform:uppercase;letter-spacing:.1em}
-/* ACCORDION */
-.accordion{max-width:700px;margin:0 auto}
-.accordion-item{border-bottom:1px solid rgba(38,41,43,.1)}
-.accordion-trigger{width:100%;text-align:left;padding:1.5rem 0;font-family:var(--font-d);font-size:1.2rem;font-weight:500;color:var(--text);background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;min-height:44px}
-.accordion-trigger:hover{color:var(--emerald)}
-.accordion-icon{width:20px;height:20px;color:var(--gold);transition:transform .3s}
-.accordion-item.active .accordion-icon{transform:rotate(180deg)}
-.accordion-content{max-height:0;overflow:hidden;transition:max-height .4s ease}
-.accordion-item.active .accordion-content{max-height:300px}
-.accordion-text{padding:0 0 1.5rem;color:var(--text-m);line-height:1.7}
-.accordion-text strong{color:var(--emerald)}
-/* ABOUT - GRASS BLOCK */
-.about{background:var(--grass);color:var(--bg)}
-.about__inner{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
-@media(min-width:768px){.about__inner{grid-template-columns:1.2fr .8fr}}
-.about__title{color:var(--bg);margin-bottom:1rem}
-.about__text{color:rgba(244,237,228,.9);font-size:1.1rem;line-height:1.8;margin-bottom:1.5rem}
-.about__features{display:grid;gap:1rem;margin:1.5rem 0}
-.about__feature{display:flex;gap:.75rem;align-items:flex-start}
-.about__feature svg{width:20px;height:20px;color:var(--gold);flex-shrink:0;margin-top:3px}
-/* PORTFOLIO - BENTO + SCROLL */
-.portfolio__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:140px 0 80px;overflow:hidden}
+.hero__image{position:absolute;inset:0;z-index:1}
+.hero__image img{width:100%;height:100%;object-fit:cover}
+.hero__overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(244,237,228,0.93),rgba(244,237,228,0.87));z-index:2}
+.hero__content{position:relative;z-index:3;max-width:750px}
+.hero__pre{font-family:var(--font-d);font-size:14px;color:var(--gold);letter-spacing:4px;text-transform:uppercase;margin-bottom:24px;display:block;font-weight:500;opacity:0;animation:fadeInUp .8s ease forwards}
+.hero__title{font-family:var(--font-d);font-size:clamp(36px,6vw,64px);font-weight:400;line-height:1.05;margin-bottom:28px;letter-spacing:-1px;color:var(--text)}
+.hero__title .char{display:inline-block;opacity:0;animation:charReveal .6s ease forwards;transform:translateY(40px)}
+@keyframes charReveal{to{opacity:1;transform:translateY(0)}}
+.hero__desc{font-size:17px;color:var(--text-m);max-width:600px;margin-bottom:40px;line-height:1.9;font-weight:300;opacity:0;animation:fadeInUp .8s ease .8s forwards}
+.hero__btn{display:inline-flex;align-items:center;justify-content:center;padding:18px 40px;background:var(--emerald);color:#fff;border-radius:50px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:all .3s;min-height:52px;border:none;cursor:pointer;opacity:0;animation:fadeInUp .8s ease 1s forwards}
+.hero__btn:hover{background:#0d6146;transform:translateY(-3px);box-shadow:0 12px 35px rgba(11,76,55,0.3)}
+@keyframes fadeInUp{to{opacity:1;transform:translateY(0)}from{opacity:0;transform:translateY(30px)}}
+.promo{background:var(--wine);color:var(--bg);padding:32px 0;text-align:center;position:relative;z-index:10}
+.promo__title{font-family:var(--font-d);font-size:20px;font-weight:400;margin-bottom:20px;letter-spacing:0.5px}
+.timer{display:flex;justify-content:center;gap:40px;font-family:var(--font-d)}
+.timer__item{text-align:center}
+.timer__num{font-size:42px;font-weight:600;line-height:1;display:block;color:var(--gold)}
+.timer__label{font-size:11px;text-transform:uppercase;letter-spacing:3px;opacity:0.85;margin-top:8px;display:block}
+.section__title{font-family:var(--font-d);font-size:clamp(32px,4vw,48px);font-weight:400;margin-bottom:20px;line-height:1.1;color:var(--text)}
+.section__subtitle{font-size:16px;color:var(--text-m);max-width:600px;margin-bottom:64px;line-height:1.8;font-weight:300}
+.accordion{max-width:800px}
+.accordion__item{border-bottom:1px solid rgba(38,41,43,0.12)}
+.accordion__trigger{width:100%;text-align:left;padding:32px 0;font-family:var(--font-d);font-size:22px;font-weight:400;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:24px;color:var(--text);transition:color .3s}
+.accordion__trigger:hover{color:var(--emerald)}
+.accordion__icon{width:24px;height:24px;flex-shrink:0;color:var(--gold);transition:transform .3s}
+.accordion__item.active .accordion__icon{transform:rotate(180deg)}
+.accordion__content{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.accordion__item.active .accordion__content{max-height:500px}
+.accordion__text{padding:0 0 32px;color:var(--text-m);line-height:1.9;font-size:16px;font-weight:300}
+.accordion__text strong{color:var(--emerald);font-weight:600}
+.about{background:var(--grass);color:var(--bg);position:relative;overflow:hidden}
+.about__inner{position:relative;z-index:2;max-width:800px;text-align:center}
+.about__photo{width:200px;height:200px;border-radius:50%;object-fit:cover;margin:0 auto 32px;display:block;border:3px solid rgba(209,158,72,0.5);box-shadow:0 0 0 12px rgba(209,158,72,0.15),0 20px 40px rgba(0,0,0,0.3);filter:saturate(0.9) contrast(1.05)}
+.about__title{font-family:var(--font-d);font-size:clamp(32px,4vw,44px);font-weight:400;margin-bottom:28px;line-height:1.1;color:var(--bg)}
+.about__text{font-size:17px;line-height:1.95;opacity:0.95;margin-bottom:24px;font-weight:300;text-align:left}
+.portfolio__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 @media(min-width:768px){.portfolio__grid{grid-template-columns:repeat(3,1fr)}}
-.portfolio-item{position:relative;border-radius:1rem;overflow:hidden;background:rgba(38,41,43,.04);aspect-ratio:4/3;transition:transform .3s}
-.portfolio-item:hover{transform:translateY(-4px)}
-.portfolio-item--wide{grid-column:span 2}@media(min-width:768px){.portfolio-item--wide{grid-column:span 2}}
-.portfolio-item__img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.portfolio-item:hover .portfolio-item__img{transform:scale(1.05)}
-.portfolio-item__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(38,41,43,.8),transparent);display:flex;flex-direction:column;justify-content:flex-end;padding:1rem;color:#fff}
-.portfolio-item__tag{font-size:.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.25rem}
-.portfolio-item__title{font-family:var(--font-d);font-size:1.1rem;font-weight:600}
-@media(max-width:600px){.portfolio__grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem;gap:1rem}.portfolio-item{min-width:85vw;scroll-snap-align:start;aspect-ratio:3/4}}
-/* SERVICES - RESTAURANT MENU */
-.services-menu{max-width:600px;margin:0 auto}
-.service-row{display:flex;align-items:baseline;gap:1rem;padding:1rem 0;border-bottom:1px dashed rgba(209,158,72,.4)}
-.service-row:last-child{border-bottom:none}
-.service-name{font-family:var(--font-d);font-size:1.1rem;font-weight:500;color:var(--text)}
-.service-dots{flex:1;border-bottom:2px dotted var(--gold);margin:0 .5rem;position:relative;top:-3px}
-.service-price{font-weight:600;color:var(--emerald);white-space:nowrap}
-/* FOOTER */
-.footer{background:var(--grass);color:var(--bg);padding:3rem 0 5rem}
-.footer__content{display:flex;flex-direction:column;gap:2rem;text-align:center}
-.footer__legal{font-size:.9rem;opacity:.8;line-height:1.8}
+.portfolio__item{position:relative;border-radius:2px;overflow:hidden;background:#fff;aspect-ratio:4/3;transition:transform .3s}
+.portfolio__item:hover{transform:translateY(-6px)}
+.portfolio__item--wide{grid-column:span 2}@media(min-width:768px){.portfolio__item--wide{grid-column:span 2}}
+.portfolio__img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.portfolio__item:hover .portfolio__img{transform:scale(1.05)}
+.portfolio__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(38,41,43,0.88),transparent);display:flex;flex-direction:column;justify-content:flex-end;padding:28px;color:#fff}
+.portfolio__tag{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:2.5px;margin-bottom:10px;font-weight:500}
+.portfolio__title{font-family:var(--font-d);font-size:24px;font-weight:400;line-height:1.2}
+@media(max-width:640px){.portfolio__grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:24px;gap:20px;-webkit-overflow-scrolling:touch}.portfolio__item{min-width:85vw;scroll-snap-align:start;aspect-ratio:3/4}}
+.testimonials{background:rgba(209,158,72,0.08)}
+.testimonials__grid{display:grid;grid-template-columns:1fr;gap:32px}
+@media(min-width:768px){.testimonials__grid{grid-template-columns:repeat(2,1fr)}}
+.testimonial{background:#fff;padding:40px;border-radius:2px;box-shadow:0 4px 20px rgba(0,0,0,0.04)}
+.testimonial__text{font-family:var(--font-d);font-size:18px;font-style:italic;line-height:1.9;color:var(--text-m);margin-bottom:24px;font-weight:300}
+.testimonial__author{font-weight:600;color:var(--text);font-size:15px}
+.testimonial__role{font-size:13px;color:var(--text-m);margin-top:4px}
+.services__list{max-width:700px}
+.service__row{display:flex;align-items:baseline;gap:16px;padding:24px 0;border-bottom:1px dashed rgba(209,158,72,0.5)}
+.service__name{font-family:var(--font-d);font-size:19px;font-weight:400;color:var(--text);flex:1}
+.service__desc{font-size:13px;color:var(--text-m);display:block;margin-top:4px;font-weight:300}
+.service__dots{flex:1;border-bottom:2px dotted var(--gold);margin:0 12px;position:relative;top:-4px;min-width:60px}
+.service__price{font-weight:600;color:var(--emerald);white-space:nowrap;font-size:16px;letter-spacing:0.3px}
+.addons{background:rgba(11,76,55,0.04)}
+.addons__title{font-family:var(--font-d);font-size:clamp(28px,4vw,40px);font-weight:400;margin-bottom:40px;color:var(--text)}
+.addons__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media(min-width:768px){.addons__grid{grid-template-columns:repeat(3,1fr)}}
+.addon__item{background:#fff;padding:28px;border-radius:2px;border:1px solid rgba(209,158,72,0.2);transition:all .3s}
+.addon__item:hover{border-color:var(--gold);box-shadow:0 8px 25px rgba(0,0,0,0.06);transform:translateY(-3px)}
+.addon__name{font-family:var(--font-d);font-size:17px;font-weight:500;color:var(--text);margin-bottom:8px}
+.addon__price{color:var(--emerald);font-weight:600;font-size:15px}
+.cta{background:var(--wine);color:var(--bg);text-align:center}
+.cta__title{font-family:var(--font-d);font-size:clamp(32px,4vw,44px);font-weight:400;margin-bottom:20px;color:var(--bg)}
+.cta__text{max-width:650px;margin:0 auto 32px;font-size:17px;line-height:1.9;opacity:0.95;font-weight:300}
+.cta__btn{display:inline-flex;align-items:center;justify-content:center;padding:18px 40px;background:var(--gold);color:var(--wine);border-radius:50px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:all .3s;min-height:52px;margin-top:24px}
+.cta__btn:hover{background:#e0b86d;transform:translateY(-3px);box-shadow:0 12px 35px rgba(209,158,72,0.3)}
+.footer{background:var(--grass);color:var(--bg);padding:60px 0 40px;text-align:center}
+.footer__legal{font-size:13px;opacity:0.75;line-height:1.9}
 .footer__legal a{color:var(--gold)}
-/* VERBOX BUTTON STYLES */
-.verbox-button{width:60px!important;height:60px!important;bottom:20px!important;right:20px!important}
-.verbox-button svg{width:30px!important;height:30px!important}
-/* UTILS */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.verbox-button{width:60px!important;height:60px!important;bottom:24px!important;right:24px!important;background:var(--emerald)!important;box-shadow:0 4px 20px rgba(11,76,55,0.35)!important}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
+
+<div class="cursor"></div>
+
 <header class="header">
 <div class="container header__inner">
-<a href="#" class="logo">VK<span>Studio</span></a>
-<button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+<div class="logo">VK<span>.studio</span></div>
+<div style="display:flex;align-items:center">
+<div class="header__socials">
+<a href="https://t.me/kowiktori" target="_blank" class="social-icon hover-trigger" aria-label="Telegram">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.67-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.87 7.97-3.44 3.8-1.6 4.59-1.88 5.1-1.89.11 0 .37.03.54.17.14.12.18.28.2.45-.01.06.01.24 0 .38z"/></svg>
+</a>
+<a href="https://wa.me/79080288580" target="_blank" class="social-icon hover-trigger" aria-label="WhatsApp">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+</a>
+<a href="https://instagram.com/kowiktori" target="_blank" class="social-icon hover-trigger" aria-label="Instagram">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+</a>
 </div>
-<nav class="nav-overlay">
-<button class="nav-close" aria-label="Закрыть">✕</button>
-<a href="#pain">Решения</a><a href="#about">Обо мне</a><a href="#portfolio">Портфолио</a><a href="#services">Услуги</a><a href="#contact">Контакты</a>
+<button class="burger hover-trigger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</div>
+<nav class="nav">
+<button class="nav-close hover-trigger" aria-label="Close">✕</button>
+<a href="#solutions" class="hover-trigger">Решения</a>
+<a href="#about" class="hover-trigger">Обо мне</a>
+<a href="#portfolio" class="hover-trigger">Портфолио</a>
+<a href="#testimonials" class="hover-trigger">Отзывы</a>
+<a href="#services" class="hover-trigger">Стоимость</a>
+<a href="#addons" class="hover-trigger">Поддержка</a>
+<a href="#contact" class="hover-trigger">Контакты</a>
 </nav>
 </header>
 
-<div class="promo-banner">
-🔥 Скидка 20% при заказе до 31 мая
-<div class="promo-banner__timer" id="timer">
-<div><span class="timer__num" id="d">00</span><span class="timer__label">Дн</span></div>
-<div><span class="timer__num" id="h">00</span><span class="timer__label">Ч</span></div>
-<div><span class="timer__num" id="m">00</span><span class="timer__label">М</span></div>
-</div>
-</div>
-
 <section class="hero">
-<div class="hero__bg"></div>
-<div class="container hero__content">
-<div class="hero__pre reveal">VK Studio</div>
-<h1 class="hero__title reveal">Сайты на коде, которые <span>работают на вас</span></h1>
-<p class="hero__desc reveal">Создаю быстрые лендинги и квизы без абонентской платы за конструкторы. Бесплатный хостинг навсегда.</p>
-<div class="hero__actions reveal">
-<a href="#contact" class="btn btn--emerald">Рассчитать стоимость</a>
-<a href="https://t.me/kowiktori?text=Здравствуйте" class="btn btn--wine">Написать в Telegram</a>
+<div class="hero__image">
+<img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1600&q=80" alt="Рабочее место">
 </div>
+<div class="hero__overlay"></div>
+<div class="container">
+<div class="hero__content">
+<span class="hero__pre">VK.studio</span>
+<h1 class="hero__title" id="animatedTitle">Студия IT-решений Виктории Кокуриной. Проектирование сайтов на чистом коде без абонентской платы.</h1>
+<p class="hero__desc">Разработка легких, сверхбыстрых лендингов, квизов и многостраничных систем для экспертов, помогающих практик, сферы финансов и недвижимости. Вечный бесплатный хостинг на GitHub Pages.</p>
+<a href="#contact" class="hero__btn hover-trigger">Обсудить проект в чате</a>
+</div>
+</div>
+<div class="asymmetric-divider">
+<svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+<path d="M0,40 Q300,80 600,40 T1200,40 L1200,80 L0,80 Z"></path>
+</svg>
 </div>
 </section>
 
-<section class="section" id="pain">
+<div class="promo">
 <div class="container">
-<h2 class="section-title reveal">Что вас беспокоит?</h2>
-<p class="section-subtitle reveal">Нажмите на вопрос — увидите решение</p>
+<div class="promo__title">Специальные условия для быстрого старта — скидка 20% до 31 мая</div>
+<div class="timer" id="timer">
+<div class="timer__item"><span class="timer__num" id="days">00</span><span class="timer__label">дней</span></div>
+<div class="timer__item"><span class="timer__num" id="hours">00</span><span class="timer__label">часов</span></div>
+<div class="timer__item"><span class="timer__num" id="mins">00</span><span class="timer__label">минут</span></div>
+</div>
+</div>
+</div>
+
+<section class="section" id="solutions">
+<div class="container">
+<h2 class="section__title reveal">Как IT-решения на чистом коде оптимизируют ваш бизнес</h2>
 <div class="accordion reveal">
-<div class="accordion-item">
-<button class="accordion-trigger">Устал платить за Tilda/Taplink каждый месяц?<svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-<div class="accordion-content"><p class="accordion-text"><strong>Моё решение:</strong> GitHub Pages — бесплатный хостинг навсегда. Вы платите один раз за разработку, сайт работает вечно без ежемесячных платежей.</p></div>
+<div class="accordion__item">
+<button class="accordion__trigger hover-trigger">Высокая конкуренция и слив дорогого трафика<svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="accordion__content"><p class="accordion__text"><strong>Решение:</strong> Шаблонные сайты теряют до 40% мобильных клиентов. Мой чистый код обеспечивает запуск за 0.5 секунды. Каждая заявка доходит до вас мгновенно.</p></div>
 </div>
-<div class="accordion-item">
-<button class="accordion-trigger">Сайт есть, а заявок нет?<svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-<div class="accordion-content"><p class="accordion-text"><strong>Моё решение:</strong> Продающая структура + чёткий оффер + форма захвата. Каждый элемент работает на конверсию, а не просто «висит».</p></div>
+<div class="accordion__item">
+<button class="accordion__trigger hover-trigger">Постоянные расходы на конструкторы<svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="accordion__content"><p class="accordion__text"><strong>Решение:</strong> GitHub Pages полностью освобождает от абонентской платы. Сайт работает на вас бесплатно и навсегда.</p></div>
 </div>
-<div class="accordion-item">
-<button class="accordion-trigger">Боюсь, что сайт «упадёт» или взломают?<svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-<div class="accordion-content"><p class="accordion-text"><strong>Моё решение:</strong> Статические сайты на инфраструктуре GitHub (Microsoft) защищены от взлома лучше, чем обычные. Нет админки = нет точки входа для хакеров.</p></div>
-</div>
-<div class="accordion-item">
-<button class="accordion-trigger">Не хочу разбираться в технических деталях<svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-<div class="accordion-content"><p class="accordion-text"><strong>Моё решение:</strong> Полное сопровождение. Вы занимаетесь бизнесом, я — сайтом. Любые правки — через меня, чтобы ничего не сломалось.</p></div>
+<div class="accordion__item">
+<button class="accordion__trigger hover-trigger">Шаблонный дизайн без доверия<svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="accordion__content"><p class="accordion__text"><strong>Решение:</strong> Асимметричная журнальная верстка подчеркивает ваш статус и отстраивает от конкурентов.</p></div>
 </div>
 </div>
 </div>
 </section>
 
 <section class="section about" id="about">
-<div class="container about__inner">
-<div class="reveal">
-<h2 class="about__title">Почему мне доверяют</h2>
-<p class="about__text">Я не работаю на конвейер. Каждый проект — это глубокое погружение в задачи клиента и создание индивидуального решения, а не шаблонной страницы.</p>
-<div class="about__features">
-<div class="about__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Личный контроль на всех этапах</span></div>
-<div class="about__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Чистый код без конструкторов</span></div>
-<div class="about__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Срок 3-5 дней без потери качества</span></div>
-<div class="about__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Бесплатный хостинг навсегда</span></div>
-</div>
+<div class="container">
+<div class="about__inner reveal">
+<img src="IMG_20260515_124729.png" alt="Виктория Кокурина" class="about__photo" loading="lazy">
+<h2 class="about__title">Цифровая эстетика и независимость вашего бренда</h2>
+<p class="about__text">Меня зовут Виктория Кокурина. В рамках VK.studio я создаю независимую, премиальную и стабильную цифровую инфраструктуру для вашего бренда. Мой подход — это сочетание визуального стиля «тихой роскоши» и чистого кода.</p>
+<p class="about__text">Более 10 успешно реализованных проектов позволяют мне глубоко понимать специфику продаж: от личных консультаций психологов до сложных лид-магнитов в сфере инвестиций.</p>
 </div>
 </div>
 </section>
 
 <section class="section" id="portfolio">
 <div class="container">
-<h2 class="section-title reveal">Портфолио</h2>
-<p class="section-subtitle reveal">Реальные проекты для экспертов и бизнеса</p>
-<div class="portfolio__grid reveal" id="portfolio-grid">
-<!-- JS will populate -->
+<h2 class="section__title reveal">Практические кейсы студии</h2>
+<p class="section__subtitle reveal">Оцените скорость работы и логику взаимодействия на примере 6 реализованных проектов.</p>
+<div class="portfolio__grid reveal" id="portfolioGrid"></div>
+</div>
+</section>
+
+<section class="section testimonials" id="testimonials">
+<div class="container">
+<h2 class="section__title reveal">Отзывы клиентов</h2>
+<div class="testimonials__grid reveal">
+<div class="testimonial">
+<p class="testimonial__text">«Виктория создала для меня не просто сайт, а настоящий инструмент продаж. Раньше я тратила 750₽ в месяц на Tilda, теперь плачу один раз и сайт работает бесплатно. За первые 2 недели получила 3 заявки!»</p>
+<div class="testimonial__author">Анжела Погосян</div>
+<div class="testimonial__role">Эксперт по новостройкам · exned.ru</div>
+</div>
+<div class="testimonial">
+<p class="testimonial__text">«Наконец-то нашла разработчика, который понимает специфику работы с недвижимостью и финансами. Сайт получился строгим, но при этом продающим.»</p>
+<div class="testimonial__author">Марина Садрыева</div>
+<div class="testimonial__role">Финансовый консультант · msfin.ru</div>
+</div>
 </div>
 </div>
 </section>
 
 <section class="section" id="services">
 <div class="container">
-<h2 class="section-title reveal">Дополнительные услуги</h2>
-<p class="section-subtitle reveal">Расширьте возможности вашего сайта</p>
-<div class="services-menu reveal">
-<div class="service-row"><span class="service-name">Правки контента</span><span class="service-dots"></span><span class="service-price">3 000 ₽</span></div>
-<div class="service-row"><span class="service-name">Перенос сайта на GitHub</span><span class="service-dots"></span><span class="service-price">7 000 ₽</span></div>
-<div class="service-row"><span class="service-name">Установка виджета (чат/таймер)</span><span class="service-dots"></span><span class="service-price">5 000 ₽</span></div>
-<div class="service-row"><span class="service-name">Комплекс виджетов</span><span class="service-dots"></span><span class="service-price">8 000 ₽</span></div>
-<div class="service-row"><span class="service-name">Базовая поддержка (мес)</span><span class="service-dots"></span><span class="service-price">5 000 ₽</span></div>
-<div class="service-row"><span class="service-name">Бизнес-поддержка (мес)</span><span class="service-dots"></span><span class="service-price">15 000 ₽</span></div>
+<h2 class="section__title reveal">Фиксированная стоимость услуг</h2>
+<div class="services__list reveal">
+<div class="service__row"><div><div class="service__name">Экспресс-Лендинг</div><span class="service__desc">до 5 экранов под акции и лид-магниты</span></div><span class="service__dots"></span><span class="service__price">25 000 ₽</span></div>
+<div class="service__row"><div><div class="service__name">Интерактивный Бизнес-Лендинг</div><span class="service__desc">до 8 экранов, интеграция чата и аналитики</span></div><span class="service__dots"></span><span class="service__price">40 000 ₽</span></div>
+<div class="service__row"><div><div class="service__name">Многостраничный сайт под ключ</div><span class="service__desc">до 4 рабочих страниц для компаний</span></div><span class="service__dots"></span><span class="service__price">55 000 ₽</span></div>
+<div class="service__row"><div><div class="service__name">Перенос сайта с Tilda/Wix</div><span class="service__desc">на хостинг GitHub Pages</span></div><span class="service__dots"></span><span class="service__price">7 000 ₽</span></div>
+<div class="service__row"><div><div class="service__name">Настройка виджетов</div><span class="service__desc">чатов, таймеров, форм захвата</span></div><span class="service__dots"></span><span class="service__price">5 000 ₽</span></div>
 </div>
 </div>
 </section>
 
-<footer class="footer" id="contact">
-<div class="container footer__content">
-<h2 class="section-title" style="color:var(--bg)">Готовы начать?</h2>
-<p style="max-width:400px;margin:0 auto 2rem;opacity:.9">Напишите мне — рассчитаю стоимость и сроки под вашу задачу</p>
-<div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-<a href="https://t.me/kowiktori?text=Здравствуйте" class="btn btn--emerald">Telegram</a>
-<a href="https://wa.me/79080288580" class="btn" style="background:#fff;color:var(--emerald)">WhatsApp</a>
+<section class="section addons" id="addons">
+<div class="container">
+<h2 class="addons__title reveal">Дополнительные услуги и поддержка</h2>
+<div class="addons__grid reveal">
+<div class="addon__item"><div class="addon__name">Правки контента</div><div class="addon__price">3 000 ₽</div></div>
+<div class="addon__item"><div class="addon__name">Базовая поддержка (мес)</div><div class="addon__price">5 000 ₽</div></div>
+<div class="addon__item"><div class="addon__name">Бизнес-поддержка (мес)</div><div class="addon__price">15 000 ₽</div></div>
+<div class="addon__item"><div class="addon__name">Комплекс виджетов</div><div class="addon__price">8 000 ₽</div></div>
+<div class="addon__item"><div class="addon__name">SEO-оптимизация</div><div class="addon__price">10 000 ₽</div></div>
+<div class="addon__item"><div class="addon__name">Обучение управлению</div><div class="addon__price">5 000 ₽</div></div>
 </div>
-<div class="footer__legal" style="margin-top:3rem">
-ИП Кокурина В.А. · ИНН 761101173810<br>
-<a href="tel:+79080288580">+7 908 028-85-80</a> · <a href="https://t.me/kowiktori">@kowiktori</a><br>
-© 2026 VK Studio. Все права защищены.
 </div>
+</section>
+
+<section class="section cta" id="contact">
+<div class="container">
+<h2 class="cta__title reveal">Зафиксируйте скидку 20% прямо сейчас</h2>
+<p class="cta__text reveal">При фиксации даты разработки до конца недели — специальная цена. Идеальное решение для быстрого запуска трафика.</p>
+<a href="https://t.me/kowiktori?text=Здравствуйте! Хочу зафиксировать скидку 20%" class="cta__btn hover-trigger">Написать в Telegram</a>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<div class="footer__legal">ИП Кокурина Виктория Андреевна<br>ИНН 761101173810 · ОГРНИП 325762700032112<br><a href="tel:+79080288580">+7 908 028-85-80</a> · <a href="https://t.me/kowiktori">@kowiktori</a><br>© 2026 VK.studio</div>
 </div>
 </footer>
 
 <script src="https://admin.verbox.ru/support/support.js?h=82bb90aaeeebce6ea5848b59bc71ec90" async></script>
 <script>
-// Timer
-const dl=new Date('2026-05-31T23:59:59').getTime();
-function tick(){const n=Date.now(),d=dl-n;if(d<=0){document.getElementById('d').textContent='00';document.getElementById('h').textContent='00';document.getElementById('m').textContent='00';return;}document.getElementById('d').textContent=String(Math.floor(d/864e5)).padStart(2,'0');document.getElementById('h').textContent(String(Math.floor(d%864e5/36e5)).padStart(2,'0'));document.getElementById('m').textContent(String(Math.floor(d%36e5/6e4)).padStart(2,'0'));}
-tick();setInterval(tick,6e4);
-// Burger
-const b=document.querySelector('.burger'),n=document.querySelector('.nav-overlay'),c=document.querySelector('.nav-close');
+// CUSTOM CURSOR
+const cursor=document.querySelector('.cursor');
+const hoverTriggers=document.querySelectorAll('.hover-trigger,a,button');
+document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px'});
+hoverTriggers.forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'))});
+
+// ANIMATED TITLE
+const title=document.getElementById('animatedTitle');
+const text=title.textContent;
+title.innerHTML='';
+text.split('').forEach((char,i)=>{const span=document.createElement('span');span.className='char';span.textContent=char===' '?' ':char;span.style.animationDelay=(i*0.03)+'s';title.appendChild(span)});
+
+// TIMER
+const deadline=new Date('2026-05-31T23:59:59').getTime();
+function updateTimer(){const now=Date.now(),diff=deadline-now;if(diff<=0){document.getElementById('days').textContent='00';document.getElementById('hours').textContent='00';document.getElementById('mins').textContent='00';return;}document.getElementById('days').textContent=String(Math.floor(diff/(1000*60*60*24))).padStart(2,'0');document.getElementById('hours').textContent=String(Math.floor((diff%(1000*60*60*24))/(1000*60*60))).padStart(2,'0');document.getElementById('mins').textContent=String(Math.floor((diff%(1000*60*60))/(1000*60))).padStart(2,'0');}
+updateTimer();setInterval(updateTimer,60000);
+
+// BURGER MENU
+const b=document.querySelector('.burger'),n=document.querySelector('.nav'),c=document.querySelector('.nav-close');
 function toggle(){b.classList.toggle('active');n.classList.toggle('open');document.body.style.overflow=n.classList.contains('open')?'hidden':'';}
-b.onclick=toggle;c.onclick=toggle;document.querySelectorAll('.nav-overlay a').forEach(l=>l.onclick=()=>{toggle();});
-// Accordion
-document.querySelectorAll('.accordion-trigger').forEach(t=>t.onclick=()=>{const i=t.parentElement;i.classList.toggle('active');});
-// Reveal on scroll
-const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target);}}),{threshold:.1});
+b.onclick=toggle;c.onclick=toggle;document.querySelectorAll('.nav a').forEach(l=>l.onclick=toggle);
+
+// ACCORDION
+document.querySelectorAll('.accordion__trigger').forEach(t=>t.onclick=()=>{t.parentElement.classList.toggle('active');});
+
+// REVEAL ON SCROLL
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target);}}),{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-// Portfolio
-const projects=[{t:'Анжела Погосян',tag:'Лендинг',l:'https://exned.ru',i:'https://images.unsplash.com/photo-1560436224-29f5a4f1c6b2?w=600&q=80'},{t:'Марина Садрыева',tag:'Корпоративный',l:'https://msfin.ru',i:'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80'},{t:'Васту-компас',tag:'Интерактив',l:'https://vikaandreevnadesign.github.io/test.vastu/',i:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80'},{t:'Тест «Кто ты?»',tag:'Квиз',l:'https://vikaandreevnadesign.github.io/test.kto_ty/',i:'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80'},{t:'ТОЧКА СБОРКИ',tag:'Многостраничный',l:'https://tosborki.ru',i:'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80'},{t:'Лендинг новостройки',tag:'Прототип',l:'https://v0-realtor-landing-page-eight.vercel.app/',i:'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80'}];
-const g=document.getElementById('portfolio-grid');
-projects.forEach((p,idx)=>{const el=document.createElement('a');el.className='portfolio-item'+(idx===0?' portfolio-item--wide':'');el.href=p.l;el.target='_blank';el.innerHTML=`<img src="${p.i}" alt="${p.t}" class="portfolio-item__img" loading="lazy"><div class="portfolio-item__overlay"><span class="portfolio-item__tag">${p.tag}</span><div class="portfolio-item__title">${p.t}</div></div>`;g.appendChild(el);});
+
+// PORTFOLIO
+const projects=[
+  {t:'Анжела Погосян',tag:'Лендинг для эксперта по недвижимости',l:'https://exned.ru',i:'https://image.thum.io/get/width/600/https://exned.ru'},
+  {t:'Марина Садрыева',tag:'Корпоративный сайт финансового консультанта',l:'https://msfin.ru',i:'https://image.thum.io/get/width/600/https://msfin.ru'},
+  {t:'Я есть',tag:'Сайт для помогающих практик',l:'https://ya-est.ru',i:'https://image.thum.io/get/width/600/https://ya-est.ru'},
+  {t:'Васту-компас',tag:'Интерактивный инструмент',l:'https://vikaandreevnadesign.github.io/test.vastu/',i:'https://image.thum.io/get/width/600/https://vikaandreevnadesign.github.io/test.vastu/'},
+  {t:'Тест «Кто ты?»',tag:'Квиз-лендинг',l:'https://vikaandreevnadesign.github.io/test.kto_ty/',i:'https://image.thum.io/get/width/600/https://vikaandreevnadesign.github.io/test.kto_ty/'},
+  {t:'Лендинг новостройки',tag:'Прототип',l:'https://v0-realtor-landing-page-eight.vercel.app/',i:'https://image.thum.io/get/width/600/https://v0-realtor-landing-page-eight.vercel.app/'}
+];
+const g=document.getElementById('portfolioGrid');
+projects.forEach(p=>{const el=document.createElement('a');el.className='portfolio__item'+(p===projects[0]?' portfolio__item--wide':'');el.href=p.l;el.target='_blank';el.innerHTML='<img src="'+p.i+'" alt="'+p.t+'" class="portfolio__img" loading="lazy"><div class="portfolio__overlay"><span class="portfolio__tag">'+p.tag+'</span><div class="portfolio__title">'+p.t+'</div></div>';g.appendChild(el);});
 </script>
 </body>
 </html>
